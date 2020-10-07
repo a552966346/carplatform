@@ -91,18 +91,42 @@
         },
         methods: {
             submit_register: function (event) {
-              console.log(this.phone_number)
-              console.log(this.verification)
-              console.log(this.sex)
-              console.log(this)
-              this.$addr.get('v1/bpi/currentprice.json')
-                     .then(response => {
-                       console.log(response)
-                     }
-
-                   )
-            }
-          }
+              var that = this;
+              layui.use('layer', function(){
+                var layer = layui.layer;
+              // console.log(that.phone_number)
+              // console.log(that.verification)
+              // console.log(that.sex)
+              // console.log(that)
+              //判断输入
+              if(that.phone_number==""){
+                layer.msg('请输入手机号');
+              }
+              else if(that.phone_number.length<11){
+                 layer.msg('请输入正确的手机号');
+              }
+              else if(that.verification==""){
+                layer.msg('请输入验证码');
+              }
+              else if(that.car_number ==""){
+                layer.msg('请输入车牌号');
+              }
+              else if(that.car_number.length<6){
+                 layer.msg('请输入正确的车牌号');
+              }
+              else if(that.kilometre == ""){
+                layer.msg('请输入行驶里程');
+              }
+              else{
+                // 请求数据
+                that.$addr.get('v1/bpi/currentprice.json')
+                       .then(response => {
+                         console.log(response)
+                } )
+              }
+          });
+        }
+     }
   }
 </script>
 
