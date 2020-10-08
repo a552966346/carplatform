@@ -6,11 +6,10 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from './store'
-
-Vue.use(VueAxios, axios)
-
+axios.defaults.baseURL = "https://api.coindesk.com/"
+axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
 Vue.config.productionTip = false
-
+Vue.prototype.$addr= axios;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
