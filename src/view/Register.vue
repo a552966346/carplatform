@@ -10,7 +10,7 @@
         <p>验证码</p>
         <div class="register_code">
           <input type="text" placeholder="请输入验证码" name="Verification" v-model="verification">
-          <button>获取验证码</button>
+          <button @click="verification_code">获取验证码</button>
         </div>
       </div>
       <!-- 性别 -->
@@ -90,14 +90,30 @@
             }
         },
         methods: {
-            submit_register: function (event) {
-              var that = this;
+          //获取验证码
+          verification_code:function(event){
+            var that = this;
               layui.use('layer', function(){
                 var layer = layui.layer;
-              // console.log(that.phone_number)
-              // console.log(that.verification)
-              // console.log(that.sex)
-              // console.log(that)
+               var index = layer.load(1, {
+               	shade: [0.2, '#000'] //0.2透明度的黑色背景
+               });
+              that.$addr.get('v1/bpi/currentprice.json')
+                                     .then(response => {
+                                     //  console.log(response)
+                              } )
+            });
+          },
+          //注册
+            submit_register: function (event) {
+              var that = this;
+
+              layui.use('layer', function(){
+                var layer = layui.layer;
+               console.log(that.phone_number)
+               console.log(that.verification)
+               console.log(that.sex)
+               //console.log(that)
               //判断输入
               if(that.phone_number==""){
                 layer.msg('请输入手机号');
@@ -117,6 +133,7 @@
               else if(that.kilometre == ""){
                 layer.msg('请输入行驶里程');
               }
+
               else{
                 // 请求数据
                 that.$addr.get('v1/bpi/currentprice.json')
