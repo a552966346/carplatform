@@ -6,6 +6,7 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from './store'
+import './assets/iconfont/iconfont.css'
 axios.defaults.baseURL = "https://api.coindesk.com/"
 axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
 Vue.config.productionTip = false
