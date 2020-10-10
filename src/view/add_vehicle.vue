@@ -11,9 +11,16 @@
      <!-- 表单内容 -->
     <div class="add_vehicle_vont">
       <div class="add_vehicle_firstvont">
-        <p>
-           <mt-field label="车牌号" placeholder="请输入车牌号" type="number"></mt-field>
-        </p>
+        <div class="car_number">
+          <span>车牌号</span>
+          <div class="car_number1">
+            <select>
+              <option>晋</option>
+            </select>
+            <input placeholder="请输入车身架号后6位" type="number"/>
+          </div>
+           <!-- <mt-field label="车牌号" placeholder="请输入车牌号" type="number"></mt-field> -->
+        </div>
         <p>
           <mt-field label="车身架号" placeholder="请输入车身架号后6位" type="number"></mt-field>
         </p>
@@ -68,9 +75,7 @@ export default {
         console.log("打开相册")
     }
   }
-
 }
-
 </script>
 <style>
   .add_vehicle{width: 100%;height: 100%;display: flex;flex-direction: column;overflow: hidden;}
@@ -84,9 +89,18 @@ export default {
   .add_vehicle_firstvont{width: 100%;padding: 0px 15px;padding-top: 10px;}
   .add_vehicle_firstvont p{width: 100%;border-bottom: 1px solid #ccc;padding: 0px 15px;}
   .add_vehicle_firstvont p:last-of-type{border: none;}
-  .add_vehicle_secondvont{width: 100%;border-top: 10px solid #F2F2F2;padding: 0px 10px;}
+  .add_vehicle_secondvont{width: 100%;border-top: 10px solid #F2F2F2;padding: 0px 15px;}
   .add_vehicle_secondvont p{width: 100%;border-bottom: 1px solid #ccc;padding: 0px 15px;}
   .add_vehicle_secondvont p:last-of-type{border: none;}
+
+  .car_number{display: flex;justify-content: space-between;border-bottom: 1px solid #ccc; padding: 0px 15px;min-height: 48px;align-items: center;}
+  .car_number span{width: 105px;text-align: left;}
+  .car_number1{flex: 1;display: flex;justify-content: flex-end;}
+  .car_number1 select{font-size: 14px;color: #F8D11F;background-color: #fef5d0;border: none;border-radius: 3px;}
+  .car_number1 input{text-align: right;font-size: 14px;border: none;width: 145px;}
+
+
+
   .mint-cell-wrapper{padding: 0px;}
   .mint-cell-title{text-align: left;font-size: 14px;color: #333;}
   .mint-field-core{text-align: right;font-size: 14px;color: #333;}
