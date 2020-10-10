@@ -314,7 +314,6 @@
     /* 全部版块*/
     .index_center{width: 100%;/* padding: 5px 15px; */position: absolute;top: 160px;}
     .index_center1{width: 100%;padding: 0px 15px;}
-
     .center_content{width: 100%;background-color: #FFFFFF;border-radius: 20px;/* box-shadow: 1px 1px 5px #ccc; */padding: 5px 20px;}
     /* 喇叭*/
     .center_content_service{width: 100%;border-bottom: 1px solid #ebeff2;display: flex;align-items: center;padding: 5px 0px;}
