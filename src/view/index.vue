@@ -184,7 +184,7 @@
             <!-- 标题 -->
             <div class="index_shop_title">
             	<p>附近商家</p>
-            	<a href="javascript:;" >更多<i class="iconfont icon-youjiantou"></i></a>
+            	<a href="javascript:;" @click="more" >更多<i class="iconfont icon-youjiantou"></i></a>
             </div>
             <!-- 内容 -->
             <div class="index_shop_cont">
@@ -299,51 +299,81 @@
     methods:{
       //审车代办
       examination:function(){
-        console.log("审车代办")
+       this.$router.push({
+        name: '',
+        })
       },
       //维修与救援
       repair:function(){
-        conso.log("维修与救援")
-    },
+       this.$router.push({
+        name: '',
+        })
+      },
     //洗车
-    wash:function(){
-      console.log("洗车");
+      wash:function(){
+       this.$router.push({
+        name: '',
+        })
        },
        //备品超市
-       market:function(){
-         conso.log("备品超市")
+      market:function(){
+         this.$router.push({
+          name: '',
+          })
        },
        //车辆美容
-       beauty:function(){
-
+      beauty:function(){
+       this.$router.push({
+        name: '',
+        })
        },
       //轮胎更换
-       change:function(){
-
+      change:function(){
+       this.$router.push({
+        name: '',
+        })
        },
        //快修与保养
-       run:function(){
-
+      run:function(){
+       this.$router.push({
+        name: '',
+        })
        },
        //品质贴膜
-      around:function(){
-
+     around:function(){
+       this.$router.push({
+        name: '',
+        })
       },
       //专属服务
-      service:function(){
-
+     service:function(){
+       this.$router.push({
+        name: '',
+        })
       },
       //专家在线
-      spicial:function(){
-
+     spicial:function(){
+       this.$router.push({
+        name: 'expert_online',
+        })
+      },
+      //更多
+     more:function(){
+       this.$router.push({
+        name: '',
+        })
       },
       //商家
-      shop:function(){
-
+     shop:function(){
+       this.$router.push({
+        name: '',
+        })
       },
       //导航
-      navigation:function(){
-
+     navigation:function(){
+       this.$router.push({
+        name: '',
+        })
       }
     }
   }

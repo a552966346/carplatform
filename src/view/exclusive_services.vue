@@ -85,9 +85,9 @@ export default {
     add:function(){
       this.$router.push({
               name: 'add_vehicle',
-              params: {
-              
-              }
+              // params: {
+
+              // }
             })
       console.log("添加车辆")
     },

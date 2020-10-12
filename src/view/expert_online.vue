@@ -29,16 +29,16 @@
       </div>
       <!-- 筛选 -->
       <div class="expert_screen">
-      	<select name="">
+      	<select name="consulting" v-model="down.consulting">
       		<option value="咨询类型">咨询类型</option>
       	</select>
-      	<select name="">
+      	<select name="region" v-model="down.region">
       		<option value="地区">地区</option>
       	</select>
-      	<select name="">
+      	<select name="sort" v-model="down.sort">
       		<option value="排序">排序</option>
       	</select>
-      	<select name="">
+      	<select name="screen" v-model="down.screen">
       		<option value="筛选">筛选</option>
       	</select>
       </div>
@@ -60,7 +60,7 @@
               </div>
               <!-- 向我提问 -->
               <div class="center_item_right">
-              	<a href="javascript:;">向我提问</a>
+              	<a href="javascript:;" @click="questions">向我提问</a>
               </div>
             </div>
       			<div class="right_Grade">
@@ -84,158 +84,7 @@
       			</div>
       		</div>
       	</div>
-        <div class="center_item">
-          <!-- 图片 -->
-        	<div class="center_item_left">
-        		<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=184182366,3170467759&fm=26&gp=0.jpg" >
-        	</div>
-        	<!-- 内容 -->
-          <div class="center_item_center">
-            <div class="right_all">
-              <div class="right_all_two">
-                <p class="center_item_name">李亚娟</p>
-                <p class="center_item_position">保险理赔专家</p>
-              </div>
-              <!-- 向我提问 -->
-              <div class="center_item_right">
-              	<a href="javascript:;">向我提问</a>
-              </div>
-            </div>
-        		<div class="right_Grade">
-              <div class="right_Grade_pic">
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-              </div>
-        			<p>3456条评价</p>
-        		</div>
-        		<div class="right_service">
-        			<p>帮助1299人</p>
-        			<p>服务3876小时</p>
-        		</div>
-        		<div class="right_absorbed">
-        				<p>保险理赔</p>
-        				<p>车险</p>
-        				<p>保险升级</p>
-        		</div>
-        	</div>
-        </div>
-        <div class="center_item">
-          <!-- 图片 -->
-        	<div class="center_item_left">
-        		<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=184182366,3170467759&fm=26&gp=0.jpg" >
-        	</div>
-        	<!-- 内容 -->
-          <div class="center_item_center">
-            <div class="right_all">
-              <div class="right_all_two">
-                <p class="center_item_name">李亚娟</p>
-                <p class="center_item_position">保险理赔专家</p>
-              </div>
-              <!-- 向我提问 -->
-              <div class="center_item_right">
-              	<a href="javascript:;">向我提问</a>
-              </div>
-            </div>
-        		<div class="right_Grade">
-              <div class="right_Grade_pic">
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-              </div>
-        			<p>3456条评价</p>
-        		</div>
-        		<div class="right_service">
-        			<p>帮助1299人</p>
-        			<p>服务3876小时</p>
-        		</div>
-        		<div class="right_absorbed">
-        				<p>保险理赔</p>
-        				<p>车险</p>
-        				<p>保险升级</p>
-        		</div>
-        	</div>
-        </div>
-        <div class="center_item">
-          <!-- 图片 -->
-        	<div class="center_item_left">
-        		<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=184182366,3170467759&fm=26&gp=0.jpg" >
-        	</div>
-        	<!-- 内容 -->
-          <div class="center_item_center">
-            <div class="right_all">
-              <div class="right_all_two">
-                <p class="center_item_name">李亚娟</p>
-                <p class="center_item_position">保险理赔专家</p>
-              </div>
-              <!-- 向我提问 -->
-              <div class="center_item_right">
-              	<a href="javascript:;">向我提问</a>
-              </div>
-            </div>
-        		<div class="right_Grade">
-              <div class="right_Grade_pic">
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-              </div>
-        			<p>3456条评价</p>
-        		</div>
-        		<div class="right_service">
-        			<p>帮助1299人</p>
-        			<p>服务3876小时</p>
-        		</div>
-        		<div class="right_absorbed">
-        				<p>保险理赔</p>
-        				<p>车险</p>
-        				<p>保险升级</p>
-        		</div>
-        	</div>
-        </div>
-        <div class="center_item">
-          <!-- 图片 -->
-        	<div class="center_item_left">
-        		<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=184182366,3170467759&fm=26&gp=0.jpg" >
-        	</div>
-        	<!-- 内容 -->
-          <div class="center_item_center">
-            <div class="right_all">
-              <div class="right_all_two">
-                <p class="center_item_name">李亚娟</p>
-                <p class="center_item_position">保险理赔专家</p>
-              </div>
-              <!-- 向我提问 -->
-              <div class="center_item_right">
-              	<a href="javascript:;">向我提问</a>
-              </div>
-            </div>
-        		<div class="right_Grade">
-              <div class="right_Grade_pic">
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-                <img src="../assets/index_star.png" >
-              </div>
-        			<p>3456条评价</p>
-        		</div>
-        		<div class="right_service">
-        			<p>帮助1299人</p>
-        			<p>服务3876小时</p>
-        		</div>
-        		<div class="right_absorbed">
-        				<p>保险理赔</p>
-        				<p>车险</p>
-        				<p>保险升级</p>
-        		</div>
-        	</div>
-        </div>
+
     </div>
 
   </div>
@@ -246,7 +95,20 @@ export default {
   name: 'expert_online',
   data () {
     return {
-      msg: 'expert_online'
+      msg: 'expert_online',
+      down:{
+      consulting:'',
+      region:'',
+      sort:'',
+      screen:'',
+      }
+    }
+  },
+  methods:{
+    questions:function(){
+    this.$router.push({
+     name: '',
+     })
     }
   }
 }

@@ -137,9 +137,13 @@
                 // 请求数据
                 that.$addr.get('v1/bpi/currentprice.json')
                        .then(response => {
-                         console.log(response)
-                } )
-              }
+                       layer.msg('注册成功')
+                        console.log(response)
+                 //        that.$router.push({
+                 //          name: 'index',
+                 // })
+              })
+            }
           });
         }
      }
