@@ -12,14 +12,14 @@
             </div>
         </div>
         <div class="exclusive_righttitle">
-            <button>立即开通</button>
+            <button @click="vip">立即开通</button>
         </div>
     </div>
     <!-- 剩余板块 -->
     <div class="exclusive_cont">
       <!-- 添加车辆 -->
       <div class="exclusive_top">
-          <a href="#">
+          <a href="#" @click="add">
             <img src="../assets/exclusive_add.png" >
           </a>
           <p>请立即添加您的爱车</p>
@@ -75,9 +75,24 @@ export default {
   name: 'exclusive_services',
   data () {
     return {
-      msg: 'exclusive_services'
+        msg: 'exclusive_services',
     }
+  },
+ methods:{
+    vip:function(){
+        console.log("开通会员");
+    },
+    add:function(){
+      this.$router.push({
+              name: 'add_vehicle',
+              // params: {
+
+              // }
+            })
+      console.log("添加车辆")
+    },
   }
+
 }
 </script>
 <style>
