@@ -14,18 +14,18 @@
         <div class="car_number">
           <span>车牌号</span>
           <div class="car_number1">
-            <select>
+            <select v-model="item.plate">
               <option>晋</option>
             </select>
-            <input placeholder="请输入车身架号后6位" type="number"/>
+            <input placeholder="请输入车牌号" type="number" v-model="item.cnub"/>
           </div>
            <!-- <mt-field label="车牌号" placeholder="请输入车牌号" type="number"></mt-field> -->
         </div>
         <p>
-          <mt-field label="车身架号" placeholder="请输入车身架号后6位" type="number"></mt-field>
+          <mt-field label="车身架号" placeholder="请输入车身架号后6位" type="number" v-model="item.bodynub"></mt-field>
         </p>
         <p>
-           <mt-field label="发动机号" placeholder="请输入发动机号后6位" type="number"></mt-field>
+           <mt-field label="发动机号" placeholder="请输入发动机号后6位" type="number" v-model="item.engnub"></mt-field>
         </p>
       </div>
       <div class="add_vehicle_secondvont">
@@ -34,10 +34,10 @@
             <mt-switch></mt-switch>
         </p>
         <p>
-            <mt-field label="手机号码" placeholder="请输入手机号" type="tel"></mt-field>
+            <mt-field label="手机号码" placeholder="请输入手机号" type="tel" v-model="item.phone_nub"></mt-field>
         </p>
         <div class="check_btn">
-          <mt-button type="default" size="small" class="check">立即查询</mt-button>
+          <mt-button type="default" size="small" class="check" @click="query">立即查询</mt-button>
           <mt-actionsheet :actions="actions" v-model="sheetVisible"></mt-actionsheet>
         </div>
       </div>
@@ -50,7 +50,15 @@ export default {
   name: 'add_vehicle',
   data () {
     return {
+      //获取数据
       msg: 'add',
+      item:{
+      plate:'',
+      cnub:'',
+      bodynub:'',
+      engnub:'',
+      phone_nub:'',
+      },
       // action sheet 选项内容
       actions: [{
         name: '拍照',
@@ -62,10 +70,11 @@ export default {
       // action sheet 默认不显示，为false。操作sheetVisible可以控制显示与隐藏
       sheetVisible: false
       }
+
   },
   methods:{
     phone:function(){
-       console.log(this)
+      // console.log(this)
        this.sheetVisible = true;
     },
     getCamera: function(){
@@ -73,7 +82,16 @@ export default {
      },
     getLibrary: function(){
         console.log("打开相册")
-    }
+    },
+    //请求数据
+     query:function(){
+       var  that = this;
+       console.log(that.msg)
+       that.$addr.get('v1/bpi/currentprice.json')
+              .then(response => {
+                console.log(response)
+       } )
+     }
   }
 }
 </script>

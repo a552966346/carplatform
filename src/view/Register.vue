@@ -91,7 +91,7 @@
         },
         methods: {
           //获取验证码
-          verification_code:function(event){
+          verification_code:function(verification){
             var that = this;
               layui.use('layer', function(){
                 var layer = layui.layer;
@@ -107,7 +107,6 @@
           //注册
             submit_register: function (event) {
               var that = this;
-
               layui.use('layer', function(){
                 var layer = layui.layer;
                console.log(that.phone_number)

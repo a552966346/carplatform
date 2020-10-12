@@ -25,7 +25,7 @@
                 <!-- 审车代办 -->
                 <div class="swiper-slide">
                   <div class="index_menu_item">
-                    <a href="">
+                    <a href="" @click="examination">
                       <div class="index_menu_item1">
                         <div class="activity_management">
                           <img src="../assets/tag_proxy.png" />
@@ -38,7 +38,7 @@
                <!-- 维修与救援 -->
                <div class="swiper-slide">
                  <div class="index_menu_item">
-                   <a href="">
+                   <a href="" @click="repair">
                      <div class="index_menu_item1">
                        <div class="activity_management">
                            <img src="../assets/tag_repair.png" />
@@ -51,7 +51,7 @@
                 <!-- 洗车 -->
                 <div class="swiper-slide">
                   <div class="index_menu_item">
-                    <a href="">
+                    <a href="" @click="wash">
                       <div class="index_menu_item1">
                         <div class="activity_management">
                           <img src="../assets/tag_wash.png" />
@@ -64,7 +64,7 @@
                 <!-- 备品超市 -->
                 <div class="swiper-slide">
                   <div class="index_menu_item">
-                    <a href="">
+                    <a href=""  @click="market">
                       <div class="index_menu_item1">
                         <div class="activity_management">
                             <img src="../assets/tag_market.png" />
@@ -77,7 +77,7 @@
                 <!-- 车辆美容 -->
                 <div class="swiper-slide">
                   <div class="index_menu_item">
-                    <a href="">
+                    <a href="" @click="beauty">
                       <div class="index_menu_item1">
                         <div class="activity_management">
                           <img src="../assets/tag_beauty.png" />
@@ -90,7 +90,7 @@
                 <!-- 轮胎更换 -->
                 <div class="swiper-slide">
                    <div class="index_menu_item">
-                     <a href="">
+                     <a href="" @click="change">
                        <div class="index_menu_item1">
                          <div class="activity_management">
                              <img src="../assets/tag_change.png" />
@@ -105,7 +105,7 @@
                 <!-- 快修与保养 -->
                 <div class="swiper-slide">
                   <div class="index_menu_item">
-                    <a href="">
+                    <a href="" @click="run">
                       <div class="index_menu_item1">
                         <div class="activity_management">
                            <img src="../assets/tag_run.png" />
@@ -118,7 +118,7 @@
                 <!-- 品质贴膜 -->
                 <div class="swiper-slide">
                   <div class="index_menu_item">
-                    <a href="">
+                    <a href="" @click="around">
                       <div class="index_menu_item1">
                         <div class="activity_management">
                             <img src="../assets/tag_around.png" />
@@ -131,12 +131,12 @@
                 <!-- 审车代办 -->
                 <div class="swiper-slide">
                   <div class="index_menu_item">
-                    <a href="">
+                    <a href="" @click="service">
                       <div class="index_menu_item1">
                         <div class="activity_management">
                              <img src="../assets/tag_service.png" />
                         </div>
-                        <div class="common_title">审车代办</div>
+                        <div class="common_title">专属服务</div>
                       </div>
                     </a>
                   </div>
@@ -144,12 +144,12 @@
                 <!-- 专属服务 -->
                 <div class="swiper-slide">
                   <div class="index_menu_item">
-                    <a href="">
+                    <a href="" @click="spicial">
                       <div class="index_menu_item1">
                         <div class="activity_management">
                             <img src="../assets/tag_spicial.png" />
                         </div>
-                        <div class="common_title">专属服务</div>
+                        <div class="common_title">专家在线</div>
                       </div>
                     </a>
                   </div>
@@ -184,7 +184,7 @@
             <!-- 标题 -->
             <div class="index_shop_title">
             	<p>附近商家</p>
-            	<a href="javascript:;">更多<i class="iconfont icon-youjiantou"></i></a>
+            	<a href="javascript:;" >更多<i class="iconfont icon-youjiantou"></i></a>
             </div>
             <!-- 内容 -->
             <div class="index_shop_cont">
@@ -205,7 +205,7 @@
                 		</div>
                 		<p class="index_centershop_bottomtitle">山西省太原市小区店***号</p>
                 	</div>
-                  <a href="javascript:'">
+                  <a href="javascript:'" @click="shop">
                     <div class="index_shop_righttext">
                         <img class="position_img" src="../assets/index_navigation.png">
                         <p>1km</p>
@@ -228,7 +228,7 @@
                 		</div>
                 		<p class="index_centershop_bottomtitle">山西省太原市小区店***号</p>
                 	</div>
-                  <a href="javascript:'">
+                  <a href="javascript:'" @click="navigation">
                     <div class="index_shop_righttext">
                         <img class="position_img" src="../assets/index_navigation.png">
                         <p>1km</p>
@@ -249,7 +249,7 @@
                 			<img src="../assets/index_star.png">
                 			<img src="../assets/index_star.png">
                 		</div>
-                		<p class="index_centershop_bottomtitle">山西省太原市小区店***号</p>
+                		<p class="index_centershop_bottomtitle">山西省太原阿达达瓦大大哇市小区店***号</p>
                 	</div>
                   <a href="javascript:'">
                     <div class="index_shop_righttext">
@@ -295,13 +295,63 @@
           },
         });
 
+    },
+    methods:{
+      //审车代办
+      examination:function(){
+        console.log("审车代办")
+      },
+      //维修与救援
+      repair:function(){
+        conso.log("维修与救援")
+    },
+    //洗车
+    wash:function(){
+      console.log("洗车");
+       },
+       //备品超市
+       market:function(){
+         conso.log("备品超市")
+       },
+       //车辆美容
+       beauty:function(){
+
+       },
+      //轮胎更换
+       change:function(){
+
+       },
+       //快修与保养
+       run:function(){
+
+       },
+       //品质贴膜
+      around:function(){
+
+      },
+      //专属服务
+      service:function(){
+
+      },
+      //专家在线
+      spicial:function(){
+
+      },
+      //商家
+      shop:function(){
+
+      },
+      //导航
+      navigation:function(){
+
+      }
     }
   }
 </script>
 
 <style>
      *{padding: 0;margin: 0;box-sizing: border-box;}
-    .index{width: 100%;height: 100%;}
+    .index{width: 100%;height: 100%; overflow: hidden;}
     .index_top{width: 100%;height: 180px;position: relative;}
     .index_top>img{width: 100%;height: 100%;}
     /* 文字*/
@@ -340,7 +390,7 @@
     .index_shop_title>p{font-size: 14px;padding-left: 5px;border-left: 3px solid #D5622E;color: #333;font-weight: bold;}
     .index_shop_title>a{font-size: 14px;color: #999;}
     /* 附近商家内容 */
-    .index_shop_cont{width: 100%;padding: 0px 15px;padding-top: 20px;}
+    .index_shop_cont{width: 100%;padding: 0px 15px;padding-top: 20px;height: 120px; overflow: scroll;}
     .index_shop_item{width: 100%;display: flex;padding: 20px 15px;box-shadow: 1px 1px 5px #ccc;border-radius: 10px;margin-bottom: 20px;}
     /* 左侧内容 */
     .index_shop_picitem{width: 25%;}
