@@ -258,6 +258,7 @@ export default {
     .expert_online_top{width: 100%;height: 120px;}
     .expert_top{width: 100%;display: flex;height: 80px;padding: 0px 15px;background-color:#F2F2F2;}
     .expert_top>a{flex: 1;display: flex;align-items: center;}
+    .expert_top>a:nth-child(2){justify-content: flex-end;}
     .top_left{display: flex;}
     /* .top_left_pic{width: 50px;height: 50px;border-radius: 5px;} */
     .top_left_pic img{width:50px;height:50px;border-radius: 5px;}
@@ -273,7 +274,7 @@ export default {
     .expert_center{flex: 1;overflow: auto;}
     .center_item{display: flex;padding: 10px;border-bottom: 1px solid #ccc;}
     .center_item_left{width:30%;height: 120px;}
-    .center_item_left img{width: 85%;height: 100%;}
+    .center_item_left img{width: 90%;height: 100%;}
     .center_item_center{width: 70%;display: flex;flex-direction: column;justify-content: center;align-items: flex-start;padding: 0px 15px;}
     /*名字 */
     .right_all{display: flex;width: 100%;justify-content: space-between;align-items: center;}
