@@ -29,9 +29,9 @@
         </p>
       </div>
       <div class="add_vehicle_secondvont">
-        <p class="add_vehicle_switch">
+        <p class="add_vehicle_switch" >
             <span>接收信息提醒</span>
-            <mt-switch></mt-switch>
+            <mt-switch  v-model="item.accept"></mt-switch>
         </p>
         <p>
             <mt-field label="手机号码" placeholder="请输入手机号" type="tel" v-model="item.phone_nub"></mt-field>
@@ -58,6 +58,7 @@ export default {
       bodynub:'',
       engnub:'',
       phone_nub:'',
+      accept:false
       },
       // action sheet 选项内容
       actions: [{
@@ -86,7 +87,7 @@ export default {
     //请求数据
      query:function(){
        var  that = this;
-       console.log(that.msg)
+       console.log(that.item)
        that.$addr.get('v1/bpi/currentprice.json')
               .then(response => {
                 console.log(response)

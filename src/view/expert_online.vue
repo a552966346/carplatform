@@ -29,17 +29,25 @@
       </div>
       <!-- 筛选 -->
       <div class="expert_screen">
-      	<select name="consulting" v-model="down.consulting">
-      		<option value="咨询类型">咨询类型</option>
+      	<select name="consulting"v-model="down.consulting" @change="consulting">
+      		<option  value=1 >咨询类型</option>
+          <option  value=2 >升级</option>
+          <option  value=3 >维护</option>
       	</select>
-      	<select name="region" v-model="down.region">
-      		<option value="地区">地区</option>
+      	<select name="region"  v-model="down.region" @change="region">
+      		<option  value=1 >地区</option>
+          <option  value=2 >晋中</option>
+          <option  value=3 >运城</option>
       	</select>
-      	<select name="sort" v-model="down.sort">
-      		<option value="排序">排序</option>
+      	<select name="sort" v-model="down.sort" @change="sort">
+      		<option   value=1 >排序</option>
+          <option   value=2 >1小时</option>
+          <option   value=3 >2小时</option>
       	</select>
-      	<select name="screen" v-model="down.screen">
-      		<option value="筛选">筛选</option>
+      	<select name="screen" v-model="down.screen" @change="screen">
+      		<option  value=1>筛选</option>
+          <option  value=2>张三</option>
+          <option  value=3 >李四</option>
       	</select>
       </div>
     </div>
@@ -97,15 +105,28 @@ export default {
     return {
       msg: 'expert_online',
       down:{
-      consulting:'',
-      region:'',
-      sort:'',
-      screen:'',
+      consulting:1,
+      region:1,
+      sort:1,
+      screen:1,
       }
     }
   },
   methods:{
+    consulting:function(){
+      console.log(this.down.consulting)
+    },
+    region:function(){
+      console.log(this.down.region)
+    },
+    sort:function(){
+      console.log(this.down.sort)
+    },
+    screen:function(){
+      console.log(this.down.screen)
+    },
     questions:function(){
+
     this.$router.push({
      name: '',
      })
