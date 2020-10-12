@@ -6,6 +6,7 @@ import register from '@/view/register'
 import index from '@/view/index'
 import add_vehicle from '@/view/add_vehicle'
 import appointment_details from '@/view/appointment_details'
+import exclusive_services from '@/view/exclusive_services'
 Vue.use(Router)
 
 export default new Router({
@@ -40,6 +41,11 @@ export default new Router({
       path:'/appointment_details',
       name: 'appointment_details',
       component:appointment_details
+    },
+    {
+      path:'/exclusive_services',
+      name: 'exclusive_services',
+      component:exclusive_services
     }
 
   ]

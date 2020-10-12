@@ -43,7 +43,7 @@ export default {
         username:'',
         phone:'',
         time:'',
-        service:'',
+        service:'换胎',
         remarks:''
       }
   },
