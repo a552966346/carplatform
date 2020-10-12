@@ -148,6 +148,7 @@
 </script>
 
 <style scoped>
+  *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
   .register{width: 100%;height: 100%;padding: 30px 20px;}
   /* 块 */
   .register_common{width: 100%;display: flex;align-items: center;justify-content: space-between;border-bottom: 1px solid #ddd;padding: 10px 15px;padding-right: 10px;font-size: 14px;}

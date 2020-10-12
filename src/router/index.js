@@ -8,6 +8,7 @@ import add_vehicle from '@/view/add_vehicle'
 import appointment_details from '@/view/appointment_details'
 import exclusive_services from '@/view/exclusive_services'
 import expert_online from '@/view/expert_online'
+import personal_center from '@/view/personal_center'
 Vue.use(Router)
 
 export default new Router({
@@ -52,6 +53,11 @@ export default new Router({
       path:'/expert_online',
       name: 'expert_online',
       component:expert_online
+    },
+    {
+      path:'/personal_center',
+      name: 'personal_center',
+      component:personal_center
     }
 
   ]

@@ -61,6 +61,7 @@ export default {
 }
 </script>
 <style>
+  *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
   .appointment_details{width: 100%;height: 100%;display: flex;flex-direction: column;padding: 0px 15px;padding-top: 15px;}
   .appointment_details p{width: 100%;border-bottom: 1px solid #ccc;padding: 0px 15px;}
   .mint-cell-wrapper{padding: 0px;}

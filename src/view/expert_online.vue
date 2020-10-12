@@ -237,7 +237,6 @@
         	</div>
         </div>
     </div>
-
   </div>
 </template>
 
@@ -252,7 +251,7 @@ export default {
 }
 </script>
 <style>
-    *{padding: 0;margin: 0;box-sizing: border-box;}
+    *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
     .expert_online{width: 100%;height: 100%;display: flex;flex-direction: column;overflow: hidden;}
     /* 顶部内容 */
     .expert_online_top{width: 100%;height: 120px;}

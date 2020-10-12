@@ -81,6 +81,7 @@ export default {
 }
 </script>
 <style>
+  *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
     .exclusive_services{height: 100%;width: 100%;display: flex;flex-direction: column;overflow: hidden;}
     /* 开通模块 */
     .exclusive_title{width: 100%;height: 70px;background-color: #3e3e3e;display: flex;justify-content: space-between;align-items: center;padding: 0px 15px;}

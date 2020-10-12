@@ -300,7 +300,7 @@
 </script>
 
 <style>
-     *{padding: 0;margin: 0;box-sizing: border-box;}
+    *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
     .index{width: 100%;height: 100%;}
     .index_top{width: 100%;height: 180px;position: relative;}
     .index_top>img{width: 100%;height: 100%;}

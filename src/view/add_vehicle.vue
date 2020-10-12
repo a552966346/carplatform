@@ -78,6 +78,7 @@ export default {
 }
 </script>
 <style>
+  *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
   .add_vehicle{width: 100%;height: 100%;display: flex;flex-direction: column;overflow: hidden;}
   /* 顶部内容 */
   .add_vehicle_top{width: 100%;height: 80px;display: flex;flex-direction: column;justify-content: center;align-items: start;padding: 0px 30px;background-color: white;border-bottom: 5px solid #f2f2f2;}
