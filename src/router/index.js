@@ -9,6 +9,7 @@ import appointment_details from '@/view/appointment_details'
 import exclusive_services from '@/view/exclusive_services'
 import expert_online from '@/view/expert_online'
 import personal_center from '@/view/personal_center'
+import repair_maintenance from '@/view/repair_maintenance'
 Vue.use(Router)
 
 export default new Router({
@@ -58,6 +59,11 @@ export default new Router({
       path:'/personal_center',
       name: 'personal_center',
       component:personal_center
+    },
+    {
+      path:'/repair_maintenance',
+      name: 'repair_maintenance',
+      component:repair_maintenance
     }
 
   ]
