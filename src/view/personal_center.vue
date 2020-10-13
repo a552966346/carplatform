@@ -20,25 +20,25 @@
     	</div>
     	<!-- 我的 -->
     	<div class="personalcenter_bottom">
-    		<a href="#">
+    		<a href="#" @click="integral">
     			<div class="personalcenter_bottom_item">
     				<p>5</p>
     				<p>积分</p>
     			</div>
     		</a>
-    		<a href="#">
+    		<a href="#" @click="agency">
     			<div class="personalcenter_bottom_item">
     				<p>0</p>
     				<p>待办</p>
     			</div>
     		</a>
-    		<a href="#">
+    		<a href="#" @click="appointment">
     			<div class="personalcenter_bottom_item">
     				<p>0</p>
     				<p>我的预约</p>
     			</div>
     		</a>
-    		<a href="#">
+    		<a href="#" @click="coupon">
     			<div class="personalcenter_bottom_item">
             <p><img src="../assets/personalcenter_coupon.png" ></p>
     				<p>票券</p>
@@ -62,65 +62,65 @@
         <!-- 我的订单 -->
         <div class="dingdan">
         	<div class="dingdan_top">
-        		<a href="">
+        		<a href="" @click="order">
         			<p>我的订单</p>
         			<p><span>全部订单</span><i class="iconfont icon-youjiantou"></i></p>
         		</a>
         	</div>
           <div class="dingdan_center">
-        		<a href="#">
+        		<a href="#" @click="payment">
         			<img src="../assets/personal_center_pay.png" >
         			<p>待付款</p>
         		</a>
-        		<a href="#">
+        		<a href="#" @click="delivered">
         			<img src="../assets/personal_center_delivered.png" >
         			<p>待发货</p>
         		</a>
-        		<a href="#">
+        		<a href="#" @click="receive">
         			<img src="../assets/personal_center_receive.png" >
         			<p>待收货</p>
         		</a>
-        		<a href="#">
+        		<a href="#" @click="evaluated">
         			<img src="../assets/personal_center_evaluated.png" >
         			<p>待评价</p>
         		</a>
-        		<a href="#">
+        		<a href="#" @click="refund">
         			<img src="../assets/personal_center_refund.png" >
-        			<p>待付款</p>
+        			<p>退款/售后</p>
         		</a>
         	</div>
         </div>
         <!-- 服务项目 -->
         <div class="center_bottom">
-        	<a href="#">
+        	<a href="#" @click="centercontact">
         		<img src="../assets/personal_centercontact.png" >
         		<p>联系客服</p>
         	</a>
-        	<a href="#">
+        	<a href="#" @cliack="examination">
         		<img src="../assets/personal_center_car.png" >
         		<p>审车代办</p>
         	</a>
-        	<a href="#">
+        	<a href="#" @click="repair">
         		<img src="../assets/personal_center_repair.png" >
         		<p>维修与救援</p>
         	</a>
-        	<a href="#">
+        	<a href="#" @click="maintain">
         		<img src="../assets/personal_center_maintain.png" >
         		<p>快修与保养</p>
         	</a>
-        	<a href="#">
+        	<a href="#" @click="tire">
         		<img src="../assets/personal_center_tire.png" >
         		<p>轮胎更换</p>
         	</a>
-        	<a href="#">
+        	<a href="#" @click="expert">
         		<img src="../assets/personal_center_expert.png" >
         		<p>专家在线</p>
         	</a>
-        	<a href="#">
+        	<a href="#" @click="quality">
         		<img src="../assets/personal_center_quality.png" >
         		<p>品质贴膜</p>
         	</a>
-        	<a href="#">
+        	<a href="#" @click="member">
         		<img src="../assets/personal_center_member.png" >
         		<p>会员中心</p>
         	</a>
@@ -137,6 +137,110 @@ export default {
     return {
       msg: 'personal_center'
     }
+  },
+  methods:{
+    //积分
+    integral:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //待办
+    agency:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //我的预约
+    appointment:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //券票
+    coupon:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //全部订单
+    order:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //待付款
+    payment:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //代发货
+    delivered:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //待收货
+    receive:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //待评价
+    evaluated:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //联系客服
+    centercontact:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //审车代办
+    examination:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //维修与救援
+    repair:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //快修与保养
+    maintain:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //轮胎更换
+    tire:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //专家在线
+    expert:function(){
+      this.$router.push({
+         name: 'expert_online',
+       })
+    },
+    //品质贴膜
+    quality:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    //会员中心
+    member:function(){
+      this.$router.push({
+         name: 'exclusive_services',
+       })
+    },
   }
 }
 </script>

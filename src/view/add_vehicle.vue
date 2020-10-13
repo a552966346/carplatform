@@ -15,7 +15,10 @@
           <span>车牌号</span>
           <div class="car_number1">
             <select v-model="item.plate">
-              <option>晋</option>
+              <option value="晋">晋</option>
+              <option value="津">津</option>
+              <option value="京">京</option>
+              <option value="冀">冀</option>
             </select>
             <input placeholder="请输入车牌号" type="number" v-model="item.cnub"/>
           </div>
@@ -53,7 +56,7 @@ export default {
       //获取数据
       msg: 'add',
       item:{
-      plate:'',
+      plate:'晋',
       cnub:'',
       bodynub:'',
       engnub:'',
@@ -87,11 +90,32 @@ export default {
     //请求数据
      query:function(){
        var  that = this;
-       console.log(that.item)
-       that.$addr.get('v1/bpi/currentprice.json')
-              .then(response => {
-                console.log(response)
-       } )
+       var data = that.item;
+       layui.use('layer', function(){
+         var layer = layui.layer;
+       console.log(data)
+       if(data.cnub.length!=6){
+         layer.msg("请输入正确车牌号!");
+       }else if(data.phone_nub.length!=11){
+         layer.msg("请输入正确手机号")
+       }else if(data.plate = ''){
+         layer.msg("请选择车牌归属地")
+       }else if(data.cnub = ''){
+         layer.msg("请填写车牌号")
+       }else if(data.bodynub = ''){
+         layer.msg("请填写车身架号")
+       }else if(data.engnub = ''){
+         layer.msg("请填写发动机架号")
+       }else if(data.phone_nub = ''){
+         layer.msg("请填写手机号码")
+       }else {
+           console.log(that.item)
+           that.$addr.get('v1/bpi/currentprice.json')
+                  .then(response => {
+                    console.log(response.data)
+          })
+         }
+       })
      }
   }
 }

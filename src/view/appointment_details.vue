@@ -53,7 +53,8 @@ export default {
   methods:{
       submit:function(){
         var that = this
-            console.log(this.item)
+        console.log(this.item)
+         
         that.$addr.post('v1/bpi/currentprice.json', {
 
           })

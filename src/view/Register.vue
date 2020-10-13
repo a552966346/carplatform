@@ -117,7 +117,7 @@
               if(that.phone_number==""){
                 layer.msg('请输入手机号');
               }
-              else if(that.phone_number.length<11){
+              else if(that.phone_number.length!=11){
                  layer.msg('请输入正确的手机号');
               }
               else if(that.verification==""){
@@ -126,7 +126,7 @@
               else if(that.car_number ==""){
                 layer.msg('请输入车牌号');
               }
-              else if(that.car_number.length<6){
+              else if(that.car_number.length!=6){
                  layer.msg('请输入正确的车牌号');
               }
               else if(that.kilometre == ""){
