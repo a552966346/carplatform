@@ -1,10 +1,11 @@
-@font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1602292206979'); /* IE9 */
-  src: url('iconfont.eot?t=1602292206979#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAKIAAsAAAAABkAAAAI7AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcApIXQE2AiQDCAsGAAQgBYRtBzQbhwURBezIPk5XxCcjuCsjFf+Oh//2M++bP8nO/mwBQfVUAjsCheiq1qUOSUgwikGTRNJZnbrDQpAB6oMVb9nO4zlO0uvKdXfEx/AQGoADcD7P5fTuKqBA5gfKcS8aa9KkXkC9OJACGmtTZCWUccPYBS/wOIHaWLPFsmrFBkVmjwvE4WbfDqXglmUWK0KzYWkW5zSUdDw9w9no+/HVnCgkjYpdsGbv8t0WfZjhJFTtTtvmgOAhoNUNVJiNTGxoDK9SCcas1OFsIsfKDT7M6HQCkziqXrC/zs7uAaOh4JmEnuhRYwkeq60BGDbpamLAkb1XTlxvD9mz+1L7xslh+64efXhl9/7Y8IHDj+9KR3Y8zj7m9r0jLUI/S6/Tb4Hg3pa/37b1m/e/tDJ4c23mj0iXDbNSdmEJfoVwYE02xLYxZU3Y2JgMOEVRrUYHtg/0fqpmyHnjoRgywdplTIZKMZnMjNloaJmLpkJdiNos9eqWQdhW5G7M9AYI/X2Q9HUTlf6+ZGb80DDUH039Y4vaphi0ZcvUaNRSRi3owLygsTR61ywqzj1hWHrNeXHEuiHPjQ/yJCvHahyRl5gx30Mh4sEzDVCB07DvCSamFq0kUWQq09Q3vSmxNKyUpRjSBHKA8QIaFhn5oLlQlc+foGDR07ijqs5/g9is6RzkEtkAslaMg6oe5ZXZXVAQwgMeIwNQgUGo1yNgah7UQpZIxAnBSSl16vmhimR71fB3W6Bma1M43Sp1Ly1to0cJ9asVAAAA') format('woff2'),
-  url('iconfont.woff?t=1602292206979') format('woff'),
-  url('iconfont.ttf?t=1602292206979') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('iconfont.svg?t=1602292206979#iconfont') format('svg'); /* iOS 4.1- */
+@font-face {
+  font-family: 'iconfont';  /* project id 2118841 */
+  src: url('//at.alicdn.com/t/font_2118841_qy6xhevpeji.eot');
+  src: url('//at.alicdn.com/t/font_2118841_qy6xhevpeji.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_2118841_qy6xhevpeji.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_2118841_qy6xhevpeji.woff') format('woff'),
+  url('//at.alicdn.com/t/font_2118841_qy6xhevpeji.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_2118841_qy6xhevpeji.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -14,8 +15,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-weixin:before {
+  content: "\e600";
+}
+.icon-dianhua:before {
+  content: "\e61f";
+}
 .icon-youjiantou:before {
   content: "\e629";
 }
-
+.icon-chahao:before {
+  content: "\e668";
+}
+.icon-dingwei:before {
+  content: "\e61e";
+}
