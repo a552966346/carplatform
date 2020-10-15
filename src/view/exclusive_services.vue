@@ -5,7 +5,7 @@
     <div class="exclusive_title">
         <div class="exclusive_lefttitle">
             <div class="exclusive_lefttitle_pic">
-              <img src="../assets/portrait.jpg"/>
+              <img src="@/assets/portrait.jpg"/>
             </div>
             <div class="exclusive_lefttitle_cont">
                 <p>逆行的雪豹</p>
