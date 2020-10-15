@@ -1,4 +1,5 @@
 <template>
+  <!--刘玉霞 -->
   <div class="store_details">
     <!-- 背景 -->
     <div class="store_details_back"></div>
