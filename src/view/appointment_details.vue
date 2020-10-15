@@ -1,4 +1,5 @@
 <template>
+  <!--刘玉霞 -->
   <div class="appointment_details">
      <!-- 表单内容 -->
       <p>
@@ -54,7 +55,7 @@ export default {
       submit:function(){
         var that = this
         console.log(this.item)
-         
+
         that.$addr.post('v1/bpi/currentprice.json', {
 
           })

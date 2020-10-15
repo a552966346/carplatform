@@ -11,6 +11,7 @@ import expert_online from '@/view/expert_online'
 import personal_center from '@/view/personal_center'
 import repair_maintenance from '@/view/repair_maintenance'
 import store_details from '@/view/store_details'
+import quality_film from '@/view/quality_film'
 Vue.use(Router)
 
 export default new Router({
@@ -70,6 +71,11 @@ export default new Router({
       path:'/store_details',
       name: 'store_details',
       component:store_details
+    },
+    {
+      path:'/quality_film',
+      name: 'quality_film',
+      component:quality_film
     }
 
   ]
