@@ -1,7 +1,7 @@
  *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
  .store_details{width: 100%;height: 100%;}
  /* 头部背景*/
- .store_details_back{width: 100%;height: 200px;background: url(../picture/store_details_pic.jpg) no-repeat 0.0;filter: blur(10px);}
+ .store_details_back{width: 100%;height: 200px;background: url(../../../static/img/store_details_pic.jpg) no-repeat 0.0;filter: blur(10px);}
  /* 内容*/
 .store_details_cont{width: 100%;height: 100%;display: flex;flex-direction: column;overflow: hidden;position: absolute;left: 0;top: 0;}
 /* 上部分内容 */

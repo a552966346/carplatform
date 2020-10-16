@@ -9,8 +9,9 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import store from './store'
 import './assets/iconfont/iconfont.css'
-axios.defaults.baseURL = "https://api.coindesk.com/"
+axios.defaults.baseURL = "/api"
 axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+// axios.defaults.headers.post['Content-type']='application/json'
 Vue.config.productionTip = false
 Vue.prototype.$addr= axios;
 

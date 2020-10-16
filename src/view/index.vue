@@ -279,7 +279,12 @@
         msg: 'index'
       }
     },
-    mounted() {
+    mounted:function() {
+
+        this.$addr.get('index/index/market')
+                               .then(response => {
+                                console.log(response)
+                        } )
         var swiper = new Swiper('.swiper-container1', {
             slidesPerView: 4,
             slidesPerColumn:2,

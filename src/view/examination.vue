@@ -1,11 +1,11 @@
 <template>
   <div class="examination_all">
-  	<div class="examination_top">
-  			<p class="break">全程代办</p>
-  			<p>自驾前往</p>
+  	<div class="examination_top" >
+  			<p v-bind:class="{ break: isBreak }" @click="exa_switch_one">全程代办</p>
+  			<p v-bind:class="{ break: !isBreak }" @click="exa_switch_two">自驾前往</p>
   	</div>
   	<div class="examination_center">
-  		<div class="examination_center_one ">
+  		<div class="examination_center_one " v-show="isBreak">
   			<div class="examination_position">
   				<p>接车位置</p>
   				<select name="position">
@@ -29,14 +29,14 @@
   				<button type="button">当前审车费用预计<span >300元</span></button>
   			</div>
   		</div>
-  		<div class="examination_center_one" style="display: none;" >
+  		<div class="examination_center_one" v-show="!isBreak" >
   			<div class="center_one_all">
   				<div class="examination_inp">
   					<p>预留电话</p>
   					<input type="nub" name="phone" placeholder="请输入您的电话号" id="" value="" />
   				</div>
   				<div class="center_two">
-  					<img src="../assets/picture/location.png" >
+  					<img src="../../static/img/location.png" >
   					<span>等待通知审车时间</span>
   				</div>
   				<div class="examination_payment">
@@ -74,7 +74,7 @@
   	</div>
   	<div class="examination_last">
   		<div class="last_left">
-  			<img src="../assets/picture/customer.png" >
+  			<img src="../../static/img/customer.png" >
   			<p>联系商家</p>
   		</div>
   		<div class="last_right">
@@ -89,10 +89,10 @@
     name: 'examination',
     data() {
       return {
-
+        isBreak:true,
       }
     },
-   
+
     mounted:function(){
           this.$store.state.heard_title ='车平台 - 审车待办'
     },
@@ -106,6 +106,21 @@
             viewMode:'2D',
         });
     },
+    methods:{
+      // $(".examination_top>p").click(function(){
+      // 	$(".examination_top>p").removeClass("break");
+      // 	$(this).addClass("break");
+      // 	$(".examination_center_one").hide();
+      // 	console.log($(this).index())
+      // 	$('.examination_center_one').eq($(this).index()).show()
+      // })
+      exa_switch_one: function(){
+           this.isBreak=true;
+      },
+      exa_switch_two: function(){
+          this.isBreak=false;
+      }
+    }
   }
 </script>
 

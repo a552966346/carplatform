@@ -51,6 +51,9 @@ export default {
         },
       }
   },
+  mounted:function(){
+        this.$store.state.heard_title ='车平台 - 预约'
+  },
   methods:{
       submit:function(){
         var that = this
