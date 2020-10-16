@@ -1,0 +1,7 @@
+  *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
+  .quality_film{width: 100%; display: flex; flex-direction: column;height: 100%;}
+  .quality_top img{width: 100%;}
+  .center_screen {height:8%;display:flex;justify-content:space-between;align-items:flex-end;}
+  .quality_center{flex: 1;}
+  select {height:100%;width:30%;color:#868686;font-size:12px;text-align:center;outline:none;border:none;text-align:center;text-align-last:center;background-color:#FFFFFF;}
+  .center_navigation{height: 50%;background-color:#f5f5f5;}

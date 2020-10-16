@@ -152,28 +152,6 @@
 </script>
 
 <style scoped>
-  *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
-  .register{width: 100%;height: 100%;padding: 30px 20px;}
-  /* 块 */
-  .register_common{width: 100%;display: flex;align-items: center;justify-content: space-between;border-bottom: 1px solid #ddd;padding: 10px 15px;padding-right: 10px;font-size: 14px;}
-  .register_common>p{font-size: 14px;color: #ccc;}
+  @import '../assets/css/Register.css'
 
-  .register_code>input{width:60%;font-size: 14px;border: none;outline: none;color: #333;text-align: right;}
-  .register_code>button{border: none;background-color: transparent;color:#F8D11F;outline: none;}
-
-  input[name="phone"] {width:80%;padding: 5px 0px;text-align: right;font-size: 14px;border: none;outline: none;}
-  .register_common>div{font-size: 14px;width:78%;text-align: right;}
-
-  .register_distance{width: 70%!important;}
-  input[name="distance"] {width:70%;;font-size: 14px;border: none;outline: none;color: #333;text-align: right;padding-right: 5px;}
-  input[type="radio"] {font-size: 14px;}
-  input::placeholder {font-size: 14px;color: #999;}
-  /* .register_address{width:80%;text-align: right;} */
-  .register_address>select{border: none;outline: none;text-align-last: right;}
-  /* .register_number{display: flex;align-items: center;} */
-  .register_number>select{border: none;outline: none;padding: 5px 0px;color: #F8D11F;}
-  .register_number>input{width: 60%;text-align: right;border: none;outline: none;padding: 5px 0px;}
-  /* 按钮 */
-  .register_btn{width: 100%;}
-  .register_btn>button{width: 80%;margin: 0 auto;margin-top: 50px;background-color:#F8D11F;border-radius: 20px;border: none;padding: 10px 0px;color: white;outline:  none;}
 </style>

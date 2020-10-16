@@ -4,7 +4,8 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    count: 1
+    count: 1,
+    heard_title:'车平台 - 首页'
   }
 })
 export default store

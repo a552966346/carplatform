@@ -1,0 +1,36 @@
+* {margin:0;padding:0;box-sizing:border-box;}
+.examination_all {height:100%;}
+.examination_center {height:94%;overflow:scroll;}
+.examination_top {height:6%;display:flex;align-items:center;font-size:14px;box-shadow:1px 1px 1px 5px #FAFAFA;padding:0 10px;font-weight:bold;}
+.examination_top>p:nth-child(1) {padding:10px 10px;margin-right:15px;}
+.examination_center_one {/* height:360px;*/padding-top:10px;}
+.center_one_all {padding:0 10px;}
+.examination_position {display:flex;height:35px;align-items:center;font-size:12px;padding-left:10px;}
+.examination_position>p {padding-left:10px;}
+.examination_position>select {width:80%;height:35px;border:none;padding-left:20px;color:#aaaaaa;outline:none;font-size:10px;}
+.examination_location {height:200px;background-color:#F5F5F5;}
+.center_one_inp {height:80px;padding:0 10px;}
+.examination_inp {height:40px;display:flex;align-items:center;border-bottom:1px solid #CCCCCC;/* padding:0 10px;*/}
+.examination_inp>p {font-size:12px;padding:0 10px;}
+.examination_inp>input {height:33px;width:75%;text-align:end;border:none;outline:none;}
+.examination_payment {height:45px;display:flex;justify-content:center;align-items:center;}
+.examination_payment>button {padding:6px 50px;border-radius:25px;border:none;background-color:#FF0F0F;color:#FFFFFF;outline:none;}
+.examination_payment>button>span {padding-left:55px;}
+.examination_center_two {height:100px;padding:0 10px;}
+.center_two {display:flex;justify-content:flex-end;align-items:center;height:25px;}
+.center_two>img {height:15px;}
+.center_two>span {padding:0 10px;font-size:10px;color:#818181;}
+.examination_bottom {height:500px;}
+.bottom_header {height:36px;line-height:36px;text-align:center;padding:0 20px;}
+.line {display:inline-block;width:25%;border-top:1px solid #cccccc;vertical-align:5px;}
+.text {color:#818181;font-size:12px;}
+.bottom_text {height:264px;padding:0 20px;}
+.text {color:#8D8D8D;font-size:12px;padding-top:20px;}
+.text_two {padding:0 10px;}
+.text_two>span {color:#ccc;font-size:10px;}
+.examination_last {height:60px;padding:0 20px;width:100%;position:absolute;bottom:0;display:flex;align-items:center;justify-content:space-between;background-color:#FFFFFF;box-shadow:1px -1px 8px 3px #ECECEC;}
+.last_left {height:50px;width:80px;text-align:center;}
+.last_left>img {height:25px;}
+.last_left>p {font-size:8px;}
+.last_right>a {text-decoration:none;background-color:#F5C92E;color:#FFFFFF;font-size:12px;padding:2px 7px;border-radius:10px;}
+.break {color:#F5C92E;border-bottom:2px solid #F5C92E;}

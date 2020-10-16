@@ -13,6 +13,13 @@ import repair_maintenance from '@/view/repair_maintenance'
 import store_details from '@/view/store_details'
 import quality_film from '@/view/quality_film'
 import repair from '@/view/repair'
+import payment from '@/view/payment'
+import cosmetology from'@/view/cosmetology'
+import examination from '@/view/examination'
+import detailed from '@/view/detailed'
+import exchange from '@/view/exchange'
+import rule from '@/view/rule'
+import tyre from '@/view/tyre'
 Vue.use(Router)
 
 export default new Router({
@@ -82,6 +89,41 @@ export default new Router({
       path:'/repair',
       name: 'repair',
       component:repair
-    }
+    },
+    {
+      path:'/payment',
+      name: 'payment',
+      component:payment
+    },
+    {
+      path:'/cosmetology',
+      name: 'cosmetology',
+      component:cosmetology
+    },
+    {
+      path:'/examination',
+      name: 'examination',
+      component:examination
+    },
+    {
+      path:'/detailed',
+      name: 'detailed',
+      component:detailed
+    },
+  {
+      path:'/exchange',
+      name: 'exchange',
+      component:exchange
+    },
+    {
+        path:'/rule',
+        name: 'rule',
+        component:rule
+      },
+      {
+        path:'/tyre',
+        name: 'tyre',
+        component:tyre
+      }
   ]
 })

@@ -6,9 +6,9 @@
     	<!-- 登录资料 -->
     	<div class="personalcenter_top_login">
     			<div class="personalcenter_top_loginimg">
-    				<img src="../assets/portrait.jpg" >
+    				<img src="../assets/picture/portrait.jpg" >
             <div class="vip">
-              <img src="../assets/VIP.png" >
+              <img src="../assets/picture/VIP.png" >
             </div>
     			</div>
           <div class="personalcenter_top_logintext">
@@ -41,7 +41,7 @@
     		</a>
     		<a href="#" @click="coupon">
     			<div class="personalcenter_bottom_item">
-            <p><img src="../assets/personalcenter_coupon.png" ></p>
+            <p><img src="../assets/picture/personalcenter_coupon.png" ></p>
     				<p>票券</p>
     			</div>
     		</a>
@@ -70,23 +70,23 @@
         	</div>
           <div class="dingdan_center">
         		<a href="#" @click="payment">
-        			<img src="../assets/personal_center_pay.png" >
+        			<img src="../assets/picture/personal_center_pay.png" >
         			<p>待付款</p>
         		</a>
         		<a href="#" @click="delivered">
-        			<img src="../assets/personal_center_delivered.png" >
+        			<img src="../assets/picture/personal_center_delivered.png" >
         			<p>待发货</p>
         		</a>
         		<a href="#" @click="receive">
-        			<img src="../assets/personal_center_receive.png" >
+        			<img src="../assets/picture/personal_center_receive.png" >
         			<p>待收货</p>
         		</a>
         		<a href="#" @click="evaluated">
-        			<img src="../assets/personal_center_evaluated.png" >
+        			<img src="../assets/picture/personal_center_evaluated.png" >
         			<p>待评价</p>
         		</a>
         		<a href="#" @click="refund">
-        			<img src="../assets/personal_center_refund.png" >
+        			<img src="../assets/picture/personal_center_refund.png" >
         			<p>退款/售后</p>
         		</a>
         	</div>
@@ -94,35 +94,35 @@
         <!-- 服务项目 -->
         <div class="center_bottom">
         	<a href="#" @click="centercontact">
-        		<img src="../assets/personal_centercontact.png" >
+        		<img src="../assets/picture/personal_centercontact.png" >
         		<p>联系客服</p>
         	</a>
         	<a href="#" @cliack="examination">
-        		<img src="../assets/personal_center_car.png" >
+        		<img src="../assets/picture/personal_center_car.png" >
         		<p>审车代办</p>
         	</a>
         	<a href="#" @click="repair">
-        		<img src="../assets/personal_center_repair.png" >
+        		<img src="../assets/picture/personal_center_repair.png" >
         		<p>维修与救援</p>
         	</a>
         	<a href="#" @click="maintain">
-        		<img src="../assets/personal_center_maintain.png" >
+        		<img src="../assets/picture/personal_center_maintain.png" >
         		<p>快修与保养</p>
         	</a>
         	<a href="#" @click="tire">
-        		<img src="../assets/personal_center_tire.png" >
+        		<img src="../assets/picture/personal_center_tire.png" >
         		<p>轮胎更换</p>
         	</a>
         	<a href="#" @click="expert">
-        		<img src="../assets/personal_center_expert.png" >
+        		<img src="../assets/picture/personal_center_expert.png" >
         		<p>专家在线</p>
         	</a>
         	<a href="#" @click="quality">
-        		<img src="../assets/personal_center_quality.png" >
+        		<img src="../assets/picture/personal_center_quality.png" >
         		<p>品质贴膜</p>
         	</a>
         	<a href="#" @click="member">
-        		<img src="../assets/personal_center_member.png" >
+        		<img src="../assets/picture/personal_center_member.png" >
         		<p>会员中心</p>
         	</a>
         </div>
@@ -138,6 +138,9 @@ export default {
     return {
       msg: 'personal_center'
     }
+  },
+  mounted:function(){
+        this.$store.state.heard_title ='车平台 - 个人中心'
   },
   methods:{
     //积分
@@ -247,59 +250,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-  *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
-  .personal_center{width: 100%;}
-  /* 黑色块内容 */
-  .personalcenter_top{width: 100%;background-color: #3E3E3E;padding: 0 20px;}
-  /* 登录资料 */
-  .personalcenter_top_login{display: flex;padding: 25px 0px;}
-  /* 头像 */
-  .personalcenter_top_loginimg{width: 50px;height: 50px;display: flex;justify-content: center;align-items: flex-end;border: 2px solid #FADDB3;border-radius: 50%;position: relative;}
-  .personalcenter_top_loginimg>img{width: 100%;height: 100%;border-radius: 50%;}
-  .vip{position: absolute;right: 0;}
-  .vip img{height: 13px;}
-  /* 登录信息 */
-  .personalcenter_top_logintext{padding-left: 20px;flex: 1;display: flex;flex-direction: column;justify-content: center;align-items: flex-start;}
-  .personalcenter_top_logintext>p{color:#fff;font-size: 14px;}
-  .personalcenter_top_logintext>p:nth-child(1){font-weight: bold;}
-  .personalcenter_top_logintext>p:nth-child(2){color: #A3A3A3;padding-top: 10px;font-size: 12px;}
-  /* 设置 */
-  .top_top_set{width: 50px;display: flex;align-items: center;justify-content: flex-end;}
-  .top_top_set>a{color: #FADDB3;font-size: 14px;}
-  /* 登录块 */
-  .personalcenter_bottom{display: flex;padding: 10px 0px;}
-  .personalcenter_bottom a{flex: 1;}
-  .personalcenter_bottom_item{color: #FADDB3;font-size: 12px;}
-  .personalcenter_bottom_item p:nth-child(1){padding-bottom: 5px;height: 20px;}
-  .personalcenter_bottom_item p:nth-child(1) img{height: 20px;}
-  /* 白色块内容 */
-  .personalcenter_cont{width: 100%;}
-  /* 滚动快 */
-  .personalcenter_cont_news{height:40px;background-color: #FFFFFF;display: flex;justify-content: space-between;align-items: center;padding: 0 20px;}
-  .personalcenter_cont_news>marquee{width: 100%;height: 100%;display: flex;align-items: center;}
-  .personalcenter_cont_scoll{width: 100%;height: 100%;display: flex;align-items: center;}
-  .personalcenter_cont_scoll>div{width: 20px;}
-  .dian{width: 10px;height: 10px;border-radius: 50%;background-color: #f04a57;margin-right: 15px;}
-  .word{flex: 1;justify-content: flex-start;text-align: left;}
-  /* 我的订单模块 */
-  .personalcenter_cont_order{width: 100%;}
-  /* 我的订单  */
-  .dingdan{width: 100%;padding: 0px 20px;/* background-color: #F5F5F5; */}
-  .dingdan_top{height: 30%;background-color: #FFFFFF;border-bottom: 2px solid #F0F0F0;    padding: 20px 0px;}
-  .dingdan_top>a{height: 100%;display: flex;justify-content: space-between;align-items: center;color: #888;}
-  .dingdan_top>a>p:nth-child(1){font-size: 14px;color: #333;}
-  .dingdan_top>a>p:nth-child(2){font-size: 12px;color: #666;}
-  /* 我的订单块 */
-  .dingdan_center{display: flex;padding:15px 0px;background-color: #FFFFFF;}
-  .dingdan_center>a{width: 20%;text-align: center;}
-  .dingdan_center>a>img{width: 25px;height: 25px;}
-  .dingdan_center>a>p{padding-top: 15px;font-size: 12px;color: #6E6E6E;}
-  /* 服务项目 */
-  .center_bottom{width: 100%;display: flex;flex-wrap: wrap;padding: 0px 20px;padding-top: 30px;}
-  .center_bottom>a{width: 25%;text-align: center;margin-bottom: 20px;}
-  .center_bottom>a>img{height: 25px;width: 25px;}
-  .center_bottom>a>p{color: #6E6E6E;font-size: 12px;padding-top: 10px;}
-
+<style scoped>
+  @import '../assets/css/personal_center.css'
 
 </style>

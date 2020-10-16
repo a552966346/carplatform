@@ -77,6 +77,9 @@ export default {
       }
 
   },
+  mounted:function(){
+        this.$store.state.heard_title ='车平台 - 添加车辆'
+  },
   methods:{
     phone:function(){
       // console.log(this)
@@ -121,43 +124,7 @@ export default {
   }
 }
 </script>
-<style>
-  *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
-  .add_vehicle{width: 100%;height: 100%;display: flex;flex-direction: column;overflow: hidden;}
-  /* 顶部内容 */
-  .add_vehicle_top{width: 100%;height: 80px;display: flex;flex-direction: column;justify-content: center;align-items: start;padding: 0px 30px;background-color: white;border-bottom: 5px solid #f2f2f2;}
-  .add_vehicle_top p{font-size: 12px;color: #ccc;padding-bottom: 6px;}
-  .mint-button--primary{color: #F8D11F;background-color: transparent;}
-  .mint-button--small{padding: 0px;padding-right: 12px;}
-  /* 内容 */
-  .add_vehicle_vont{width: 100%;flex: 1;}
-  .add_vehicle_firstvont{width: 100%;padding: 0px 15px;padding-top: 10px;}
-  .add_vehicle_firstvont p{width: 100%;border-bottom: 1px solid #ccc;padding: 0px 15px;}
-  .add_vehicle_firstvont p:last-of-type{border: none;}
-  .add_vehicle_secondvont{width: 100%;border-top: 10px solid #F2F2F2;padding: 0px 15px;}
-  .add_vehicle_secondvont p{width: 100%;border-bottom: 1px solid #ccc;padding: 0px 15px;}
-  .add_vehicle_secondvont p:last-of-type{border: none;}
+<style scoped>
+  @import '../assets/css/add_vehicle.css'
 
-  .car_number{display: flex;justify-content: space-between;border-bottom: 1px solid #ccc; padding: 0px 15px;min-height: 48px;align-items: center;}
-  .car_number span{width: 105px;text-align: left;}
-  .car_number1{flex: 1;display: flex;justify-content: flex-end;}
-  .car_number1 select{font-size: 14px;color: #F8D11F;background-color: #fef5d0;border: none;border-radius: 3px;}
-  .car_number1 input{text-align: right;font-size: 14px;border: none;width: 145px;}
-
-
-
-  .mint-cell-wrapper{padding: 0px;}
-  .mint-cell-title{text-align: left;font-size: 14px;color: #333;}
-  .mint-field-core{text-align: right;font-size: 14px;color: #333;}
-
-  .add_vehicle_switch{display: flex;justify-content: space-between;align-items: center;min-height: 48px;}
-
-  .mint-switch-core{width: 45px;height: 17px;}
-  .mint-switch-core::before{width: 23px;height: 15px;}
-  .mint-switch-core::after{width: 23px;height: 15px;}
-  .mint-switch-input:checked + .mint-switch-core {border-color: #F8D11F;background-color: #F8D11F;}
-  input::placeholder {font-size: 14px;color: #ccc;}
-  /* 按钮 */
-  .check_btn{width: 100%;padding-top: 40px;}
-  .check{width: 80%;margin: 0 auto;background-color:#F8D11F;color: #fff;border-radius:20px;height: 40px;}
 </style>

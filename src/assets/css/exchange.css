@@ -1,0 +1,30 @@
+* {padding:0;margin:0;box-sizing:border-box;}
+.exchange_all {height:100%;display:flex;flex-direction:column;}
+.exchange_top {height:32%;box-shadow:1px 1px 5px 2px #F4F4F4;}
+.swiper-container {width:100%;height:100%;}
+.swiper-container {width:100%;height:300px;margin-left:auto;margin-right:auto;}
+.swiper-slide {background-size:cover;background-position:center;text-align:center;}
+.swiper-slide>img {height:100%;width:60%;}
+.gallery-top {height:65%;width:100%;}
+.gallery-thumbs {height:35%;box-sizing:border-box;padding:10px  60px;}
+.gallery-thumbs>div>div {border:1px solid #ccc;width:20%;overflow:hidden;}
+.gallery-thumbs .swiper-slide {width:25% !important;height:100%;opacity:0.4;}
+.gallery-thumbs .swiper-slide-thumb-active {opacity:1; border:1px solid #FFD271 !important;}
+.exchange_center {flex:1;overflow:scroll;}
+.center_xinxi {height:25%;padding:20px 40px;box-shadow:1px 1px 5px 2px #F4F4F4;}
+.center_xinxi>p:first-child {font-size:14px;}
+.xingxi_money {padding:10px 0;display:flex;justify-content:space-between;}
+.xingxi_money>p:first-child {color:#FF0000;font-weight:bold;}
+.xingxi_money>p {font-size:12px;}
+.xingxi_money>p>span {font-size:10px;text-decoration:line-through;padding-left:5px;color:#000000;font-weight:500;}
+.xingxi_money>p:last-child {color:#5B5B5B;}
+.center_xinxi>p:last-child {color:#9A9A9A;font-size:10px;}
+.center_xinxi>p:last-child>span {color:#9A9A9A;font-size:10px;padding-right:20px;}
+.center_rule {height:75%;padding:15px 20px;}
+.center_rule>p {font-size:14px;font-weight:bold;border-left:2px solid  #FFD271;padding-left:10px;}
+.rule_text {padding:10px 20px 50px 20px;}
+.rule_text>p {font-size:10px;line-height:2;color:#9A9A9A;}
+.exchange_bottom {display:flex;position:absolute;bottom:0;height:50px;width:100%;box-shadow:1px 1px 5px 5px #f4f4f4;background-color:#FFFFFF;}
+.exchange_bottom>p {width:50%;text-align:center;font-size:14px;margin:auto 0;}
+.exchange_bottom>p>span {color:#FF0000;}
+.exchange_bottom>a {background-color:#F8D11F;width:50%;text-align:center;padding:4% 0;font-size:14px;color:#FFFFFF;text-decoration:none;}

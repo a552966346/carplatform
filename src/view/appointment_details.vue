@@ -77,22 +77,8 @@ export default {
   }
 }
 </script>
-<style>
-  *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
-  .appointment_details{width: 100%;height: 100%;display: flex;flex-direction: column;padding: 0px 15px;padding-top: 15px;}
-  .appointment_details p{width: 100%;border-bottom: 1px solid #ccc;padding: 0px 15px;}
-  .mint-cell-wrapper{padding: 0px;}
-  .mint-cell-title{text-align: left;font-size: 14px;color: #333;}
-  .mint-field-core{text-align: right;font-size: 14px;color: #333;}
-  input::placeholder {font-size: 14px;color: #ccc;}
-  /* 选择服务 */
-  .appointment_details_chooseseevice{display: flex;justify-content: space-between;min-height: 48px;align-items: center;}
-  .appointment_details_chooseseevice select{border: none;font-size: 14px;}
-  /* 按钮 */
-  .check_btn{width: 100%;padding-top: 40px;display: flex;}
-  .check_btn>div{flex: 1;}
-  .submit{width: 80%;margin: 0 auto;background-color:#F8D11F;color: #fff;border-radius:20px;height: 40px;}
-  .reset{width: 80%;margin: 0 auto;color: #333;border-radius:20px;height: 40px;}
-  .mint-button--default.is-plain {border: 1px solid #F8D11F;}
-  .mint-button::after{background-color: #F8D11F;}
+<style scoped>
+  @import '../assets/css/appointment_details.css'
+
 </style>
+

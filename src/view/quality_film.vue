@@ -1,10 +1,29 @@
 <template>
   <div class="quality_film">
-    <!-- bannerå›¾ -->
+    <!-- bannerå›-->
     <div class="quality_top">
-    	<img src="../assets/quality_film_top.png" >
+    	<img src="../assets/picture/quality_film_top.png" >
     </div>
-    <!--  -->
+    <!-- É¸Ñ¡ -->
+    <div class=" quality_center">
+      <!-- É¸Ñ¡ -->
+      <div class="center_screen">
+        <select name="data">
+          <option value="1">111</option>
+        </select>
+        <select name="sort">
+          <option value="1">222</option>
+        </select>
+        <select name="screen">
+          <option value="1">333</option>
+        </select>
+      </div>
+      <!-- µ¼º½ -->
+      <div class="center_navigation" id="container">
+
+       </div>
+
+    </div>
   </div>
 </template>
 
@@ -15,12 +34,20 @@ export default {
     return {
       msg: 'quality_film'
     }
-  }
+  },
+  mounted:function(){
+      //¶¨ÒåµØÍ¼ÖÐÐÄµã×ø±ê
+      var center = new TMap.LatLng(39.984120, 116.307484)
+      //¶¨Òåmap±äÁ¿£¬µ÷ÓÃ TMap.Map() ¹¹Ôìº¯Êý´´½¨µØÍ¼
+      var map = new TMap.Map(document.getElementById('container'), {
+          center: center,//ÉèÖÃµØÍ¼ÖÐÐÄµã×ø±ê
+          zoom: 11,   //ÉèÖÃµØÍ¼Ëõ·Å¼¶±ð
+          viewMode:'2D',
+      });
+  },
 }
 </script>
-<style>
-  *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
-  .quality_film{width: 100%;}
-  .quality_film img{width: 100%;}
+<style scoped>
+  @import '../assets/css/quality_film.css'
 
 </style>
