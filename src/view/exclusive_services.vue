@@ -5,7 +5,7 @@
     <div class="exclusive_title">
         <div class="exclusive_lefttitle">
             <div class="exclusive_lefttitle_pic">
-              <img src="../assets/picture/portrait.jpg"/>
+              <img src="../../static/img/portrait.jpg"/>
             </div>
             <div class="exclusive_lefttitle_cont">
                 <p>逆行的雪豹</p>
@@ -21,7 +21,7 @@
       <!-- 添加车辆 -->
       <div class="exclusive_top">
           <a href="#" @click="add">
-            <img src="../assets/picture/exclusive_add.png" >
+            <img src="../../static/img/exclusive_add.png" >
           </a>
           <p>请立即添加您的爱车</p>
       </div>
@@ -30,7 +30,7 @@
         <!-- 保险到期提醒 -->
         	<div class="center_remind">
         		<div class="center_remind_pic">
-        			<img src="../assets/picture/exclusive_insurance.png" >
+        			<img src="../../static/img/exclusive_insurance.png" >
         		</div>
         		<div class="center_remind_cont">
         			<p>保险到期提醒</p>
@@ -40,7 +40,7 @@
           <!-- 审车提醒 -->
         	<div class="center_remind">
         		<div class="center_remind_pic">
-        			<img src="../assets/picture/exclusive_car.png" >
+        			<img src="../../static/img/exclusive_car.png" >
         		</div>
         		<div class="center_remind_cont">
         			<p>审车提醒</p>
@@ -50,7 +50,7 @@
           <!-- 违章告知 -->
         	<div class="center_remind">
             <div class="center_remind_pic">
-        			<img src="../assets/picture/exclusive_notification.png" >
+        			<img src="../../static/img/exclusive_notification.png" >
         		</div>
         		<div class="center_remind_cont">
         			<p>违章告知</p>
@@ -60,7 +60,7 @@
           <!-- 驾照到期等换提醒 -->
         	<div class="center_remind">
         		 <div class="center_remind_pic">
-        			<img src="../assets/picture/driving_driving.png" >
+        			<img src="../../static/img/driving_driving.png" >
         		</div>
         		<div class="center_remind_cont">
         			<p>驾照到期等换提醒</p>

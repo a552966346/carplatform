@@ -74,11 +74,11 @@
             </div>
       			<div class="right_Grade">
               <div class="right_Grade_pic">
-                <img src="../assets/picture/index_star.png" >
-                <img src="../assets/picture/index_star.png" >
-                <img src="../assets/picture/index_star.png" >
-                <img src="../assets/picture/index_star.png" >
-                <img src="../assets/picture/index_star.png" >
+                <img src="../../static/img/index_star.png" >
+                <img src="../../static/img/index_star.png" >
+                <img src="../../static/img/index_star.png" >
+                <img src="../../static/img/index_star.png" >
+                <img src="../../static/img/index_star.png" >
               </div>
       				<p>3456条评价</p>
       			</div>

@@ -28,10 +28,10 @@
           <div class="store_swiper_top">
             <!-- 轮播图 -->
             <div class="store_swiper_cont">
-              <div class="store_swiper_itemcont"><img src="../assets/picture/store_details_pic.jpg"></div>
-              <div class="store_swiper_itemcont"><img src="../assets/picture/store_details_pic.jpg"></div>
-              <div class="store_swiper_itemcont"><img src="../assets/picture/store_details_pic.jpg"></div>
-              <div class="store_swiper_itemcont"><img src="../assets/picture/store_details_pic.jpg"></div>
+              <div class="store_swiper_itemcont"><img src="../../static/img/store_details_pic.jpg"></div>
+              <div class="store_swiper_itemcont"><img src="../../static/img/store_details_pic.jpg"></div>
+              <div class="store_swiper_itemcont"><img src="../../static/img/store_details_pic.jpg"></div>
+              <div class="store_swiper_itemcont"><img src="../../static/img/store_details_pic.jpg"></div>
              <!-- <div style="width: 1px;"></div> -->
             </div>
             <!-- 地址 -->

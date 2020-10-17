@@ -2,7 +2,7 @@
   <div class="quality_film">
     <!-- banner�-->
     <div class="quality_top">
-    	<img src="../assets/picture/quality_film_top.png" >
+    	<img src="../../static/img/quality_film_top.png" >
     </div>
     <!-- ɸѡ -->
     <div class=" quality_center">

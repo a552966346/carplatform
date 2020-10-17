@@ -3,14 +3,14 @@
    <div class="repair_maintenance">
      <!-- 顶部图片 -->
       <div class="repair_maintenance_top">
-        <img src="../assets/picture/repair_top.png" >
+        <img src="../../static/img/repair_top.png" >
       </div>
       <!-- 发动机快修保养模块 -->
       <div class="repair_maintenance_maintain">
         <p class="maintain_txt1">继续拖动，查看图文详情</p>
         <p class="maintain_txt2">本产品针对日常行驶过程中的维修以及对车辆进行的保养提供详细说明</p>
         <p class="maintain_txt3">发动机快修保养模块</p>
-        <p class="maintain_txt4"><img src="../assets/picture/repair_fast.png" ></p>
+        <p class="maintain_txt4"><img src="../../static/img/repair_fast.png" ></p>
         <div class="maintain_txt5">
             <p>机油三滤的检查与更换</p>
             <p>正时皮带的检查与更新</p>
@@ -23,7 +23,7 @@
       <!-- 轮胎修复模块 -->
       <div class="repair_maintenance_tyre">
         <p>轮胎修复模块</p>
-        <img src="../assets/picture/repair_repair.png" >
+        <img src="../../static/img/repair_repair.png" >
       </div>
       <!-- 底盘快修保养模块 -->
       <div class="repair_maintenance_chassis">
@@ -42,7 +42,7 @@
               <p>全车灯光检查调整</p>
           </div>
           <div class="repair_maintenance_chassispic">
-            <img src="../assets/picture/repair_chassis.png" >
+            <img src="../../static/img/repair_chassis.png" >
           </div>
         </div>
       </div>

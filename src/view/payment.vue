@@ -2,7 +2,7 @@
   <div class="payment_all">
   	<div class="payment_top">
   		<div class="top_img">
-  			<img src="../assets/picture/card.png" >
+  			<img src="../../static/img/card.png" >
   			<div class="top_img_xinxi">
   				<p>LALALA</p>
   				<a href="#">开通自动续费</a>
@@ -70,7 +70,7 @@
   			<p>支付方式</p>
   			<div class="mode">
   				<div class="mode_left">
-  					<img src="../assets/picture/zhifubao.png" >
+  					<img src="../../static/img/zhifubao.png" >
   					<span>支付宝</span>
   					<span>推荐</span>
   				</div>
@@ -80,7 +80,7 @@
   			</div>
   			<div class="mode">
   				<div class="mode_left">
-  					<img src="../assets/picture/weixin.png" >
+  					<img src="../../static/img/weixin.png" >
   					<span>微信</span>
   				</div>
   				<div class="mode_right">
@@ -95,19 +95,19 @@
   			<p>会员权益</p>
   			<div class="equity_vip">
   				<div class="equity_vip_class">
-  					<img src="../assets/picture/time.png" >
+  					<img src="../../static/img/time.png" >
   					<p>保险到期提醒</p>
   				</div>
   				<div class="equity_vip_class">
-  					<img src="../assets/picture/examination.png" >
+  					<img src="../../static/img/examination.png" >
   					<p>审车提醒</p>
   				</div>
   				<div class="equity_vip_class">
-  					<img src="../assets/picture/regulations.png" >
+  					<img src="../../static/img/regulations.png" >
   					<p>违章告知</p>
   				</div>
   				<div class="equity_vip_class">
-  					<img src="../assets/picture/license.png" >
+  					<img src="../../static/img/license.png" >
   					<p>驾照更换提醒</p>
   				</div>
   			</div>

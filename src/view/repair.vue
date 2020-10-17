@@ -1,7 +1,7 @@
 <template>
   <div class="repair_all">
     <div class=" repair_top">
-      <img src="../assets/picture/maintain.png">
+      <img src="../../static/img/maintain.png">
     </div>
     <div class=" repair_center">
       <!-- 筛选 -->
@@ -31,8 +31,8 @@
     name: 'repair',
     data() {
       return {
-        urls: require('../assets/picture/daohang.png'),
-        urlp: require('../assets/picture/phone.png'),
+        urls: require('../../static/img/daohang.png'),
+        urlp: require('../../static/img/phone.png'),
       }
     },
     mounted:function(){

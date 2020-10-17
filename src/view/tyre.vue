@@ -1,7 +1,7 @@
 <template>
   <div class="tyre_all">
   	<!-- banner -->
-  	<img src="../assets/picture/tyre.png" >
+  	<img src="../../static/img/tyre.png" >
   	<div class="tyre_top">
   		<p>轮胎更换</p>
   		 <p>轮胎变形</p>
@@ -39,8 +39,8 @@
       name: 'tyre',
       data() {
         return {
-          urls: require('../assets/picture/daohang.png'),
-          urlp: require('../assets/picture/phone.png'),
+          urls: require('../../static/img/daohang.png'),
+          urlp: require('../../static/img/phone.png'),
         }
       },
       mounted:function(){

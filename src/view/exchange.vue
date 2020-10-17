@@ -3,16 +3,16 @@
   	<div class="exchange_top">
   		<div class="swiper-container gallery-top">
   		    <div class="swiper-wrapper">
-  		      <div class="swiper-slide " ><img src="../assets/picture/shujuxian.png" ></div>
-  		      <div class="swiper-slide" ><img src="../assets/picture/xian.jpg" ></div>
-  			  <div class="swiper-slide" ><img src="../assets/picture/xian3.jpg" ></div>
+  		      <div class="swiper-slide " ><img src="../../static/img/shujuxian.png" ></div>
+  		      <div class="swiper-slide" ><img src="../../static/img/xian.jpg" ></div>
+  			  <div class="swiper-slide" ><img src="../../static/img/xian3.jpg" ></div>
   		    </div>
   		</div>
   		 <div class="swiper-container gallery-thumbs">
   		    <div class="swiper-wrapper">
-  		      <div class="swiper-slide boder" ><img src="../assets/picture/xian2.jpg" ></div>
-  		      <div class="swiper-slide"><img src="../assets/picture/xian.jpg" ></div>
-  		      <div class="swiper-slide"><img src="../assets/picture/xian3.jpg" ></div>
+  		      <div class="swiper-slide boder" ><img src="../../static/img/xian2.jpg" ></div>
+  		      <div class="swiper-slide"><img src="../../static/img/xian.jpg" ></div>
+  		      <div class="swiper-slide"><img src="../../static/img/xian3.jpg" ></div>
   		    </div>
   		  </div>
   	</div>

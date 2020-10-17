@@ -17,7 +17,7 @@
           <div class="center_content">
             <!-- 公告 -->
             <div class="center_content_service">
-              <img src="../assets/picture/horn.png">
+              <img src="../../static/img/horn.png">
               <p>暂无更多消息</p>
             </div>
             <!-- 菜单 -->
@@ -29,7 +29,7 @@
                     <a href="">
                       <div class="index_menu_item1">
                         <div class="activity_management">
-                          <img src="../assets/picture/tag_proxy.png" />
+                          <img src="../../static/img/tag_proxy.png" />
                         </div>
                         <div class="common_title">审车代办</div>
                       </div>
@@ -42,7 +42,7 @@
                    <a href="">
                      <div class="index_menu_item1">
                        <div class="activity_management">
-                           <img src="../assets/picture/tag_repair.png" />
+                           <img src="../../static/img/tag_repair.png" />
                        </div>
                        <div class="common_title">维修与救援</div>
                      </div>
@@ -55,7 +55,7 @@
                     <a href="">
                       <div class="index_menu_item1">
                         <div class="activity_management">
-                          <img src="../assets/picture/tag_wash.png" />
+                          <img src="../../static/img/tag_wash.png" />
                         </div>
                         <div class="common_title">洗车</div>
                       </div>
@@ -68,7 +68,7 @@
                     <a href="">
                       <div class="index_menu_item1">
                         <div class="activity_management">
-                            <img src="../assets/picture/tag_market.png" />
+                            <img src="../../static/img/tag_market.png" />
                         </div>
                         <div class="common_title">备品超市</div>
                       </div>
@@ -81,7 +81,7 @@
                     <a href="">
                       <div class="index_menu_item1">
                         <div class="activity_management">
-                          <img src="../assets/picture/tag_beauty.png" />
+                          <img src="../../static/img/tag_beauty.png" />
                         </div>
                         <div class="common_title">车辆美容</div>
                       </div>
@@ -94,7 +94,7 @@
                      <a href="">
                        <div class="index_menu_item1">
                          <div class="activity_management">
-                             <img src="../assets/picture/tag_change.png" />
+                             <img src="../../static/img/tag_change.png" />
                          </div>
                          <div class="common_title">轮胎更换</div>
                        </div>
@@ -109,7 +109,7 @@
                     <a href="">
                       <div class="index_menu_item1">
                         <div class="activity_management">
-                           <img src="../assets/picture/tag_run.png" />
+                           <img src="../../static/img/tag_run.png" />
                         </div>
                         <div class="common_title">快修与保养</div>
                       </div>
@@ -122,7 +122,7 @@
                     <a href="">
                       <div class="index_menu_item1">
                         <div class="activity_management">
-                            <img src="../assets/picture/tag_around.png" />
+                            <img src="../../static/img/tag_around.png" />
                         </div>
                         <div class="common_title">品质贴膜</div>
                       </div>
@@ -135,7 +135,7 @@
                     <a href="/exclusive_services">
                       <div class="index_menu_item1">
                         <div class="activity_management">
-                             <img src="../assets/picture/tag_service.png" />
+                             <img src="../../static/img/tag_service.png" />
                         </div>
                         <div class="common_title">专属服务</div>
                       </div>
@@ -148,7 +148,7 @@
                     <a href="/expert_online" >
                       <div class="index_menu_item1">
                         <div class="activity_management">
-                            <img src="../assets/picture/tag_spicial.png" />
+                            <img src="../../static/img/tag_spicial.png" />
                         </div>
                         <div class="common_title">专家在线</div>
                       </div>
@@ -165,13 +165,13 @@
             <div class="swiper-container2">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                   <img src="../assets/picture/index_banner1.png" />
+                   <img src="../../static/img/index_banner1.png" />
                   </div>
                   <div class="swiper-slide">
-                    <img src="../assets/picture/index_banner1.png" />
+                    <img src="../../static/img/index_banner1.png" />
                    </div>
                   <div class="swiper-slide">
-                    <img src="../assets/picture/index_banner1.png" />
+                    <img src="../../static/img/index_banner1.png" />
                   </div>
 
                 </div>
@@ -189,72 +189,71 @@
             </div>
             <!-- 内容 -->
             <div class="index_shop_cont">
-
                 <div class="index_shop_item">
                 	<div class="index_shop_picitem">
-                		<img src="../assets/picture/index_shop.png">
+                		<img src="../../static/img/index_shop.png">
                 	</div>
                 	<div class="index_shop_textitem">
                 		<p class="index_centershop_toptitle">万科云溪洗车店</p>
                 		<div class="index_shop_centertext">
                 			<p class="index_centershop_centertitle">维修保养</p>
-                			<img src="../assets/picture/index_star.png">
-                			<img src="../assets/picture/index_star.png">
-                			<img src="../assets/picture/index_star.png">
-                			<img src="../assets/picture/index_star.png">
-                			<img src="../assets/picture/index_star.png">
+                			<img src="../../static/img/index_star.png">
+                			<img src="../../static/img/index_star.png">
+                			<img src="../../static/img/index_star.png">
+                			<img src="../../static/img/index_star.png">
+                			<img src="../../static/img/index_star.png">
                 		</div>
                 		<p class="index_centershop_bottomtitle">山西省太原市小区店***号</p>
                 	</div>
                   <a href="javascript:'">
                     <div class="index_shop_righttext">
-                        <img class="position_img" src="../assets/picture/index_navigation.png">
+                        <img class="position_img" src="../../static/img/index_navigation.png">
                         <p>1km</p>
                     </div>
                   </a>
                 </div>
                 <div class="index_shop_item">
                 	<div class="index_shop_picitem">
-                		<img src="../assets/picture/index_shop.png">
+                		<img src="../../static/img/index_shop.png">
                 	</div>
                 	<div class="index_shop_textitem">
                 		<p class="index_centershop_toptitle">万科云溪洗车店</p>
                 		<div class="index_shop_centertext">
                 			<p class="index_centershop_centertitle">维修保养</p>
-                			<img src="../assets/picture/index_star.png">
-                			<img src="../assets/picture/index_star.png">
-                			<img src="../assets/picture/index_star.png">
-                			<img src="../assets/picture/index_star.png">
-                			<img src="../assets/picture/index_star.png">
+                			<img src="../../static/img/index_star.png">
+                			<img src="../../static/img/index_star.png">
+                			<img src="../../static/img/index_star.png">
+                			<img src="../../static/img/index_star.png">
+                			<img src="../../static/img/index_star.png">
                 		</div>
                 		<p class="index_centershop_bottomtitle">山西省太原市小区店***号</p>
                 	</div>
                   <a href="javascript:'">
                     <div class="index_shop_righttext">
-                        <img class="position_img" src="../assets/picture/index_navigation.png">
+                        <img class="position_img" src="../../static/img/index_navigation.png">
                         <p>1km</p>
                     </div>
                   </a>
                 </div>
                 <div class="index_shop_item">
                 	<div class="index_shop_picitem">
-                		<img src="../assets/picture/index_shop.png">
+                		<img src="../../static/img/index_shop.png">
                 	</div>
                 	<div class="index_shop_textitem">
                 		<p class="index_centershop_toptitle">万科云溪洗车店</p>
                 		<div class="index_shop_centertext">
                 			<p class="index_centershop_centertitle">维修保养</p>
-                			<img src="../assets/picture/index_star.png">
-                			<img src="../assets/picture/index_star.png">
-                			<img src="../assets/picture/index_star.png">
-                			<img src="../assets/picture/index_star.png">
-                			<img src="../assets/picture/index_star.png">
+                			<img src="../../static/img/index_star.png">
+                			<img src="../../static/img/index_star.png">
+                			<img src="../../static/img/index_star.png">
+                			<img src="../../static/img/index_star.png">
+                			<img src="../../static/img/index_star.png">
                 		</div>
                 		<p class="index_centershop_bottomtitle">山西省太原市小区店***号</p>
                 	</div>
                   <a href="javascript:'">
                     <div class="index_shop_righttext">
-                        <img class="position_img" src="../assets/picture/index_navigation.png">
+                        <img class="position_img" src="../../static/img/index_navigation.png">
                         <p>1km</p>
                     </div>
                   </a>
@@ -281,10 +280,10 @@
     },
     mounted:function() {
 
-        this.$addr.get('index/index/market')
+        this.$addr.get('index/index/index')
                                .then(response => {
                                 console.log(response)
-                        } )
+                              } )
         var swiper = new Swiper('.swiper-container1', {
             slidesPerView: 4,
             slidesPerColumn:2,

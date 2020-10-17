@@ -6,9 +6,9 @@
     	<!-- 登录资料 -->
     	<div class="personalcenter_top_login">
     			<div class="personalcenter_top_loginimg">
-    				<img src="../assets/picture/portrait.jpg" >
+    				<img src="../../static/img/portrait.jpg" >
             <div class="vip">
-              <img src="../assets/picture/VIP.png" >
+              <img src="../../static/img/VIP.png" >
             </div>
     			</div>
           <div class="personalcenter_top_logintext">
@@ -41,7 +41,7 @@
     		</a>
     		<a href="#" @click="coupon">
     			<div class="personalcenter_bottom_item">
-            <p><img src="../assets/picture/personalcenter_coupon.png" ></p>
+            <p><img src="../../static/img/personalcenter_coupon.png" ></p>
     				<p>票券</p>
     			</div>
     		</a>
@@ -70,23 +70,23 @@
         	</div>
           <div class="dingdan_center">
         		<a href="#" @click="payment">
-        			<img src="../assets/picture/personal_center_pay.png" >
+        			<img src="../../static/img/personal_center_pay.png" >
         			<p>待付款</p>
         		</a>
         		<a href="#" @click="delivered">
-        			<img src="../assets/picture/personal_center_delivered.png" >
+        			<img src="../../static/img/personal_center_delivered.png" >
         			<p>待发货</p>
         		</a>
         		<a href="#" @click="receive">
-        			<img src="../assets/picture/personal_center_receive.png" >
+        			<img src="../../static/img/personal_center_receive.png" >
         			<p>待收货</p>
         		</a>
         		<a href="#" @click="evaluated">
-        			<img src="../assets/picture/personal_center_evaluated.png" >
+        			<img src="../../static/img/personal_center_evaluated.png" >
         			<p>待评价</p>
         		</a>
         		<a href="#" @click="refund">
-        			<img src="../assets/picture/personal_center_refund.png" >
+        			<img src="../../static/img/personal_center_refund.png" >
         			<p>退款/售后</p>
         		</a>
         	</div>
@@ -94,35 +94,35 @@
         <!-- 服务项目 -->
         <div class="center_bottom">
         	<a href="#" @click="centercontact">
-        		<img src="../assets/picture/personal_centercontact.png" >
+        		<img src="../../static/img/personal_centercontact.png" >
         		<p>联系客服</p>
         	</a>
         	<a href="#" @cliack="examination">
-        		<img src="../assets/picture/personal_center_car.png" >
+        		<img src="../../static/img/personal_center_car.png" >
         		<p>审车代办</p>
         	</a>
         	<a href="#" @click="repair">
-        		<img src="../assets/picture/personal_center_repair.png" >
+        		<img src="../../static/img/personal_center_repair.png" >
         		<p>维修与救援</p>
         	</a>
         	<a href="#" @click="maintain">
-        		<img src="../assets/picture/personal_center_maintain.png" >
+        		<img src="../../static/img/personal_center_maintain.png" >
         		<p>快修与保养</p>
         	</a>
         	<a href="#" @click="tire">
-        		<img src="../assets/picture/personal_center_tire.png" >
+        		<img src="../../static/img/personal_center_tire.png" >
         		<p>轮胎更换</p>
         	</a>
         	<a href="#" @click="expert">
-        		<img src="../assets/picture/personal_center_expert.png" >
+        		<img src="../../static/img/personal_center_expert.png" >
         		<p>专家在线</p>
         	</a>
         	<a href="#" @click="quality">
-        		<img src="../assets/picture/personal_center_quality.png" >
+        		<img src="../../static/img/personal_center_quality.png" >
         		<p>品质贴膜</p>
         	</a>
         	<a href="#" @click="member">
-        		<img src="../assets/picture/personal_center_member.png" >
+        		<img src="../../static/img/personal_center_member.png" >
         		<p>会员中心</p>
         	</a>
         </div>
