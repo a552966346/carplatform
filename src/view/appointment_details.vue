@@ -59,9 +59,7 @@ export default {
         var that = this
         console.log(this.item)
 
-        that.$addr.post('v1/bpi/currentprice.json', {
-
-          })
+        that.$addr.post('v1/bpi/currentprice.json', this.item)
           .then(function (response) {
             console.log(response);
           })
@@ -84,4 +82,3 @@ export default {
   @import '../assets/css/appointment_details.css'
 
 </style>
-

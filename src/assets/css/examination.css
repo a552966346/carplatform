@@ -2,7 +2,7 @@
 .examination_all {height:100%;}
 .examination_center {height:94%;overflow:scroll;}
 .examination_top {height:6%;display:flex;align-items:center;font-size:14px;box-shadow:1px 1px 1px 5px #FAFAFA;padding:0 10px;font-weight:bold;}
-.examination_top>p:nth-child(1) {padding:10px 10px;margin-right:15px;}
+.examination_top>p{padding:10px;margin-right:15px;}
 .examination_center_one {/* height:360px;*/padding-top:10px;}
 .center_one_all {padding:0 10px;}
 .examination_position {display:flex;height:35px;align-items:center;font-size:12px;padding-left:10px;}

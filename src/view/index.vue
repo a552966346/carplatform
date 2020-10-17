@@ -24,133 +24,14 @@
             <div class="swiper-container1">
               <div class="swiper-wrapper">
                 <!-- 审车代办 -->
-                <div class="swiper-slide">
+                <div class="swiper-slide" v-for="(item,index) in types" :key='index'>
                   <div class="index_menu_item">
-                    <a href="">
+                    <a href="#" @click="index_run(item.id)">
                       <div class="index_menu_item1">
                         <div class="activity_management">
-                          <img src="../../static/img/tag_proxy.png" />
+                          <img :src="item.logoimage" />
                         </div>
-                        <div class="common_title">审车代办</div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-               <!-- 维修与救援 -->
-               <div class="swiper-slide">
-                 <div class="index_menu_item">
-                   <a href="">
-                     <div class="index_menu_item1">
-                       <div class="activity_management">
-                           <img src="../../static/img/tag_repair.png" />
-                       </div>
-                       <div class="common_title">维修与救援</div>
-                     </div>
-                   </a>
-                 </div>
-               </div>
-                <!-- 洗车 -->
-                <div class="swiper-slide">
-                  <div class="index_menu_item">
-                    <a href="">
-                      <div class="index_menu_item1">
-                        <div class="activity_management">
-                          <img src="../../static/img/tag_wash.png" />
-                        </div>
-                        <div class="common_title">洗车</div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <!-- 备品超市 -->
-                <div class="swiper-slide">
-                  <div class="index_menu_item">
-                    <a href="">
-                      <div class="index_menu_item1">
-                        <div class="activity_management">
-                            <img src="../../static/img/tag_market.png" />
-                        </div>
-                        <div class="common_title">备品超市</div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <!-- 车辆美容 -->
-                <div class="swiper-slide">
-                  <div class="index_menu_item">
-                    <a href="">
-                      <div class="index_menu_item1">
-                        <div class="activity_management">
-                          <img src="../../static/img/tag_beauty.png" />
-                        </div>
-                        <div class="common_title">车辆美容</div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <!-- 轮胎更换 -->
-                <div class="swiper-slide">
-                   <div class="index_menu_item">
-                     <a href="">
-                       <div class="index_menu_item1">
-                         <div class="activity_management">
-                             <img src="../../static/img/tag_change.png" />
-                         </div>
-                         <div class="common_title">轮胎更换</div>
-                       </div>
-                     </a>
-                   </div>
-                 </div>
-
-                <!-- 车辆美容 -->
-                <!-- 快修与保养 -->
-                <div class="swiper-slide">
-                  <div class="index_menu_item">
-                    <a href="">
-                      <div class="index_menu_item1">
-                        <div class="activity_management">
-                           <img src="../../static/img/tag_run.png" />
-                        </div>
-                        <div class="common_title">快修与保养</div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <!-- 品质贴膜 -->
-                <div class="swiper-slide">
-                  <div class="index_menu_item">
-                    <a href="">
-                      <div class="index_menu_item1">
-                        <div class="activity_management">
-                            <img src="../../static/img/tag_around.png" />
-                        </div>
-                        <div class="common_title">品质贴膜</div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <!-- 审车代办 -->
-                <div class="swiper-slide">
-                  <div class="index_menu_item">
-                    <a href="/exclusive_services">
-                      <div class="index_menu_item1">
-                        <div class="activity_management">
-                             <img src="../../static/img/tag_service.png" />
-                        </div>
-                        <div class="common_title">专属服务</div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <!-- 专属服务 -->
-                <div class="swiper-slide">
-                  <div class="index_menu_item">
-                    <a href="/expert_online" >
-                      <div class="index_menu_item1">
-                        <div class="activity_management">
-                            <img src="../../static/img/tag_spicial.png" />
-                        </div>
-                        <div class="common_title">专家在线</div>
+                        <div class="common_title">{{item.name}}</div>
                       </div>
                     </a>
                   </div>
@@ -163,17 +44,17 @@
           <!-- banner轮播 -->
           <div class="index_banner">
             <div class="swiper-container2">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                   <img src="../../static/img/index_banner1.png" />
+                <div class="swiper-wrapper" >
+                  <div class="swiper-slide" v-for="(value,index) in banner" >
+                      <img :src="value" />
+                      <!-- {{value}} -->
                   </div>
-                  <div class="swiper-slide">
+                <!--  <div class="swiper-slide">
                     <img src="../../static/img/index_banner1.png" />
                    </div>
                   <div class="swiper-slide">
                     <img src="../../static/img/index_banner1.png" />
-                  </div>
-
+                  </div> -->
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
@@ -189,12 +70,12 @@
             </div>
             <!-- 内容 -->
             <div class="index_shop_cont">
-                <div class="index_shop_item">
+                <div class="index_shop_item"  v-for="(item,index) in merchant" :key="index">
                 	<div class="index_shop_picitem">
-                		<img src="../../static/img/index_shop.png">
+                		<img :src="item.banner" />
                 	</div>
                 	<div class="index_shop_textitem">
-                		<p class="index_centershop_toptitle">万科云溪洗车店</p>
+                		<p class="index_centershop_toptitle">{{item.name}}</p>
                 		<div class="index_shop_centertext">
                 			<p class="index_centershop_centertitle">维修保养</p>
                 			<img src="../../static/img/index_star.png">
@@ -203,7 +84,7 @@
                 			<img src="../../static/img/index_star.png">
                 			<img src="../../static/img/index_star.png">
                 		</div>
-                		<p class="index_centershop_bottomtitle">山西省太原市小区店***号</p>
+                		<p class="index_centershop_bottomtitle">{{item.address}}</p>
                 	</div>
                   <a href="javascript:'">
                     <div class="index_shop_righttext">
@@ -212,54 +93,6 @@
                     </div>
                   </a>
                 </div>
-                <div class="index_shop_item">
-                	<div class="index_shop_picitem">
-                		<img src="../../static/img/index_shop.png">
-                	</div>
-                	<div class="index_shop_textitem">
-                		<p class="index_centershop_toptitle">万科云溪洗车店</p>
-                		<div class="index_shop_centertext">
-                			<p class="index_centershop_centertitle">维修保养</p>
-                			<img src="../../static/img/index_star.png">
-                			<img src="../../static/img/index_star.png">
-                			<img src="../../static/img/index_star.png">
-                			<img src="../../static/img/index_star.png">
-                			<img src="../../static/img/index_star.png">
-                		</div>
-                		<p class="index_centershop_bottomtitle">山西省太原市小区店***号</p>
-                	</div>
-                  <a href="javascript:'">
-                    <div class="index_shop_righttext">
-                        <img class="position_img" src="../../static/img/index_navigation.png">
-                        <p>1km</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="index_shop_item">
-                	<div class="index_shop_picitem">
-                		<img src="../../static/img/index_shop.png">
-                	</div>
-                	<div class="index_shop_textitem">
-                		<p class="index_centershop_toptitle">万科云溪洗车店</p>
-                		<div class="index_shop_centertext">
-                			<p class="index_centershop_centertitle">维修保养</p>
-                			<img src="../../static/img/index_star.png">
-                			<img src="../../static/img/index_star.png">
-                			<img src="../../static/img/index_star.png">
-                			<img src="../../static/img/index_star.png">
-                			<img src="../../static/img/index_star.png">
-                		</div>
-                		<p class="index_centershop_bottomtitle">山西省太原市小区店***号</p>
-                	</div>
-                  <a href="javascript:'">
-                    <div class="index_shop_righttext">
-                        <img class="position_img" src="../../static/img/index_navigation.png">
-                        <p>1km</p>
-                    </div>
-                  </a>
-                </div>
-
-
             </div>
         </div>
       </div>
@@ -275,34 +108,50 @@
     name: 'index',
     data() {
       return {
-        msg: 'index'
+        msg: 'index',
+        banner:[],
+        types:[],
+        merchant:[]
       }
     },
     mounted:function() {
-
-        this.$addr.get('index/index/index')
+        this.$addr.get('/index/index/index')
                                .then(response => {
-                                console.log(response)
+                                 console.log(this)
+                                console.log(response.data.result)
+                                 this.banner = response.data.result.banner;
+                                 console.log(this.banner)
+                                 this.types = response.data.result.types;
+                                 this.merchant=response.data.result.merchant
+                                 console.log(this.merchant)
+                                 this.$nextTick(function(){
+                                   this.doswiper()
+                                 })
                               } )
-        var swiper = new Swiper('.swiper-container1', {
-            slidesPerView: 4,
-            slidesPerColumn:2,
-            spaceBetween: 0,
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            },
-        });
-        var swiper = new Swiper('.swiper-container2', {
-           spaceBetween: 15,
-          pagination: {
-            el: '.swiper-pagination',
-          },
-        });
 
     },
     methods:{
-
+      doswiper(){
+        // swiper
+          var swiper = new Swiper('.swiper-container1', {
+              slidesPerView: 4,
+              slidesPerColumn:2,
+              spaceBetween: 0,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+          });
+          var swiper = new Swiper('.swiper-container2', {
+             spaceBetween: 15,
+            pagination: {
+              el: '.swiper-pagination',
+            },
+          });
+      },
+      index_run(movieId){
+        console.log(movieId)
+      }
     }
   }
 </script>

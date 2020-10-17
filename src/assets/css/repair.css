@@ -1,13 +1,17 @@
  * {padding:0;margin:0;box-sizing:border-box;}
   body,html {height:100%;}
   .repair_all {height:100%;}
+  /* 头部banner */
   .repair_top {height:25%;width:100%;}
   .repair_top>img {height:100%;width:100%;}
   .repair_center {height:75%;}
+  /* 筛选 */
   .center_screen {height:8%;display:flex;justify-content:space-between;align-items:flex-end;}
   select {height:100%;width:30%;color:#868686;font-size:12px;text-align:center;outline:none;border:none;text-align:center;text-align-last:center;background-color:#FFFFFF;}
+  /* 地图 */
   .center_navigation {height:55%;background-color:#f5f5f5;}
   .shop {padding:10px;margin:0 auto;}
+  /* 弹框内容 */
   .layui-layer-content {height:100%;}
   .layui-layer {border-radius:10px !important;}
   .upper {display:flex;}

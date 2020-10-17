@@ -20,6 +20,7 @@ import detailed from '@/view/detailed'
 import exchange from '@/view/exchange'
 import rule from '@/view/rule'
 import tyre from '@/view/tyre'
+import integral from '@/view/integral'
 Vue.use(Router)
 
 export default new Router({
@@ -124,6 +125,11 @@ export default new Router({
         path:'/tyre',
         name: 'tyre',
         component:tyre
-      }
+      },
+      {
+        path:'/integral',
+        name: 'integral',
+        component:integral
+      },
   ]
 })
