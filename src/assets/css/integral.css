@@ -165,3 +165,24 @@
   font-size: 10px;
   width: 80%;
 }
+ .layui-layer-content{
+   height: 100%;
+ }
+/* .integral_layer{
+  height: 150px;
+  width: 70%;
+} */
+.integral_layer>img{
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  margin: auto;
+
+}
+.integral_layer_center{
+  height: 90%;
+  width: 100%;
+  margin-top: 25px;
+  background: url(../../../static/img/8.png) no-repeat 0.0 ;
+  background-size: 100%;
+}

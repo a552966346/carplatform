@@ -116,6 +116,7 @@
             </div>
 
       </div>
+
     </div>
   </div>
 </template>
@@ -144,12 +145,17 @@
           //样式类名
           closeBtn: 1, //不显示关闭按钮
           anim: 2,
-          area: ['75%', 'auto'],
-          offset: '400px',
+          area: ['75%', '250px'],
+          // offset: '400px',
           shade: 0.4,
           id: 'one',
           shadeClose: true, //开启遮罩关闭
-          content: `11111`
+          content: `   <div class="integral_layer">
+        <img src="../../static/img/integral_top.png" alt="">
+        <div class="integral_layer_center">
+
+        </div>
+      </div>`
         })
       }
     }

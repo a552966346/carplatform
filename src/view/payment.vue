@@ -2,7 +2,7 @@
   <div class="payment_all">
   	<div class="payment_top">
   		<div class="top_img">
-  			<img src="../../static/img/card.png" >
+  			<!-- <img src="../../static/img/card.png" > -->
   			<div class="top_img_xinxi">
   				<p>LALALA</p>
   				<a href="#">开通自动续费</a>
@@ -117,16 +117,37 @@
 </template>
 
 <script>
+  import Swiper from 'swiper';
+  import 'swiper/dist/css/swiper.min.css';
   export default {
     name: 'payment',
     data() {
       return {
 
       }
-    }
+    },
+    mounted:function(){
+      this.$store.state.heard_title ='车平台 - 会员中心'
+         var mySwiper = new Swiper ('.swiper-container', {
+            slidesPerView: 3,
+         	spaceBetween: 10,
+           	  centeredSlidesBounds: true,
+           	  loop: false,
+                 pagination: {
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+                   hideOnClick: true,
+            }
+         	})
+       }
+
+      	// $(".swiper-slide").click(function(){
+      	// 	$(".swiper-slide").removeClass("color");
+      	// 	$(this).addClass("color");
+      	// })
   }
 </script>
 
-<style>
- 
+<style scoped>
+ @import '../assets/css/payment.css'
 </style>

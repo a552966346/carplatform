@@ -1,0 +1,136 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.wash_all{
+	height: 100%;
+	width: 100%;
+}
+.wash_lunbo{
+	width: 100%;
+	height: 30%;
+	padding: 15px 0 ;
+}
+ .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+  .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+	  transition: 300ms;
+	  transform: scale(0.8);
+    }
+	.swiper-slide>img{
+		width: 100%;
+		height: 100%;
+	}
+	.swiper-slide-active,.swiper-slide-duplicate-active{
+      transform: scale(1);
+	}
+	.wash_center{
+		height: 75%;
+	}
+	.center_screen{
+		height: 10%;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+	select{
+		height:100%;
+		width: 30%;
+		text-align: center;
+		outline: none;
+		border: none;
+		text-align:center;
+		text-align-last:center;
+		background-color: #FFFFFF;
+	}
+	.center_navigation{
+		height: 40%;
+		background-color: #f5f5f5;
+	}
+	
+.shop{
+	padding: 10px;
+	display: flex;
+	width: 100%;
+}
+.layui-layer{
+	border-radius: 10px !important;
+}
+.layui-layer-content{
+	height: 100%;
+	width: 100%;
+}
+.shop_text{
+	width: 75%;
+	padding: 0 5px;
+}
+.shop_text>p{
+	font-size: 10px;
+	font-weight: bold;
+}
+.shop_text_score{
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0 ;
+}
+.shop_text_score>p{
+	color: #E71919;
+	border: 1px solid #E71919;
+	padding: 1px 2px;
+	border-radius: 5px;
+}
+.shop_text_score>p:last-child{
+	border: none;
+}
+.shop_text_score>p>span{
+	color:#F29D97 ;
+	padding-right: 5px;
+}
+.shop_left{
+	width: 100%;
+}
+.shop_left>p{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.shop_a{
+	width: 25%;
+	display: flex;
+}
+.shop_a>a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #03ACEE;
+	font-size: 12px;
+}
+.shop_a>a>img{
+	height: 15px;
+	width: 10px;
+	margin:  auto 0;
+	margin-left: 5px;
+}
+	
+	

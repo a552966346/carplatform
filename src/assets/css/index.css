@@ -53,7 +53,7 @@
     /* 右侧内容 */
     .index_shop_item>a{width: 20%;display: flex;align-items: center;justify-content: center;}
     .index_shop_centertext{display: flex;align-items: center;}
-    .index_shop_centertext img{width: 12px;height: 12px;margin: 0px 3px;}
+    .index_shop_centertext img{width: 50%;height: 12px;margin-left: 5px;}
     .index_shop_righttext{width: 100%;text-align: center;}
     .index_shop_righttext img{width: 40px;margin-bottom: 6px;}
     .index_shop_righttext p{font-size: 12px;color:#00abee;}

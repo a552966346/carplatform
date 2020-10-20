@@ -7,7 +7,7 @@
 .center_one_all {padding:0 10px;}
 .examination_position {display:flex;height:35px;align-items:center;font-size:12px;padding-left:10px;}
 .examination_position>p {padding-left:10px;}
-.examination_position>select {width:80%;height:35px;border:none;padding-left:20px;color:#aaaaaa;outline:none;font-size:10px;}
+.examination_position>input {width:80%;height:35px;border:none;padding-left:20px;color:#aaaaaa;outline:none;font-size:10px;}
 .examination_location {height:200px;background-color:#F5F5F5;}
 .center_one_inp {height:80px;padding:0 10px;}
 .examination_inp {height:40px;display:flex;align-items:center;border-bottom:1px solid #CCCCCC;/* padding:0 10px;*/}
@@ -33,4 +33,6 @@
 .last_left>img {height:25px;}
 .last_left>p {font-size:8px;}
 .last_right>a {text-decoration:none;background-color:#F5C92E;color:#FFFFFF;font-size:12px;padding:2px 7px;border-radius:10px;}
+.poi-title{display: none !important;}
+.poi-info .poi-tab a{display: none !important;}
 .break {color:#F5C92E;border-bottom:2px solid #F5C92E;}

@@ -12,7 +12,7 @@
   .center_navigation {height:55%;background-color:#f5f5f5;}
   .shop {padding:10px;margin:0 auto;}
   /* 弹框内容 */
-  .layui-layer-content {height:100%;}
+  .layui-layer-content {height:100%; }
   .layui-layer {border-radius:10px !important;}
   .upper {display:flex;}
   .upper_img {padding:5px;width:25%;}

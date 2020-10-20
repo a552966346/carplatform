@@ -80,16 +80,12 @@ export default {
     }
   },
  methods:{
-    vip:function(){
+    vip(){
         console.log("开通会员");
+      this.$router.push('/payment')
     },
-    add:function(){
-      this.$router.push({
-              name: 'add_vehicle',
-              // params: {
-
-              // }
-            })
+    add(){
+      this.$router.push('/add_vehicle')
       console.log("添加车辆")
     },
   }
@@ -100,4 +96,3 @@ export default {
   @import '../assets/css/exclusive_services.css'
 
 </style>
-

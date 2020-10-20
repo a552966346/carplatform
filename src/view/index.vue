@@ -26,7 +26,7 @@
                 <!-- 审车代办 -->
                 <div class="swiper-slide" v-for="(item,index) in types" :key='index'>
                   <div class="index_menu_item">
-                    <a href="#" @click="index_run(item.id)">
+                    <a href="#" @click="index_run()">
                       <div class="index_menu_item1">
                         <div class="activity_management">
                           <img :src="item.logoimage" />
@@ -78,18 +78,14 @@
                 		<p class="index_centershop_toptitle">{{item.name}}</p>
                 		<div class="index_shop_centertext">
                 			<p class="index_centershop_centertitle">维修保养</p>
-                			<img src="../../static/img/index_star.png">
-                			<img src="../../static/img/index_star.png">
-                			<img src="../../static/img/index_star.png">
-                			<img src="../../static/img/index_star.png">
-                			<img src="../../static/img/index_star.png">
+                			<img :src=" index_star(item.star)">
                 		</div>
                 		<p class="index_centershop_bottomtitle">{{item.address}}</p>
                 	</div>
                   <a href="javascript:'">
                     <div class="index_shop_righttext">
                         <img class="position_img" src="../../static/img/index_navigation.png">
-                        <p>1km</p>
+                        <p>{{item.weigh}}km</p>
                     </div>
                   </a>
                 </div>
@@ -111,7 +107,15 @@
         msg: 'index',
         banner:[],
         types:[],
-        merchant:[]
+        merchant:[],
+        star:[
+         require('../../static/img/stars_one.png'),
+         require('../../static/img/stars_two.png'),
+         require('../../static/img/stars_three.png'),
+         require('../../static/img/stars_four.png'),
+         require('../../static/img/stars_five.png')
+        ],
+        stats:[],
       }
     },
     mounted:function() {
@@ -131,6 +135,7 @@
 
     },
     methods:{
+
       doswiper(){
         // swiper
           var swiper = new Swiper('.swiper-container1', {
@@ -151,6 +156,27 @@
       },
       index_run(movieId){
         console.log(movieId)
+      },
+      index_star(str){
+          switch(str){
+            case '1' :
+            return this.star[0];
+            break;
+            case '2' :
+            return this.star[1];
+            break;
+            case '3' :
+            return this.star[2];
+             console.log("------")
+            break;
+            case '4' :
+           return  this.star[3];
+            break;
+            case '5':
+            return this.star[4];
+             console.log('+++++')
+            break;
+          }
       }
     }
   }

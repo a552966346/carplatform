@@ -21,6 +21,7 @@ import exchange from '@/view/exchange'
 import rule from '@/view/rule'
 import tyre from '@/view/tyre'
 import integral from '@/view/integral'
+import wash from '@/view/wash'
 Vue.use(Router)
 
 export default new Router({
@@ -130,6 +131,11 @@ export default new Router({
         path:'/integral',
         name: 'integral',
         component:integral
+      },
+      {
+        path:'/wash',
+        name: 'wash',
+        component:wash
       },
   ]
 })

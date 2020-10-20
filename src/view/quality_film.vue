@@ -36,6 +36,7 @@ export default {
     }
   },
   mounted:function(){
+      this.$store.state.heard_title ='车平台 - 车辆检修'
       //定义地图中心点坐标
       var center = new TMap.LatLng(39.984120, 116.307484)
       //定义map变量，调用 TMap.Map() 构造函数创建地图
