@@ -9,15 +9,15 @@
 
   input[name="phone"] {width:80%;padding: 5px 0px;text-align: right;font-size: 14px;border: none;outline: none;}
   .register_common>div{font-size: 14px;width:78%;text-align: right;}
-
+input[name="address"] {width:70%;padding: 5px 0px;text-align: right;font-size: 14px;border: none;outline: none;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
   .register_distance{width: 70%!important;}
   input[name="distance"] {width:70%;;font-size: 14px;border: none;outline: none;color: #333;text-align: right;padding-right: 5px;}
   input[type="radio"] {font-size: 14px;}
   input::placeholder {font-size: 14px;color: #999;}
   /* .register_address{width:80%;text-align: right;} */
-  .register_address>select{border: none;outline: none;text-align-last: right;}
+  .register_address>select{border: none;outline: none;text-align-last: right;background-color: #FFFFFF;}
   /* .register_number{display: flex;align-items: center;} */
-  .register_number>select{border: none;outline: none;padding: 5px 0px;color: #F8D11F;}
+  .register_number>select{border: none;outline: none;padding: 5px 0px;color: #F8D11F;background-color: #FFFFFF;}
   .register_number>input{width: 60%;text-align: right;border: none;outline: none;padding: 5px 0px;}
   /* 按钮 */
   .register_btn{width: 100%;text-align: center;}

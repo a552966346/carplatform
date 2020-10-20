@@ -11,15 +11,15 @@
         <p>验证码</p>
         <div class="register_code">
           <input type="text" placeholder="请输入验证码" name="Verification" v-model="verification">
-          <button @click="verification_code">获取验证码</button>
+          <button @click="verification_code()">获取验证码</button>
         </div>
       </div>
       <!-- 性别 -->
       <div class="register_common">
       	<p>性别</p>
       	<div>
-      		<input type="radio" value="man" name="sex" v-model="sex">男
-      		<input type="radio" value="women" name="sex" v-model="sex">女
+      		<input type="radio" value="1" name="sex" v-model="sex">男
+      		<input type="radio" value="2" name="sex" v-model="sex">女
       	</div>
       </div>
       <!-- 常住地 -->
@@ -45,6 +45,10 @@
               <option value="山西省">山西省</option>
             </select>
       	</div>
+      </div>
+      <div class="register_common">
+        <p>详细地址</p>
+          <input type="text" name="address" v-model="address" placeholder="请输入您的详细地址"/>
       </div>
       <!-- 车牌号码 -->
       <div class="register_common">
@@ -81,28 +85,32 @@
             return {
               phone_number:"",//手机号
               verification:"",//验证码
-              sex:"man",
+              sex:"1",
               province:"山西省",
               city:'晋中市',
               area:'小店区',
+              address:'',
               plate:"晋",
               car_number:'',
               kilometre:""
             }
         },
+        mounted:function(){
+          this.$store.state.heard_title ='车平台 - 注册';
+        },
         methods: {
           //获取验证码
-          verification_code:function(verification){
+          verification_code:function(){
             var that = this;
               layui.use('layer', function(){
                 var layer = layui.layer;
                var index = layer.load(1, {
                	shade: [0.2, '#000'] //0.2透明度的黑色背景
                });
-              that.$addr.get('v1/bpi/currentprice.json')
-                                     .then(response => {
-                                     //  console.log(response)
-                              } )
+              // that.$addr.get('v1/bpi/currentprice.json')
+              //                        .then(response => {
+              //                        //  console.log(response)
+              //                 } )
             });
           },
           //注册
@@ -110,9 +118,7 @@
               var that = this;
               layui.use('layer', function(){
                 var layer = layui.layer;
-               console.log(that.phone_number)
-               console.log(that.verification)
-               console.log(that.sex)
+
                //console.log(that)
               //判断输入
               if(that.phone_number==""){
@@ -136,14 +142,33 @@
 
               else{
                 // 请求数据
-                that.$addr.get('v1/bpi/currentprice.json')
-                       .then(response => {
-                       layer.msg('注册成功')
-                        console.log(response)
-                 //        that.$router.push({
-                 //          name: 'index',
-                 // })
+                console.log()
+                that.$addr.post('/index/register/index',{
+
+                    mobile : that.phone_number,
+                    gender: that.sex,
+                    province: that.province ,
+                    city: that.city,
+                    district: that.area,
+                    address: that.address,
+                    number: that.plate + that.car_number,
+                    km: that.kilometre
+                })
+                  .then(response => {
+                   console.log(response.data.code)
+                    layui.use('layer', function(){
+                      var layer = layui.layer;
+                      layer.msg('注册成功')
+                    if(response.data.code == 200){
+                             that.$router.push({
+                               name: 'index',
+                      })
+                    }
+                })
               })
+              .catch(function (error) {
+                console.log(error);
+              });
             }
           });
         }

@@ -5,23 +5,23 @@
   		<!-- <p  :class="{bottom: bottom}" @click="isbutton_two">收入</p>
   		<p  :class="{bottom: bottom}" @click="isbutton_three">支出</p> -->
   	</div>
-  	<div class="detailed_center" v-show="">
-  		<div class="center_text"  v-for="cent in det_obtain">
-  			<p>{{cent.obt_text}}</p>
-  			<p>{{cent.obt_nub}}</p>
+  	<div class="detailed_center" v-show="bottom==0">
+  		<div class="center_text"  >
+  			<p>签到成功</p>
+  			<p>+100</p>
   		</div>
   	</div>
-  	<div class="detailed_center"  v-show="">
-  		<div class="center_text"  v-for="cent in det_obtain">
-  			<p>{{cent.obt_text}}</p>
-  			<p>{{cent.obt_nub}}</p>
+  	<div class="detailed_center"  v-show="bottom==1">
+  		<div class="center_text"  >
+  			<p>签到成功</p>
+  			<p>+200</p>
   		</div>
 
   	</div>
-  	<div class="detailed_center"  v-show="">
-  		<div class="center_text"  v-for="cent in det_obtain">
-  			<p>{{cent.obt_text}}</p>
-  			<p>{{cent.obt_nub}}</p>
+  	<div class="detailed_center"  v-show="bottom==2">
+  		<div class="center_text">
+  			<p>签到成功</p>
+  			<p>+300</p>
   		</div>
 
   	</div>
@@ -34,9 +34,9 @@
     data() {
       return {
         det_top:[
-          {'text': "全部",id:'1'},
-          {'text': "收入",id:'2'},
-          {'text': "支出",id:'3'}
+          {'text': "全部"},
+          {'text': "收入"},
+          {'text': "支出"}
         ],
         det_obtain:[
          { 'obt_text':'签到成功','obt_nub':'+100'},
