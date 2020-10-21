@@ -12,7 +12,7 @@ import personal_center from '@/view/personal_center'
 import repair_maintenance from '@/view/repair_maintenance'
 import store_details from '@/view/store_details'
 import quality_film from '@/view/quality_film'
-import repair from '@/view/repair'
+import Film from '@/view/Film'
 import payment from '@/view/payment'
 import cosmetology from'@/view/cosmetology'
 import examination from '@/view/examination'
@@ -88,9 +88,9 @@ export default new Router({
       component:quality_film
     },
     {
-      path:'/repair',
-      name: 'repair',
-      component:repair
+      path:'/Film',
+      name: 'Film',
+      component:Film
     },
     {
       path:'/payment',

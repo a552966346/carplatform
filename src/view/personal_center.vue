@@ -206,25 +206,25 @@ export default {
     //审车代办
     examination:function(){
       this.$router.push({
-         name: '',
+         name: 'examination',
        })
     },
     //维修与救援
     repair:function(){
       this.$router.push({
-         name: '',
+         name: 'quality_film',
        })
     },
     //快修与保养
     maintain:function(){
       this.$router.push({
-         name: '',
+         name: 'repair_maintenance',
        })
     },
     //轮胎更换
     tire:function(){
       this.$router.push({
-         name: '',
+         name: 'tyre',
        })
     },
     //专家在线
@@ -236,7 +236,7 @@ export default {
     //品质贴膜
     quality:function(){
       this.$router.push({
-         name: '',
+         name: 'Film',
        })
     },
     //会员中心

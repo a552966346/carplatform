@@ -26,7 +26,7 @@
                 <!-- 审车代办 -->
                 <div class="swiper-slide" v-for="(item,index) in types" :key='index'>
                   <div class="index_menu_item">
-                    <a href="#" @click="index_run()">
+                    <a href="#" @click="index_run(item.vue)">
                       <div class="index_menu_item1">
                         <div class="activity_management">
                           <img :src="item.logoimage" />
@@ -118,16 +118,21 @@
         stats:[],
       }
     },
+    created(){
+        this.$nextTick(() => {
+               this.doswiper()
+             })
+    },
     mounted:function() {
         this.$addr.get('/index/index/index')
                                .then(response => {
-                                 console.log(this)
+                                // console.log(this)
                                 console.log(response.data.result)
                                  this.banner = response.data.result.banner;
-                                 console.log(this.banner)
+                                 //console.log(this.banner)
                                  this.types = response.data.result.types;
                                  this.merchant=response.data.result.merchant
-                                 console.log(this.merchant)
+                                 //console.log(this.merchant)
                                  this.$nextTick(function(){
                                    this.doswiper()
                                  })
@@ -135,27 +140,35 @@
 
     },
     methods:{
-
       doswiper(){
         // swiper
+        setTimeout(()=>{
           var swiper = new Swiper('.swiper-container1', {
+
               slidesPerView: 4,
               slidesPerColumn:2,
               spaceBetween: 0,
               pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
+                  el: '.swiper-pagination',
+                  clickable: true,
               },
           });
           var swiper = new Swiper('.swiper-container2', {
-             spaceBetween: 15,
+            autoplay: true,
+            spaceBetween: 15,
+            loop:true,
             pagination: {
               el: '.swiper-pagination',
             },
           });
+        })
       },
+      // 项目挑传
       index_run(movieId){
         console.log(movieId)
+        this.$router.push({
+           name: movieId,
+         })
       },
       index_star(str){
           switch(str){

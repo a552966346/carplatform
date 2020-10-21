@@ -1,13 +1,13 @@
  * {padding:0;margin:0;box-sizing:border-box;text-decoration: none;list-style: none;}
   .payment_all {height:100%;overflow: auto;padding-bottom: 500px;}
-  .payment_top {height:200px;}
-  .top_img {height:150px;width:100%;background: url(../../../static/img/card.png)no-repeat 0.0;background-size: 90%;top: 50px;background-position:center;display: flex;flex-direction: column;}
+  .payment_top {height:130px;padding: 20px 20px;background-color: #000000;}
+  .top_img {height:150px;width:100%;background: url(../../../static/img/card.png)no-repeat 0.0;background-size: 100%;top: 50px;background-position:center;display: flex;flex-direction: column;overflow: hidden;border-radius: 10px;}
   /* .top_img>img {height:150px;position:absolute;top:60px;} */
-  .top_img_xinxi {height:50px;padding-left:100px;padding-top:15px;width:300px;position:relative;}
+  .top_img_xinxi {height:50px;padding-left:80px;padding-top:15px;width:300px;position:relative;}
   .top_img_xinxi>p {font-size:14px;color:#825C24;}
   .top_img_xinxi>a {color:#825C24;font-size:12px;text-decoration:none;}
-  .top_img>p:last-child {top:125px;right:65px;color:#825C24;line-height:2px;}
-  .payment_center {height:70%;padding-top:10px;}
+  .top_img>p:last-child {color:#825C24;line-height:9;text-align: end;padding: 0 40px;}
+  .payment_center {height:70%;padding-top:70px;}
   .swiper-container {width:100%;height:150px;padding:0 30px;}
   .swiper-slide {height:140px;text-align:center;font-size:18px;background:#fff;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;transition-property:all;overflow:hidden;border-radius:10px;box-shadow:-1px 1px 3px 3px #f5f5f5;border:1px solid #F5F5F5;}
   #progressEffect {position:absolute;z-index:10;top:20px;left:20px;}

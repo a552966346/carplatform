@@ -4,9 +4,7 @@
   	<div class="wash_lunbo">
   		<div class="swiper-container">
   			<div class="swiper-wrapper">
-  				<div class="swiper-slide wash_b1"><img src="../../static/img/wash_one.png" ></div>
-  				<div class="swiper-slide wash_b1"><img src="../../static/img/wash_two.png" ></div>
-  				<div class="swiper-slide wash_b1"><img src="../../static/img/wash_three.png" ></div>
+  				<div class="swiper-slide wash_b1" v-for="(item,index) in detailimages "><img :src="item" ></div>
   			</div>
   		</div>
   	</div>
@@ -14,21 +12,29 @@
   		<!-- 筛选 -->
   		<div class="center_screen">
   			<select name="data">
-  				<option value="1">榆次区</option>
+          <option value="0">洗车方式</option>
+  				<option v-for="(item,index) in category" :key="item.id" :value="item.name" >{{item.introduce}}</option>
   			</select>
   			<select name="sort">
-  				<option value="1">默认排序</option>
+  				<option v-for="(item,index) in star" :key="item" value="1">{{item}}级</option>
   			</select>
   			<select name="screen">
   				<option value="1">筛选</option>
   			</select>
 
   		</div>
+      <div class="center_text">
+
+      </div>
   			<!-- 导航 -->
   		<div class="center_navigation" id="container" @click="shop">
 
   		</div>
+
+
+
   	</div>
+
   </div>
 </template>
 
@@ -41,22 +47,23 @@ import Swiper from 'swiper';
       return {
         urls: require('../../static/img/daohang.png'),
         urlp: require('../../static/img/phone.png'),
+        data:[],
+        merchant:[],
+        category:[],
+        latitude:'',
+        longitude:'',
+        star:[1,2,3,4,5],
+        detailimages :[],
       }
     },
     mounted:function(){
-       this.$store.state.heard_title ='车平台 - 洗车'
-       var mySwiper = new Swiper ('.swiper-container', {
-           loop: true, // 循环模式选项
-          slidesPerView: 1.2,
-       	spaceBetween: -15,
-         	  centeredSlides: true,
-         	  loop: true,
-               pagination: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-                 hideOnClick: true,
-               },
-       	})
+      var that = this
+      // for(let i=0; i<=that.merchant.length; i++){
+      //    markerss.id =  that.merchant.id;
+      //    markerss.position = new TMap.latLng(that.merchant.lat,that.merchant.lng)
+      // }
+       that.$store.state.heard_title ='车平台 - 洗车'
+
         //定义地图中心点坐标
         var center = new TMap.LatLng(39.984120, 116.307484)
         //定义map变量，调用 TMap.Map() 构造函数创建地图
@@ -65,9 +72,37 @@ import Swiper from 'swiper';
             zoom: 11,   //设置地图缩放级别
             viewMode:'2D',
         });
+        that.$addr.get('index/service/wash')
+            .then(res=>{
+                console.log(res.data.result)
+                that.data = res.data.result.data,
+                that.merchant = that.data.merchant,
+                that.category = that.data.category,
+                console.log(that.merchant)
+                that.detailimages = that.data.detailimages
+                that.$nextTick(function(){
+                  that.doswiper()
+                })
+            })
+            var marker = new TMap.MultiMarker({
+                        id: 'marker-layer',
+                        map: map,
+                        styles: {
+                            "marker": new TMap.MarkerStyle({
+                                "width": 25,
+                                "height": 35,
+                                "anchor": { x: 16, y: 32 },
+                                "src": 'https://mapapi.qq.com/web/lbs/javascriptGL/demo/img/markerDefault.png'
+                            })
+                        },
+                        // geometries: [markerss]
+                        })
+                    marker.on("click", (evt)=>{
+                      this.shop()
+                    })
     },
     methods: {
-      shop: function() {
+      shop() {
         var that = this;
         console.log(that.urls)
         layui.use('layer', function() {
@@ -85,25 +120,58 @@ import Swiper from 'swiper';
             shade: 0.01,
             id: 'one',
             shadeClose: true, //开启遮罩关闭
-            content: `<div class="shop">
-									<div class="shop_text">
-										<p>路虎养车(晋中文苑东街店)</p>
-										<div class="shop_text_score">
-											<p>快修店</p>
-											<p>5级</p>
-											<p><span>评分</span>5.0</p>
-										</div>
-										<div class="shop_left">
-											<p>山西省晋中市榆次区文苑街239号安徽的卡号啊</p>
-										</div>
-									</div>
-									<div class="shop_a">
-										<a href="#">查看详情<img src="img/right.png" ></a>
+            content: ` <div class="shop" ref="total" v-for="(item,index) in merchant">
+                <div class="upper">
+                  <div class="upper_img">
+                    <img :src="item.banner" />
+                  </div>
+                  <div class="upper_text">
+                    <div class="upper_text_top">
+                      <p>{{item.name}}</p>
+                      <a href="#"><img src="${that.urls}">
+                      导航</a>
+                    </div>
+                    <div class="upper_text_score">
+                      <p>快修店</p>
+                      <p>{{item.star}}级</p>
+                      <p><span>评分</span>{{item.star}}.0</p>
+                    </div>
+                    <div class="upper_text_phont">
+                      <img src="${that.urlp}" >
+                      <p>{{item.mobile}}</p>
+                    </div>
+                  </div>
 
-									</div>
-								</div>`
+                </div>
+                <div class="bottom">
+                  <div class="bottom_left">
+                    <p>{{item.address}}</p>
+                  </div>
+                  <div class="bottom_right">
+                    <a href="#">立即预约</a>
+                  </div>
+                </div>
+              </div>`
           });
         });
+      },
+      marker(){
+        var that = this
+
+      },
+      doswiper(){
+        var mySwiper = new Swiper ('.swiper-container', {
+             loop: true, // 循环模式选项
+             slidesPerView: 1.2,
+             spaceBetween: -15,
+          	  centeredSlides: true,
+          	  loop: true,
+             pagination: {
+                 nextEl: '.swiper-button-next',
+                 prevEl: '.swiper-button-prev',
+                 hideOnClick: true,
+                },
+        	})
       }
     }
   }

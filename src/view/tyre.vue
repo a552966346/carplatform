@@ -27,7 +27,7 @@
   			</select>
   		</div>
   			<!-- 导航 -->
-  		<div class="center_navigation" id="container">
+  		<div class="center_navigation" id="container" >
 
   		</div>
     </div>

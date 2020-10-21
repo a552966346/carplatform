@@ -173,9 +173,9 @@
   width: 70%;
 } */
 .integral_layer>img{
-  height: 50px;
-  width: 50px;
-  position: absolute;
+  height: 20px;
+  width: 20px;
+  /* position: absolute; */
   margin: auto;
 
 }

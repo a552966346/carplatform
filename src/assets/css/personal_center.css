@@ -18,7 +18,7 @@
   .top_top_set{width: 50px;display: flex;align-items: center;justify-content: flex-end;}
   .top_top_set>a{color: #FADDB3;font-size: 14px;}
   /* 登录块 */
-  .personalcenter_bottom{display: flex;padding: 10px 0px;}
+  .personalcenter_bottom{display: flex;padding: 10px 0px; text-align: center;}
   .personalcenter_bottom a{flex: 1;}
   .personalcenter_bottom_item{color: #FADDB3;font-size: 12px;}
   .personalcenter_bottom_item p:nth-child(1){padding-bottom: 5px;height: 20px;}

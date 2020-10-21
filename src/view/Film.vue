@@ -1,9 +1,9 @@
 <template>
-  <div class="repair_all">
-    <div class=" repair_top">
+  <div class="Film_all">
+    <div class=" Film_top">
       <img src="../../static/img/maintain.png">
     </div>
-    <div class=" repair_center">
+    <div class=" Film_center">
       <!-- 筛选 -->
       <div class="center_screen">
         <select name="data">
@@ -28,7 +28,7 @@
 <script>
   // import layer from 'layui'
   export default {
-    name: 'repair',
+    name: 'Film',
     data() {
       return {
         urls: require('../../static/img/daohang.png'),
@@ -36,7 +36,7 @@
       }
     },
     mounted:function(){
-       this.$store.state.heard_title ='车平台 - 车辆保养'
+       this.$store.state.heard_title ='车平台 - 品质贴膜'
         //定义地图中心点坐标
         var center = new TMap.LatLng(39.984120, 116.307484)
         //定义map变量，调用 TMap.Map() 构造函数创建地图
@@ -105,6 +105,6 @@
 </script>
 
 <style scoped>
-  @import '../assets/css/repair.css'
+  @import '../assets/css/Film.css'
 
 </style>
