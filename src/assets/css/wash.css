@@ -67,7 +67,7 @@
 		height: 40%;
 		background-color: #f5f5f5;
 	}
-	
+
 .shop {padding:10px;margin:0 auto;}
 .layui-layer-content {height:100%;}
 .layui-layer {border-radius:10px !important;}
@@ -87,8 +87,12 @@
 .upper_text_phont {padding:5px 0;display:flex;color:#3E9FD7;align-items:center;letter-spacing:1px;font-size:12px;}
 .upper_text_phont>img {height:15px;}
 .upper_daohang {width:18%;}
+.center{display: flex;width: 100%;align-items: center;}
+.center>div{display: flex;flex: 1;align-items: center;justify-content: center;}
+.center_left>p{background-color:#FEF6D2;color: #F8D11F;font-size: 11px;border-radius: 5px;padding: 2px 3px;}
+.center_right>p{font-size: 10px;color: #aaa;}
+.center_right>img{width: 15px;height: 12px;}
 .bottom {height:20%;display:flex;justify-content:space-between;align-items:center;}
 .bottom_left {width:70%;}
 .bottom_left>p {font-size:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
 .bottom_right>a {background-color:#F8D11F;color:#FFFFFF;border-radius:10px;padding:3px 6px;font-size:12px;text-decoration:none;}
-	
