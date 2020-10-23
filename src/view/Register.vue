@@ -11,7 +11,7 @@
         <p>验证码</p>
         <div class="register_code">
           <input type="text" placeholder="请输入验证码" name="Verification" v-model="verification">
-          <button @click="verification_code()">获取验证码</button>
+          <button @click="verification_code" :disabled="bled">{{text}}</button>
         </div>
       </div>
       <!-- 性别 -->
@@ -92,25 +92,64 @@
               address:'',
               plate:"晋",
               car_number:'',
-              kilometre:""
+              kilometre:"",
+              bled:false,
+              text:"获取验证码"
             }
         },
         mounted:function(){
           this.$store.state.heard_title ='车平台 - 注册';
-        },
+
+          },
         methods: {
           //获取验证码
           verification_code:function(){
-            var that = this;
+            let that = this;
+            //验证手机号
               layui.use('layer', function(){
-                var layer = layui.layer;
-               var index = layer.load(1, {
-               	shade: [0.2, '#000'] //0.2透明度的黑色背景
-               });
-              // that.$addr.get('v1/bpi/currentprice.json')
-              //                        .then(response => {
-              //                        //  console.log(response)
-              //                 } )
+                let layer = layui.layer;
+/*                let index = layer.load(1, {
+              	shade: [0.1, '#fff'] //0.1透明度的白色背景
+              }); */
+                let reg1 = /^[1][3,4,5,7,8][0-9]{9}$/;
+                 let phone = that.phone_number.trim()
+                 //console.log(reg1.test(phone))
+                if(reg1.test(phone)){
+                    that.bled = true
+                    that.$addr.post('/index/register/input',{
+                        telephone:that.phone_number
+                      })
+                           .then(res => {
+                            console.log(res)
+                            if(res.data.code == 0){
+                              layer.close( layer.load(1, {
+                                  shade: [0.1, '#fff'] //0.1透明度的白色背景
+                                }) );
+                              layer.msg(res.data.result.msg);
+                            }else{
+                              layer.close( layer.load(1, {
+                                shade: [0.1, '#fff'] //0.1透明度的白色背景
+                              }));
+                              layer.msg(res.data.result.msg);
+                              var count = 60;
+                              that.text = "("+count+"秒)"
+                              count = count - 1
+                              var times = setInterval(function () {
+                              	if (count == 0) {
+                              		that.bled = false
+                              		that.text="获取验证码"
+                              		count = 60;
+                              		clearInterval(times)
+                              	} else {
+                              		 that.text = "("+count+"秒)"
+                              		count--;
+                              	}
+                              }, 1000)
+                            }
+                    } )
+                 }else{
+                   layer.msg("请输入正确手机号");
+                 }
             });
           },
           //注册
@@ -142,10 +181,9 @@
 
               else{
                 // 请求数据
-                console.log()
                 that.$addr.post('/index/register/index',{
-
                     mobile : that.phone_number,
+                    yzm:that.verification,
                     gender: that.sex,
                     province: that.province ,
                     city: that.city,
@@ -155,14 +193,16 @@
                     km: that.kilometre
                 })
                   .then(response => {
-                   console.log(response.data.code)
+                    console.log(response)
                     layui.use('layer', function(){
                       var layer = layui.layer;
-                      layer.msg('注册成功')
                     if(response.data.code == 200){
+                        layer.msg('注册成功')
                              that.$router.push({
                                name: 'index',
                       })
+                    }else{
+                       layer.msg(response.data.result.error)
                     }
                 })
               })

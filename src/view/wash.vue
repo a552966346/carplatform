@@ -12,15 +12,16 @@
   		<!-- 筛选 -->
   		<div class="center_screen">
   			<select name="data">
-          <option value="0">洗车方式</option>
+          <option >洗车方式</option>
   				<option v-for="(item,index) in category" :key="item.id" :value="item.name" >{{item.introduce}}</option>
   			</select>
   			<select name="sort">
+           <option >店铺等级</option>
   				<option v-for="(item,index) in star" :key="item" value="1">{{item}}级</option>
   			</select>
-  			<select name="screen">
-  				<option value="1">筛选</option>
-  			</select>
+  		<!-- 	<select name="screen">
+  				<option >筛选</option>
+  			</select> -->
 
   		</div>
       <div class="center_text">
@@ -30,9 +31,55 @@
   		<div class="center_navigation" id="container" >
 
   		</div>
+      <!-- 弹框 -->
+        <el-dialog
+          :visible.sync="centerDialogVisible"
+          width="90%"
+          modal
+          :show-close = "showcs"
+          close-on-click-modal
+          top=400px
+          center>
+          <div class="shop" ref="total" v-for="(item,index) in merchant" :key="item.id" v-show="shows==item.id">
+                    <div class="upper">
+                      <div class="upper_img">
+                        <img :src="item.banner" />
+                      </div>
+                      <div class="upper_text">
+                        <div class="upper_text_top">
+                          <p>{{item.name}}</p>
+                          <a href="#"><img src="../../static/img/daohang.png">
+                          导航</a>
+                        </div>
+                        <div class="upper_text_score">
+                          <p>快修店</p>
+                          <p>{{item.star}}级</p>
+                          <p><span>评分</span>{{item.star}}.0</p>
+                        </div>
+                        <div class="upper_text_phont">
+                          <img src="../../static/img/phone.png" >
+                          <p>{{item.mobile}}</p>
+                        </div>
+                      </div>
 
-
-
+                    </div>
+                    <div class="center">
+                      <div class="center_left"><p>精选服务</p></div>
+                      <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>普洗</p></div>
+                      <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>精洗</p></div>
+                      <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>全车内饰清洗</p></div>
+                      <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>打蜡</p></div>
+                    </div>
+                    <div class="bottom">
+                      <div class="bottom_left">
+                        <p>{{item.address}}</p>
+                      </div>
+                      <div class="bottom_right">
+                        <a href="#">立即预约</a>
+                      </div>
+                    </div>
+                  </div>
+        </el-dialog>
   	</div>
 
   </div>
@@ -45,9 +92,6 @@ import Swiper from 'swiper';
     name: 'repair',
     data() {
       return {
-        urls: require('../../static/img/daohang.png'),
-        urlp: require('../../static/img/phone.png'),
-        urlm: require('../../static/img/wash_weizhi.png'),
         data:[],
         merchant:[],
         category:[],
@@ -55,6 +99,9 @@ import Swiper from 'swiper';
         longitude:'',
         star:[1,2,3,4,5],
         detailimages :[],
+        centerDialogVisible: false,
+        shows:'',
+        showcs:false,
       }
     },
     mounted:function(){
@@ -72,6 +119,7 @@ import Swiper from 'swiper';
                 that.detailimages = that.data.detailimages
                 that.$nextTick(function(){
                   that.doswiper()
+
                   // console.log(that.marker(that.merchant))
                 })
                 let center = new TMap.LatLng(that.merchant[1].lat, that.merchant[1].lng)
@@ -82,8 +130,6 @@ import Swiper from 'swiper';
                     viewMode:'2D',
                 });
                     markerss = that.marker(that.merchant)
-                    console.log(markerss)
-
                   let marker = new TMap.MultiMarker({
                                id: 'container',
                                map: map,
@@ -98,71 +144,15 @@ import Swiper from 'swiper';
                                  geometries: markerss,
 
                               })
-                marker.on("click", that.shop)
+                              marker.on("click", that.shop)
             })
 
     },
     methods: {
-      shop(ent) {
-        console.log(ent)
-        let that = this;
-        //console.log(that.urls)
-        layui.use('layer', function() {
-          let layer = layui.layer;
-         // console.log(typeof(that))
-        // $(".layui-layer").css("background", "none");
-          layer.open({
-            type: 1,
-            title: false,
-            //样式类名
-            closeBtn: 0, //不显示关闭按钮
-            anim: 2,
-            area: ['90%', 'auto'],
-            offset: '400px',
-            shade: 0.01,
-            id: 'one',
-            shadeClose: true, //开启遮罩关闭
-            content: `<div class="shop" ref="total" v-for="(item,index) in merchant" :key="item.id">
-                      <div class="upper">
-                        <div class="upper_img">
-                          <img :src="item.banner" />
-                        </div>
-                        <div class="upper_text">
-                          <div class="upper_text_top">
-                            <p>{{item.name}}</p>
-                            <a href="#"><img src="${that.urls}">
-                            导航</a>
-                          </div>
-                          <div class="upper_text_score">
-                            <p>快修店</p>
-                            <p>{{item.star}}级</p>
-                            <p><span>评分</span>{{item.star}}.0</p>
-                          </div>
-                          <div class="upper_text_phont">
-                            <img src="${that.urlp}" >
-                            <p>{{item.mobile}}</p>
-                          </div>
-                        </div>
-
-                      </div>
-                      <div class="center">
-                        <div class="center_left"><p>精选服务</p></div>
-                        <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>普洗</p></div>
-                        <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>精洗</p></div>
-                        <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>全车内饰清洗</p></div>
-                        <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>打蜡</p></div>
-                      </div>
-                      <div class="bottom">
-                        <div class="bottom_left">
-                          <p>{{item.address}}</p>
-                        </div>
-                        <div class="bottom_right">
-                          <a href="#">立即预约</a>
-                        </div>
-                      </div>
-                    </div> `
-          });
-        });
+      shop(evt) {
+         console.log(evt.geometry.id)
+         this.shows =evt.geometry.id
+         this.centerDialogVisible = true
       },
       marker(ent){
         let that = this

@@ -137,5 +137,6 @@ export default new Router({
         name: 'wash',
         component:wash
       },
+      
   ]
 })

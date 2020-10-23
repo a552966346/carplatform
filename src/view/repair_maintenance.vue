@@ -56,6 +56,9 @@ export default {
     return {
       msg: 'repair_maintenance'
     }
+  },
+  mounted:function(){
+    this.$store.state.heard_title='车平台 - 快修与保养'
   }
 }
 </script>

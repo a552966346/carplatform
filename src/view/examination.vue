@@ -128,9 +128,10 @@
               zoom: 11,   //设置地图缩放级别
               viewMode:'2D',
           });
+          /* 点击地图添加marker*/
           map.on("click", (evt) => {
             console.log(evt)
-              that.removeMarker()
+              //that.removeMarker()
              markerLayer.add({
               position: evt.latLng
              });
@@ -212,12 +213,12 @@
         this.address = this.$route.query.addr; //路由地址
         this.city = this.$route.query.city; //路由城市
       },
-       removeMarker() {
-                  if (marker) {
-                      marker.setMap(null);
-                      marker = null;
+      /* removeMarker() {
+                  if (markerLayer) {
+                      markerLayer.setMap(null);
+                      markerLayer = null;
                   }
-              }
+              } */
      }
   }
 </script>
