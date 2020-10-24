@@ -10,9 +10,9 @@
         <!-- 门店介绍 -->
         <div class="store_top">
           <div class="top_left">
-            <p> 途牛养车(太原店)</p>
+            <p> {{merchant.name}}</p>
             <div class="top_left_text">
-              <p>店铺评分<span>5.0</span></p>
+              <p>店铺评分<span>{{merchant.star}}.0</span></p>
               <p>粉丝数<span>8982</span></p>
             </div>
           </div>
@@ -27,22 +27,22 @@
           <!-- 轮播图片 -->
           <div class="store_swiper_top">
             <!-- 轮播图 -->
-            <div class="store_swiper_cont">
+            <div class="store_swiper_cont" >
+              <div class="store_swiper_itemcont" ><img :src="merchant.bannerimages"></div>
+             <!-- <div class="store_swiper_itemcont"><img src="../../static/img/store_details_pic.jpg"></div>
               <div class="store_swiper_itemcont"><img src="../../static/img/store_details_pic.jpg"></div>
-              <div class="store_swiper_itemcont"><img src="../../static/img/store_details_pic.jpg"></div>
-              <div class="store_swiper_itemcont"><img src="../../static/img/store_details_pic.jpg"></div>
-              <div class="store_swiper_itemcont"><img src="../../static/img/store_details_pic.jpg"></div>
+              <div class="store_swiper_itemcont"><img src="../../static/img/store_details_pic.jpg"></div> -->
              <!-- <div style="width: 1px;"></div> -->
             </div>
             <!-- 地址 -->
             <div class="store_swiper_address">
                 <div class="store_swiper_leftaddress">
-                  <p>山西省太原市小店区</p>
+                  <p>{{merchant.address}}</p>
                   <p><i class="iconfont icon-dingwei"></i>距离您987.9km</p>
                 </div>
                 <div class="store_swiper_rightaddress">
-                    <span class="dianhua"><i class="iconfont icon-dianhua"></i></span>
-                    <span class="weixin"><i class="iconfont icon-weixin"></i></span>
+                    <a :href="'tel:'+merchant.mobile"> <span class="dianhua"><i class="iconfont icon-dianhua"></i></span></a>
+                    <a href=""><span class="weixin"><i class="iconfont icon-weixin"></i></span></a>
                 </div>
             </div>
           </div>
@@ -50,13 +50,13 @@
            <div class="store_swiper_bottom">
               <p>热门服务</p>
               <div class="store_swiper_lable">
-                <span class="active">普洗</span>
-                <span>精洗</span>
-                <span>全车内饰清洗</span>
-                <span>大面积沥青去除</span>
-                <span>打蜡</span>
-                <span>抛光</span>
-                <span>坐垫干洗</span>
+                <span :class="{active:active}">普洗</span>
+                <span :class="{active:active}">精洗</span>
+                <span :class="{active:active}">全车内饰清洗</span>
+                <span :class="{active:active}">大面积沥青去除</span>
+                <span :class="{active:active}">打蜡</span>
+                <span :class="{active:active}">抛光</span>
+                <span :class="{active:active}">坐垫干洗</span>
               </div>
            </div>
         </div>
@@ -80,13 +80,25 @@
     name: 'HelloWorld',
     data() {
       return {
-        msg: 'store_details'
+        msg: 'store_details',
+        id:"",
+        merchant:{},
+        active:""
       }
     },
     mounted:function(){
           this.$store.state.heard_title ='车平台 - 商家店面'
           let that = this
-          
+          that.id = that.$route.query.id
+          console.log(that.id)
+           that.$addr.post("index/index/merchant",{
+              id:that.id
+          })
+           .then(res=>{
+
+            that.merchant = res.data.result.merchant
+            console.log(that.merchant)
+           })
     },
   }
 </script>
