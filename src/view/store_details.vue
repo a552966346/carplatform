@@ -66,9 +66,9 @@
         <a href="tel:400-500-600">
           <div>联系商家</div>
         </a>
-        <a href="#">
+        <router-link to="appointment_details">
           <div>立即预约</div>
-        </a>
+        </router-link>
       </div>
     </div>
 
@@ -85,6 +85,8 @@
     },
     mounted:function(){
           this.$store.state.heard_title ='车平台 - 商家店面'
+          let that = this
+          
     },
   }
 </script>

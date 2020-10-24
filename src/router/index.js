@@ -78,7 +78,7 @@ export default new Router({
       component:repair_maintenance
     },
     {
-      path:'/store_details',
+      path:'/store_details/:id',
       name: 'store_details',
       component:store_details
     },

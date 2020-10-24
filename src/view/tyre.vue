@@ -15,7 +15,7 @@
 
   		</div>
   		<!-- 筛选 -->
-  		<div class="center_screen">
+  	<!-- 	<div class="center_screen">
   			<select name="data">
   				<option value="1">榆次区</option>
   			</select>
@@ -25,7 +25,7 @@
   			<select name="screen">
   				<option value="1">筛选</option>
   			</select>
-  		</div>
+  		</div> -->
   			<!-- 导航 -->
   		<div class="center_navigation" id="container" >
 		

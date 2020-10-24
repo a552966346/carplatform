@@ -7,7 +7,7 @@
     <!-- 内容 -->
     <div class=" quality_center">
       <!--筛选 -->
-      <div class="center_screen">
+<!--      <div class="center_screen">
         <select name="data">
           <option value="1">我的</option>
         </select>
@@ -17,11 +17,74 @@
         <select name="screen">
           <option value="1">333</option>
         </select>
-      </div>
+      </div> -->
       <!--地图 -->
-      <div class="center_navigation" id="container" @click="shop">
+      <div class="center_navigation" id="container" >
 
        </div>
+		<!-- 商户 -->
+        <div class="quality_bottom" @click="table = true" v-for="item in merchant" :key="item.id" v-show="isID ==item.id">
+            <div class="bottom_top">
+              <p>{{item.name}}</p>
+               <p>
+                  <span>{{item.address}}</span>
+                  <span>导航<img src="../../static/img/daohang.png"></span>
+                </p>
+            </div>
+            <div class="bottom_bottom">
+                  <img src="../../static/img/phone.png" >
+                  <span>{{item.mobile}}</span>
+            </div>
+        </div>
+        <!-- 抽屉 -->
+        <el-drawer
+          :withHeader="false"
+          :visible.sync="table"
+          direction="btt"
+          size="60%">
+              <div class="quality_drawer" v-for="item in merchant" :key="item.id" v-show="isID ==item.id">
+                  <div class="quality_drawer_top">
+                    <div class="drawer_top_text">
+                      <p>
+                          <span class="border_none">{{item.name}}</span>
+                          <span class="border">快修店</span>
+                          <span class="border">{{item.star}}级</span>
+                        </p>
+                        <p id="two">{{item.address}}</p>
+                        <p id="three">起止时间：09：00 — 22：00</p>
+                    </div>
+
+                      <div class="drawer_top_img">
+                        <img src="../../static/img/maintain.png" alt="">
+                        <img src="../../static/img/maintain.png" alt="">
+                        <img src="../../static/img/maintain.png" alt="">
+                        <img src="../../static/img/maintain.png" alt="">
+                      </div>
+                  </div>
+                  <div class="quality_drawer_center">
+                      <div class="center_top">
+                        <p :class="{ color: isBreak }" @click="isbreak_one">概况</p>
+                        <p :class="{ color: !isBreak }" @click="isbreak_two">服务</p>
+                      </div>
+                      <div class="center_text" v-show="isBreak">
+                            <p>啊空间的开挖的开挖很快就打黑屋骄傲和我的空间hawk的话卡玩家获得卡玩家获得卡位好的空间hawk的哈万家灯火卡玩家获得卡玩家获得卡玩家获得卡位好的卡号我空间的好卡哇好的开挖基坑接电话卡接我电话卡位还得看骄傲和我客户打款我hwak</p>
+                      </div>
+                      <div class="center_text" v-show="!isBreak">
+                            <p>啊空间的开挖的开挖很快就打黑屋骄傲和我的空间hawk的话卡玩家获得卡玩家获得卡位好的空间hawk的哈万家灯火卡玩家获得卡玩家获得卡</p>
+                      </div>
+                      <div class="center_bottom">
+                          <p>
+                            <img src="../../static/img/phone.png" alt="">
+                            <span>{{item.mobile}}</span>
+                          </p>
+                          <p>
+                            <span>导航</span>
+                            <img src="../../static/img/daohang.png" >
+                          </p>
+                      </div>
+                  </div>
+              </div>
+        </el-drawer>
 
     </div>
   </div>
@@ -32,81 +95,82 @@ export default {
   name: 'quality_film',
   data () {
     return {
-      msg: 'quality_film'
+      msg: 'quality_film',
+      data:[],
+      merchant:[],
+      category:[],
+      latitude:'',
+      longitude:'',
+      table:false,
+      isBreak: true,
+      isID:""
     }
   },
   mounted:function(){
       this.$store.state.heard_title='车平台 - 维修与救援'
-     /* //定义地图中心点坐标
-     var center = new TMap.LatLng(39.984120, 116.307484)
-     //定义map变量，调用 TMap.Map() 构造函数创建地图
-     var map = new TMap.Map(document.getElementById('container'), {
-         center: center,//设置地图中心点坐标
-         zoom: 11,   //设置地图缩放级别
-         viewMode:'2D',
-     }); */
+      var that = this
+      var markerss
+      that.$addr.get('index/service/help')
+      .then(res=>{
+          that.data = res.data.result.data,
+          that.merchant = that.data.merchant,
+          that.category = that.data.category,
+          console.log(that.merchant)
+          that.detailimages = that.data.detailimages
+           that.isID = that.merchant[0].id
+          let center = new TMap.LatLng(that.merchant[1].lat, that.merchant[1].lng)
+          //定义map变量，调用 TMap.Map() 构造函数创建地图
+          let map = new TMap.Map(document.getElementById('container'), {
+              center: center,//设置地图中心点坐标
+              zoom: 11,   //设置地图缩放级别
+              viewMode:'2D',
+          });
+              markerss = that.marker(that.merchant)
+            let marker = new TMap.MultiMarker({
+                         id: 'container',
+                         map: map,
+                         styles: {
+                             "marker": new TMap.MarkerStyle({
+                                 "width": 25,
+                                 "height": 35,
+                                 "anchor": { x: 16, y: 32 },
+                                 "src": '../../static/img/wash_weizhi.png'
+                             })
+                         },
+                           geometries: markerss,
+
+                        })
+                        marker.on("click", that.drawer)
+      })
   },
   methods:{
-      shop(ent) {
-        console.log(ent)
-        let that = this;
-        //console.log(that.urls)
-        layui.use('layer', function() {
-          let layer = layui.layer;
-         // console.log(typeof(that))
-        // $(".layui-layer").css("background", "none");
-          layer.open({
-            type: 1,
-            title: false,
-            //样式类名
-            closeBtn: 0, //不显示关闭按钮
-            anim: 2,
-            area: ['90%', '160px'],
-            offset: '400px',
-            shade: 0.01,
-            id: 'one',
-            shadeClose: true, //开启遮罩关闭
-            content: `<div class="shop">
-								<div class="upper">
-									<div class="upper_img">
-										<img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3459447635,4017257470&fm=26&gp=0.jpg" >
-									</div>
-									<div class="upper_text">
-										<p>路虎养车(晋中文苑东街店)</p>
-										<div class="upper_text_score">
-											<p>快修店</p>
-											<p>5级</p>
-											<p><span>评分</span>5.0</p>
-										</div>
-										<div class="upper_text_phont">
-											<img src="img/phone.png" >
-											<p>123-2345-7692</p>
-										</div>
-									</div>
-									<div class="upper_daohang">
-										<a href="#"><img src="img/daohang.png" >
-										导航</a>
-									</div>
-								</div>
-                <div class="center">
-                  <div class="center_left"><p>精选服务</p></div>
-                  <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>普洗</p></div>
-                  <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>精洗</p></div>
-                  <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>全车内饰清洗</p></div>
-                  <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>打蜡</p></div>
-                </div>
-								<div class="bottom">
-									<div class="bottom_left">
-										<p>山西省晋中市榆次区文苑街239号安徽的卡号啊</p>
-									</div>
-									<div class="bottom_right">
-										<a href="#">去换胎</a>
-									</div>
-								</div>
-							</div> `
-          });
-        });
+      drawer(evt){
+        this.isID = evt.geometry.id
       },
+      isbreak_one(){
+        this.isbreak = true;
+      },
+      isbreak_two(){
+        this.isbreak = false;
+      },
+      marker(ent){
+        let that = this
+        let id = []
+        let pos = [],name = [], str = '',markers = []
+       //console.log(ent[0].lat)
+          //console.log(ent[i].lat)
+          for(let i= 0 ; i<ent.length; i++){
+            // that.marker(that.merchant[i])
+            let position =  new TMap.LatLng(ent[i].lat,ent[i].lng)
+            pos[i] = position,
+            id[i] = ent[i].id
+            name[i] = ent[i].name
+            str = {"id":id[i],"position":pos[i],"styleId":'marker'}
+            markers[i] = str
+            }
+             return markers
+
+       },
   }
 }
 </script>

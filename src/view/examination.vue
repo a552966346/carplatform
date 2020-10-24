@@ -1,8 +1,8 @@
 <template>
   <div class="examination_all">
   	<div class="examination_top" >
-  			<p v-bind:class="{ break: isBreak }" @click="exa_switch_one">全程代办</p>
-  			<p v-bind:class="{ break: !isBreak }" @click="exa_switch_two">自驾前往</p>
+  			<p v-bind:class="{ break: isBreak }" @click="exa_switch_one" v-model="value">全程代办</p>
+  			<p v-bind:class="{ break: !isBreak }" @click="exa_switch_two" v-model="value">自驾前往</p>
   	</div>
   	<div class="examination_center">
   		<div class="examination_center_one " v-show="isBreak">
@@ -29,9 +29,15 @@
   		</div>
   		<div class="examination_center_one" v-show="!isBreak" >
   			<div class="center_one_all">
-  				<div class="examination_inp">
-  					<p>预留电话</p>
-  					<input type="nub" name="phone" placeholder="请输入您的电话号" id="" value="" v-model="phone"/>
+  				<div class="center_one_inp">
+  					<div class="examination_inp">
+  						<p>预约时间</p>
+  						<input type="date" name="time" placeholder="请选择预约日期" id="" value="" v-model="date"/>
+  					</div>
+  					<div class="examination_inp">
+  						<p>预留电话</p>
+  						<input type="nub" name="phone"  placeholder="请输入您的电话号" id="" value=""v-model="phone" />
+  					</div>
   				</div>
   				<div class="center_two">
   					<img src="../../static/img/location.png" >
@@ -76,7 +82,8 @@
   			<p>联系商家</p>
   		</div>
   		<div class="last_right">
-  			<a href="#" @click="appointment">立即预约</a>
+        <input type="button" @click="appointment" :value="text" :disabled="bled"/>
+
   		</div>
   	</div>
   </div>
@@ -88,6 +95,7 @@
     name: 'examination',
     data() {
       return {
+        value:1,
         city: '',
         isBreak:true,
         address:'',
@@ -96,7 +104,8 @@
         //position:[],
         longitude:'',//经度
         latitude:'',//纬度
-
+        text:"立即预约",
+        bled:false
       }
     },
     created() {
@@ -113,7 +122,6 @@
         function showPosition(position) {
           // console.log(ss)
           //定义地图中心点坐标
-
           if(that.latitude == ''){
             that.latitude = position.lat;
             that.longitude = position.lng;
@@ -129,13 +137,13 @@
               viewMode:'2D',
           });
           /* 点击地图添加marker*/
-          map.on("click", (evt) => {
+        /*  map.on("click", (evt) => {
             console.log(evt)
               //that.removeMarker()
              markerLayer.add({
               position: evt.latLng
              });
-         });
+         }); */
           var markerLayer = new TMap.MultiMarker({
                       id: 'container',
                       map: map,
@@ -167,26 +175,34 @@
       	},
       exa_switch_one(){
            this.isBreak=true;
+           this.value = 1
       },
       exa_switch_two(){
           this.isBreak=false;
+          this.value = 2
       },
         appointment(){
           var that = this
           layui.use('layer', function() {
             var layer = layui.layer;
-          console.log(that.latitude)
-        that.$addr.post('/index/proxy/collect', {
+          console.log(that.value)
+       that.$addr.post('/index/proxy/collect', {
+              type:that.value,
               address: that.address,
               latitude: that.latitude,
               longitude: that.longitude,
-              type:1,
               date: that.date,
               phone: that.phone
             })
             .then(function (response) {
               console.log(response)
-                layer.msg("预约成功")
+              if(response.data.code==200){
+                layer.msg("已提交申请等待通知")
+                that.text = "等待通知"
+               that.bled = true
+                console.log(that.bled)
+              }
+
             })
             .catch(function (error) {
               console.log(error);

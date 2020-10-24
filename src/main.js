@@ -20,7 +20,7 @@ Vue.prototype.$addr= axios;
 /* eslint-disable no-new */
 Vue.use(ElementUI)
 Vue.use(MintUI)
-
+  console.log(Vue)
 new Vue({
   el: '#app',
   router,

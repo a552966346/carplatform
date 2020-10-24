@@ -12,7 +12,7 @@
 .center_one_inp {height:80px;padding:0 10px;}
 .examination_inp {height:40px;display:flex;align-items:center;border-bottom:1px solid #CCCCCC;/* padding:0 10px;*/}
 .examination_inp>p {font-size:12px;padding:0 10px;}
-.examination_inp>input {height:33px;width:75%;text-align:end;border:none;outline:none;}
+.examination_inp>input {height:33px;width:75%;text-align:end;border:none;outline:none;background-color: #fff;}
 .examination_payment {height:45px;display:flex;justify-content:center;align-items:center;}
 .examination_payment>button {padding:6px 50px;border-radius:25px;border:none;background-color:#FF0F0F;color:#FFFFFF;outline:none;}
 .examination_payment>button>span {padding-left:55px;}
@@ -32,7 +32,7 @@
 .last_left {height:50px;width:80px;text-align:center;}
 .last_left>img {height:25px;}
 .last_left>p {font-size:8px;}
-.last_right>a {text-decoration:none;background-color:#F5C92E;color:#FFFFFF;font-size:12px;padding:2px 7px;border-radius:10px;}
+.last_right>input {text-decoration:none;background-color:#F5C92E;color:#FFFFFF;font-size:12px;padding:2px 7px;border-radius:10px;border: none;}
 .poi-title{display: none !important;}
 .poi-info .poi-tab a{display: none !important;}
 .break {color:#F5C92E;border-bottom:2px solid #F5C92E;}

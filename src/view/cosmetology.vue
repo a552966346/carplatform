@@ -38,10 +38,11 @@
               :visible.sync="centerDialogVisible"
               width="90%"
               modal
+              title="商户详情"
               :show-close = "showcs"
               close-on-click-modal
               top=400px
-              center>
+              >
               <div class="shop" ref="total" v-for="(item,index) in merchant" :key="item.id" v-show="shows==item.id">
                         <div class="upper">
                           <div class="upper_img">
@@ -77,7 +78,7 @@
                             <p>{{item.address}}</p>
                           </div>
                           <div class="bottom_right">
-                            <a href="#">立即预约</a>
+                            <router-link to="appointment_details">立即预约</router-link>
                           </div>
                         </div>
                       </div>
@@ -178,6 +179,7 @@
 </script>
 
 <style scoped>
-  @import '../assets/css/cosmetology.css'
+  @import '../assets/css/cosmetology.css';
+  .el-dialog--center .el-dialog__body{padding:10px 10px 10px}
 
 </style>

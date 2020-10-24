@@ -36,6 +36,7 @@
           :visible.sync="centerDialogVisible"
           width="90%"
           modal
+          :with-header="false"
           :show-close = "showcs"
           close-on-click-modal
           top=400px
@@ -75,7 +76,7 @@
                         <p>{{item.address}}</p>
                       </div>
                       <div class="bottom_right">
-                        <a href="#">立即预约</a>
+                       <router-link to="appointment_details">立即预约</router-link>
                       </div>
                     </div>
                   </div>

@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="exclusive_righttitle">
-            <button @click="vip">立即开通</button>
+            <button @click="vip">立即注册</button>
         </div>
     </div>
     <!-- 剩余板块 -->
