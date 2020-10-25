@@ -70,7 +70,7 @@
             </div>
             <!-- 内容 -->
             <div class="index_shop_cont">
-              <div  v-for="(item,index) in merchant" :key="item.id" @click="isshop(item.id)">
+              <div  v-for="(item,index) in merchant" :key="item.id">
               <router-link  :to="{path:'/store_details',query:{ id:item.id }}" class="around">
                 <div class="index_shop_item" >
                 	<div class="index_shop_picitem">
@@ -141,18 +141,6 @@
 
     },
     methods:{
-      isshop(ent){
-        let that = this
-         console.log (ent)
-        that.$addr.post("index/index/merchant",{
-            id:ent
-        })
-         .then(res=>{
-           console.log(res)
-           let id = res.data.result.merchant.id
-           that.$router.push("store_details/"+id)
-         })
-      },
       doswiper(){
         // swiper
         setTimeout(()=>{
