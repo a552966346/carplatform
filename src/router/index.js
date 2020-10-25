@@ -22,6 +22,7 @@ import rule from '@/view/rule'
 import tyre from '@/view/tyre'
 import integral from '@/view/integral'
 import wash from '@/view/wash'
+import success from '@/view/success'
 Vue.use(Router)
 
 export default new Router({
@@ -137,6 +138,10 @@ export default new Router({
         name: 'wash',
         component:wash
       },
-      
+      {
+        path:'/success',
+        name: 'success',
+        component:success
+        },
   ]
 })

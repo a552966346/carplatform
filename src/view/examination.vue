@@ -8,7 +8,7 @@
   		<div class="examination_center_one " v-show="isBreak">
   			<div class="examination_position">
   				<p>接车位置</p>
-            <input type="text" name="" placeholder="请选择机构位置" v-model="address" @click="toMap">
+            <input type="text" name="" placeholder="请选择机构位置" v-model="address" @click="toMap" value="">
   			</div>
         <div class="examination_location"  id="container" >
 
@@ -16,7 +16,7 @@
   			<div class="center_one_inp">
   				<div class="examination_inp">
   					<p>预约时间</p>
-  					<input type="date" name="time" placeholder="请选择预约日期" id="" value="" v-model="date"/>
+  					<input type="datetime-local" name="time" placeholder="请选择预约日期" id="" value="" v-model="date"/>
   				</div>
   				<div class="examination_inp">
   					<p>预留电话</p>
@@ -24,7 +24,7 @@
   				</div>
   			</div>
   			<div class="examination_payment">
-  				<button type="button">当前审车费用预计<span >300元</span></button>
+  				<button type="button">提示：当前审车费用预计<span >300元</span></button>
   			</div>
   		</div>
   		<div class="examination_center_one" v-show="!isBreak" >
@@ -44,7 +44,7 @@
   					<span>等待通知审车时间</span>
   				</div>
   				<div class="examination_payment">
-  					<button type="button">当前审车费用预计<span >300元</span></button>
+  					<button type="button">提示：当前审车费用预计<span >300元</span></button>
   				</div>
   			</div>
   		</div>
@@ -120,7 +120,7 @@
         var options = {timeout: 10000000};
         geolocation.getLocation(showPosition, showErr, options);
         function showPosition(position) {
-          // console.log(ss)
+           console.log(position)
           //定义地图中心点坐标
           if(that.latitude == ''){
             that.latitude = position.lat;
@@ -185,28 +185,60 @@
           var that = this
           layui.use('layer', function() {
             var layer = layui.layer;
-          console.log(that.value)
-       that.$addr.post('/index/proxy/collect', {
-              type:that.value,
-              address: that.address,
-              latitude: that.latitude,
-              longitude: that.longitude,
-              date: that.date,
-              phone: that.phone
-            })
-            .then(function (response) {
-              console.log(response)
-              if(response.data.code==200){
-                layer.msg("已提交申请等待通知")
-                that.text = "等待通知"
-               that.bled = true
-                console.log(that.bled)
+            if(that.value==1){
+              if(that.address==''){
+                layer.msg("请选择接车位置")
               }
+              else if(that.date==''){
+                layer.msg("请选择接车时间")
+              }
+              else if(that.phone==""){
+                 layer.msg("请输入联系电话")
+              }else{
+                that.$addr.post('/index/proxy/collect', {
+                       type:that.value,
+                       address: that.address,
+                       latitude: that.latitude,
+                       longitude: that.longitude,
+                       date: that.date,
+                       phone: that.phone
+                     })
+                     .then(function (response) {
+                       console.log(response)
+                       if(response.data.code==200){
+                         layer.msg("已提交申请等待通知")
+                         that.text = "等待通知"
+                        that.bled = true
+                         console.log(that.bled)
+                       }
 
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
+                     })
+              }
+            }else{
+              if(that.date==''){
+                layer.msg("请选择接车时间")
+              }
+              else if(that.phone==""){
+                 layer.msg("请输入联系电话")
+              }else{
+                that.$addr.post('/index/proxy/collect', {
+                       type:that.value,
+                       date: that.date,
+                       phone: that.phone
+                     })
+                     .then(function (response) {
+                       console.log(response)
+                       if(response.data.code==200){
+                         layer.msg("已提交申请等待通知")
+                         that.text = "等待通知"
+                        that.bled = true
+                         console.log(that.bled)
+                       }
+
+                     })
+              }
+            }
+          console.log(that.value)
         })
       },
       toMap() {

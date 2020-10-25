@@ -63,14 +63,14 @@
                   </div>
                   <div class="quality_drawer_center">
                       <div class="center_top">
-                        <p :class="{ color: isBreak }" @click="isbreak_one">概况</p>
-                        <p :class="{ color: !isBreak }" @click="isbreak_two">服务</p>
+                        <button :class="{ color: isBreak }" @click="isbreak_one">概况</button>
+                        <button :class="{ color: !isBreak }" @click="isbreak_two">服务</button>
                       </div>
                       <div class="center_text" v-show="isBreak">
-                            <p>啊空间的开挖的开挖很快就打黑屋骄傲和我的空间hawk的话卡玩家获得卡玩家获得卡位好的空间hawk的哈万家灯火卡玩家获得卡玩家获得卡玩家获得卡位好的卡号我空间的好卡哇好的开挖基坑接电话卡接我电话卡位还得看骄傲和我客户打款我hwak</p>
+                           <textarea name="" id=""rows="3"  readonly="true">这里的啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</textarea>
                       </div>
                       <div class="center_text" v-show="!isBreak">
-                            <p>啊空间的开挖的开挖很快就打黑屋骄傲和我的空间hawk的话卡玩家获得卡玩家获得卡位好的空间hawk的哈万家灯火卡玩家获得卡玩家获得卡</p>
+                          <textarea name="" id=""rows="2"></textarea>
                       </div>
                       <div class="center_bottom">
                           <p>

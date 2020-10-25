@@ -86,7 +86,6 @@
     mounted:function(){
           this.$store.state.heard_title ='车平台 - 商家店面'
           let that = this
-          
     },
   }
 </script>

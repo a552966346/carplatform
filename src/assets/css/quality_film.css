@@ -189,18 +189,24 @@
   padding-right: 20px;
 }
 .center_top{
-  padding: 15px 25px;
+  padding: 10px 25px;
   display: flex;
  /* padding: 10px 0; */
 }
-.center_top>p{
+.center_top>button{
   margin-right: 20px;
+  background-color: #fff;
+  border: none;
 }
 .center_text{
     padding: 0 25px;
+    padding-bottom: 30px;
     overflow: auto;
 }
-.center_text>p{
+.center_text>textarea{
+  width: 100%;
+  border: none;
+  resize: none;
   font-size: 10px;
   line-height: 1.5;
 }
@@ -210,6 +216,7 @@
   bottom: 0;
   padding: 15px 25px;
   display: flex;
+  background-color: #fff;
 }
 .center_bottom>p{
   width: 50%;
@@ -222,5 +229,5 @@
 }
 .color{
   color:#F8D11F;
-  border-bottom: 2px solid #F8D11F;
+  border-bottom: 2px solid #F8D11F !important;
 }
