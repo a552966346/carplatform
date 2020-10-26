@@ -28,7 +28,7 @@
           <div class="store_swiper_top">
             <!-- 轮播图 -->
             <div class="store_swiper_cont" >
-              <div class="store_swiper_itemcont" ><img :src="merchant.bannerimages"></div>
+              <div class="store_swiper_itemcont" v-for="(item,index) in isimg" :key><img :src="$store.state.imgurl+item"/></div>
              <!-- <div class="store_swiper_itemcont"><img src="../../static/img/store_details_pic.jpg"></div>
               <div class="store_swiper_itemcont"><img src="../../static/img/store_details_pic.jpg"></div>
               <div class="store_swiper_itemcont"><img src="../../static/img/store_details_pic.jpg"></div> -->
@@ -50,13 +50,7 @@
            <div class="store_swiper_bottom">
               <p>热门服务</p>
               <div class="store_swiper_lable">
-                <span :class="{active:active}">普洗</span>
-                <span :class="{active:active}">精洗</span>
-                <span :class="{active:active}">全车内饰清洗</span>
-                <span :class="{active:active}">大面积沥青去除</span>
-                <span :class="{active:active}">打蜡</span>
-                <span :class="{active:active}">抛光</span>
-                <span :class="{active:active}">坐垫干洗</span>
+                <span :class="{active:index==nub}" v-for="(item,index) in service" :key = "index" @click="isactive(index)">{{item}}</span>
               </div>
            </div>
         </div>
@@ -83,7 +77,9 @@
         msg: 'store_details',
         id:"",
         merchant:{},
-        active:""
+        isimg:[],
+        service:[],
+        nub:0
       }
     },
     mounted:function(){
@@ -95,11 +91,18 @@
                 id:that.id
             })
              .then(res=>{
-
               that.merchant = res.data.result.merchant
               console.log(that.merchant)
+              that.isimg = that.merchant.bannerimages
+              that.service = that.merchant.service
              })
     },
+    methods:{
+      isactive(index){
+          console.log(index)
+          this.nub = index
+      }
+    }
   }
 </script>
 

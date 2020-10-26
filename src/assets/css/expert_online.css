@@ -1,42 +1,21 @@
   *{margin: 0;padding: 0;box-sizing: border-box;text-decoration: none;list-style: none;}
     .expert_online{width: 100%;height: 100%;display: flex;flex-direction: column;overflow: hidden;}
     /* 顶部内容 */
-    .expert_online_top{width: 100%;height: 120px;}
-    .expert_top{width: 100%;display: flex;height: 80px;padding: 0px 15px;background-color:#F2F2F2;}
-    .expert_top>a{flex: 1;display: flex;align-items: center;}
-    .expert_top>a:nth-child(2){justify-content: flex-end;}
-    .top_left{display: flex;}
-    /* .top_left_pic{width: 50px;height: 50px;border-radius: 5px;} */
-    .top_left_pic img{width:50px;height:50px;border-radius: 5px;}
-    .top_left_cont{display: flex;flex-direction: column;justify-content: center;}
-    .top_left_cont1{padding: 0px 10px;}
-    .top_left_cont2{padding-left: 10px;}
-    .top_left_cont p:nth-child(1){font-size: 12px;color: #333;text-align: justify;}
-    .top_left_cont p:nth-child(2){font-size: 12px;color: #999;text-align: justify;}
-    /* 筛选 */
-    .expert_screen{width: 100%;display: flex;height: 40px;background-color: #fff;border-bottom: 2px solid #F2F2F2;}
-    .expert_screen select{flex: 1;border: none;text-align-last: center;}
-    /* 列表 */
-    .expert_center{flex: 1;overflow: auto;}
-    .center_item{display: flex;padding: 10px;border-bottom: 1px solid #ccc;}
-    .center_item_left{width:30%;height: 120px;}
-    .center_item_left img{width: 90%;height: 100%;}
-    .center_item_center{width: 70%;display: flex;flex-direction: column;justify-content: center;align-items: flex-start;padding: 0px 15px;}
-    /*名字 */
-    .right_all{display: flex;width: 100%;justify-content: space-between;align-items: center;}
-    .right_all_two{display: flex;flex-direction: column;text-align: justify;}
-    .center_item_name{font-size: 14px;font-weight: bold;padding-bottom: 3px;}
-    .center_item_position{font-size: 12px;color: #333;padding-bottom: 3px;}
-    /* 提问 */
-    /* .center_item_right{} */
-    .center_item_right a{background-color: #F8D11F;color: #fff;font-size: 12px;padding: 2px 8px;border-radius: 15px;}
-    /* 评价 */
-    .right_Grade{display: flex;padding-bottom: 3px;}
-    .right_Grade_pic{display: flex;align-items: center;margin-right: 5px;}
-    .right_Grade_pic img{width: 8px;margin: 0px 2px;}
-    .right_Grade p{font-size: 12px;color: #ccc;}
-    /* 服务 */
-    .right_service{display: flex;align-items: center;font-size: 12px;color: #ccc;padding-bottom: 5px;}
-    /* 业务咨询条件 */
-    .right_absorbed{display: flex;align-items: center;font-size: 12px;color: #ccc;}
-    .right_absorbed p{border: 1px solid #ccc;border-radius: 5px;padding:0px 5px;margin-right: 5px;}
+    .expert_top{height: 23%;background:url(../../../static/img/expert_banner.png)no-repeat 0.0;display: flex;justify-content: center;flex-direction: column;padding-left: 50px;background-size:100% 100%;width: 100%;}
+    .expert_top>p{color: #fff;font-size: 14px;}
+     .expert_top>p:last-child{font-weight: bold;}
+    .expert_center{flex: 1;padding: 10px;}
+    .expert_center>p{border-left: 2px solid #F7D22B;padding-left: 5px;font-size: 14px;}
+    /* .expert_center_center{display: flex;overflow: auto;} */
+     .swiper-container {
+          width: 100%;
+          height: 210px;
+        }
+    .center_zhuanjia{height: 210px;padding: 10px 5px;text-align: center;}
+    .center_zhuanjia>img{width: 114px;height:150px;border: 1px solid #ccc;border-radius: 10px;overflow: hidden;}
+    .center_zhuanjia>h4{padding: 3px 0;font-weight: bold;}
+    .center_zhuanjia>p{font-size: 12px;}
+    .expert_center_fuwu{padding: 10px 0 10px 10px;}
+     .swiper-container_two{width: 100%;height: 75px;}
+     .swiper-slide>img{position: absolute;width: 100%;height: 100%;}
+     .fuwu_class{position: relative;color: #fff;text-align: center;line-height: 5;}

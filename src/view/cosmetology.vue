@@ -14,7 +14,7 @@
      </div>
      <div class=" cosmetology_center">
        <!-- 筛选 -->
-       <div class="center_screen">
+     <!--  <div class="center_screen">
          <select name="data">
            <option>洗车方式</option>
            <option v-for="item in category" :key="item.id" :value="item.id">{{item.name}}</option>
@@ -28,7 +28,7 @@
            <option value="1">好评优先</option>
            <option value="2">距离优先</option>
          </select>
-       </div>
+       </div> -->
        <!-- 导航 -->
        <div class="center_navigation" id="container">
 
@@ -68,17 +68,17 @@
                         </div>
                         <div class="center">
                           <div class="center_left"><p>精选服务</p></div>
-                          <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>普洗</p></div>
-                          <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>精洗</p></div>
-                          <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>全车内饰清洗</p></div>
-                          <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>打蜡</p></div>
+                          <div class="center_right" v-for="(item,index) in item.service"><p>{{item}}</p></div>
+                          <!-- <div class="center_right"><p>精洗</p></div>
+                          <div class="center_right"><p>全车内饰清洗</p></div>
+                          <div class="center_right"><p>打蜡</p></div> -->
                         </div>
                         <div class="bottom">
                           <div class="bottom_left">
                             <p>{{item.address}}</p>
                           </div>
                           <div class="bottom_right">
-                            <router-link to="appointment_details">立即预约</router-link>
+                            <a :href="'tel:'+item.mobile">立即预约</a>
                           </div>
                         </div>
                       </div>
@@ -102,6 +102,7 @@
       centerDialogVisible: false,
       shows:'',
       showcs:false,
+	  service:[]
       }
     },
     mounted:function(){
@@ -110,12 +111,13 @@
           var markerss
           that.$addr.get('/index/service/vehicle')
               .then(res=>{
-                  console.log(res.data.result)
+                 // console.log(res.data.result)
                   that.data = res.data.result.data,
                   that.merchant = that.data.merchant,
                   that.category = that.data.category,
                   console.log(that.merchant)
                   that.detailimages = that.data.detailimages
+                  that.service= that.merchant.service
 
                   let center = new TMap.LatLng(that.merchant[1].lat, that.merchant[1].lng)
                   //定义map变量，调用 TMap.Map() 构造函数创建地图
@@ -147,6 +149,11 @@
          console.log(evt)
          this.shows =evt.geometry.id
          this.centerDialogVisible = true
+      },
+      division(str){
+        console.log(str)
+        // let service =str.split("@");
+        // (this.message.message || "").split("\n");
       },
       marker(ent){
         let that = this

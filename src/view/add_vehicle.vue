@@ -15,31 +15,60 @@
         <div class="car_number">
           <span>车牌号</span>
           <div class="car_number1">
-            <select v-model="item.plate">
+            <select v-model="plate">
               <option value="晋">晋</option>
-              <option value="津">津</option>
-              <option value="京">京</option>
-              <option value="冀">冀</option>
             </select>
-            <input placeholder="请输入车牌号" type="number" v-model="item.cnub"/>
+            <input placeholder="请输入车牌号" type="number" v-model="cnub"/>
           </div>
            <!-- <mt-field label="车牌号" placeholder="请输入车牌号" type="number"></mt-field> -->
         </div>
         <p>
-          <mt-field label="车身架号" placeholder="请输入车身架号后6位" type="number" v-model="item.bodynub"></mt-field>
+          <mt-field label="车身架号" placeholder="请输入车身架号后6位" type="number" v-model="bodynub"></mt-field>
         </p>
         <p>
-           <mt-field label="发动机号" placeholder="请输入发动机号后6位" type="number" v-model="item.engnub"></mt-field>
+           <mt-field label="发动机号" placeholder="请输入发动机号后6位" type="number" v-model="engnub"></mt-field>
         </p>
+       <p>
+          <mt-field label="车型" placeholder="请输入车型" type="text" v-model="cars"></mt-field>
+       </p>
+        <p>
+          <mt-field label="注册日期" placeholder="请选择注册日期" type="date" v-model="time"></mt-field>
+        </p>
+        <p>
+           <mt-field label="行驶里程" placeholder="请输入当前行驶里程" type="number" v-model="km">km</mt-field>
+        </p>
+
+
       </div>
       <div class="add_vehicle_secondvont">
-        <p class="add_vehicle_switch" >
+       <!-- <p class="add_vehicle_switch" >
             <span>接收信息提醒</span>
             <mt-switch  v-model="item.accept"></mt-switch>
+        </p> -->
+        <div class="gengduo">
+            <p>更多信息</p><i class="iconfont icon-youjiantou"></i>
+        </div>
+       <div class="car_number">
+         <span>车检年限</span>
+         <div class="car_number2">
+           <select v-model="carsdate">
+             <option value="1">1</option>
+           </select>
+         </div>
+       </div>
+        <p>
+            <mt-field label="审车时间" placeholder="请输入上次车检时间" type="date" v-model="oldtime"></mt-field>
         </p>
         <p>
-            <mt-field label="手机号码" placeholder="请输入手机号" type="tel" v-model="item.phone_nub"></mt-field>
+            <mt-field label="车险时间" placeholder="请输入保险到期时间" type="date" v-model="newtime"></mt-field>
         </p>
+        <p>
+            <mt-field label="驾照时间" placeholder="请填写获得驾照时间" type="date" v-model="cartime"></mt-field>
+        </p>
+        <p>
+            <mt-field label="违章情况" placeholder="请填写违章情况(是/否)" type="text" v-model="illega"></mt-field>
+        </p>
+
         <div class="check_btn">
           <mt-button type="default" size="small" class="check" @click="query">立即查询</mt-button>
           <mt-actionsheet :actions="actions" v-model="sheetVisible"></mt-actionsheet>
@@ -56,14 +85,20 @@ export default {
     return {
       //获取数据
       msg: 'add',
-      item:{
-      plate:'晋',
-      cnub:'',
-      bodynub:'',
-      engnub:'',
-      phone_nub:'',
-      accept:false
-      },
+      plate:'晋',  //车牌
+      cnub:'', //车牌号
+      bodynub:'', //车身架号
+      engnub:'', //发动机号
+      phone_nub:'', //电话号
+      accept:false,
+      cars:'', //车型
+      time:'', //注册日期
+      km:'' ,//行驶公里
+      carsdate:'' ,//车检年限
+      oldtime:'' ,//审车时间
+      newtime:'' ,//保险到期时间
+      cartime:'', //驾照时间
+      illega:'' ,//违章
       // action sheet 选项内容
       actions: [{
         name: '拍照',
@@ -81,6 +116,9 @@ export default {
         this.$store.state.heard_title ='车平台 - 添加车辆'
   },
   methods:{
+    openPicker() {
+            this.$refs.picker.open();
+          },
     phone:function(){
       // console.log(this)
        this.sheetVisible = true;
@@ -94,31 +132,38 @@ export default {
     //请求数据
      query:function(){
        var  that = this;
-       var data = that.item;
-       layui.use('layer', function(){
+     layui.use('layer', function(){
          var layer = layui.layer;
-       console.log(data)
-       if(data.cnub.length!=6){
-         layer.msg("请输入正确车牌号!");
-       }else if(data.phone_nub.length!=11){
-         layer.msg("请输入正确手机号")
-       }else if(data.plate = ''){
-         layer.msg("请选择车牌归属地")
-       }else if(data.cnub = ''){
-         layer.msg("请填写车牌号")
-       }else if(data.bodynub = ''){
-         layer.msg("请填写车身架号")
-       }else if(data.engnub = ''){
-         layer.msg("请填写发动机架号")
-       }else if(data.phone_nub = ''){
-         layer.msg("请填写手机号码")
-       }else {
-           console.log(that.item)
-           that.$addr.get('v1/bpi/currentprice.json')
+       // if(that.cnub.length!=6){
+       //   layer.msg("请输入正确车牌号!");
+       // }else if(that.plate = ''){
+       //   layer.msg("请选择车牌归属地")
+       // }else if(that.cnub = ''){
+       //   layer.msg("请填写车牌号")
+       // }else if(that.bodynub = ''){
+       //   layer.msg("请填写车身架号")
+       // }else if(that.engnub = ''){
+       //   layer.msg("请填写发动机架号")
+       // }else if(that.phone_nub = ''){
+       //   layer.msg("请填写手机号码")
+       // }else {
+           that.$addr.post('/index/vehicle/add',{
+             number:that.plate+that.cnub,
+             imei: that.bodynub,
+             motor: that.engnub,
+             type_id: that.cars,
+             registertime: that.time,
+              km: that.km,
+              digit: that.carsdate,
+              booktime:that.oldtime,
+              insurancetime:that.newtime,
+              licensetime:that.cartime,
+              illega:that.illega
+           })
                   .then(response => {
-                    console.log(response.data)
+                    console.log(response)
           })
-         }
+         // }
        })
      }
   }

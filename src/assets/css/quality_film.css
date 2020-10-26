@@ -173,6 +173,7 @@
 }
 #two{
   color: #aaa;
+  padding: 5px 0;
 }
 #three{
   padding: 2px 4px;
@@ -200,7 +201,7 @@
 }
 .center_text{
     padding: 0 25px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     overflow: auto;
 }
 .center_text>textarea{
@@ -218,13 +219,13 @@
   display: flex;
   background-color: #fff;
 }
-.center_bottom>p{
+.center_bottom>a{
   width: 50%;
 }
-.center_bottom>p:last-child{
+/* .center_bottom>a:last-child{
   text-align: end;
-}
-.center_bottom>p>img{
+} */
+.center_bottom>a>img{
   height: 15px;
 }
 .color{

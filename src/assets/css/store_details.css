@@ -32,7 +32,7 @@
 
 
 
-.store_swiper_lable span{background-color:#F2F2F2;padding: 5px 0px;margin-bottom: 5px;color: #333;width: 32%;display: inline-block;margin-right: 2%;}
+.store_swiper_lable span{background-color:#F2F2F2;padding: 5px 0px;margin-bottom: 5px;color: #333;width: 32%;display: inline-block;margin-right: 2%;text-align: center;border-radius: 5px;overflow: hidden;}
 .store_swiper_lable span:nth-child(3n+3){margin-right: 0%;}
 
 .active{background-color:#FEF5D0!important;color: #fad71b!important;}

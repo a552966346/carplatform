@@ -63,24 +63,20 @@
                   </div>
                   <div class="quality_drawer_center">
                       <div class="center_top">
-                        <button :class="{ color: isBreak }" @click="isbreak_one">概况</button>
-                        <button :class="{ color: !isBreak }" @click="isbreak_two">服务</button>
+                        <button :class="{color: isbreak }" >概况</button>
                       </div>
-                      <div class="center_text" v-show="isBreak">
-                           <textarea name="" id=""rows="3"  readonly="true">这里的啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</textarea>
-                      </div>
-                      <div class="center_text" v-show="!isBreak">
-                          <textarea name="" id=""rows="2"></textarea>
+                      <div class="center_text">
+                           <textarea name="" id=""rows="5"  readonly="true" v-text="item.detailscontent"></textarea>
                       </div>
                       <div class="center_bottom">
-                          <p>
+                         <a :href="'tel:'+item.mobile">
                             <img src="../../static/img/phone.png" alt="">
                             <span>{{item.mobile}}</span>
-                          </p>
-                          <p>
+                         </a>
+                          <!-- <p>
                             <span>导航</span>
                             <img src="../../static/img/daohang.png" >
-                          </p>
+                          </p> -->
                       </div>
                   </div>
               </div>
@@ -102,7 +98,7 @@ export default {
       latitude:'',
       longitude:'',
       table:false,
-      isBreak: true,
+      isbreak: true,
       isID:""
     }
   },
@@ -146,12 +142,6 @@ export default {
   methods:{
       drawer(evt){
         this.isID = evt.geometry.id
-      },
-      isbreak_one(){
-        this.isbreak = true;
-      },
-      isbreak_two(){
-        this.isbreak = false;
       },
       marker(ent){
         let that = this

@@ -125,7 +125,8 @@
     },
     mounted:function() {
       this.$store.state.heard_title ='车平台 - 首页'
-        this.$addr.get('/index/index/index')
+      console.log(this)
+       this.$addr.get('/index/index/index')
                                .then(response => {
                                 // console.log(this)
                                 console.log(response.data.result)
@@ -138,6 +139,7 @@
                                    this.doswiper()
                                  })
                               } )
+
 
     },
     methods:{

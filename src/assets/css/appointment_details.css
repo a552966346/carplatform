@@ -10,7 +10,7 @@
   .appointment_details_chooseseevice select{border: none;font-size: 14px;}
   /* 按钮 */
   .check_btn{width: 100%;padding-top: 40px;display: flex;}
-  .check_btn>div{flex: 1;}
+  .check_btn>div{flex: 1;text-align: center;}
   .submit{width: 80%;margin: 0 auto;background-color:#F8D11F;color: #fff;border-radius:20px;height: 40px;}
   .reset{width: 80%;margin: 0 auto;color: #333;border-radius:20px;height: 40px;}
   .mint-button--default.is-plain {border: 1px solid #F8D11F;}

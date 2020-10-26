@@ -54,7 +54,7 @@
         <div class="personalcenter_cont_scoll">
             <div><p class="dian"></p></div>
             <marquee>
-             <p class="word">APP专向，30天4.65%，低风险理财。</p>
+             <p class="word">顺通广大,为您提供全方位的汽车服务</p>
             </marquee>
         </div>
     	</div>
@@ -69,30 +69,45 @@
         		</a>
         	</div>
           <div class="dingdan_center">
-        		<a href="#" @click="payment">
-        			<img src="../../static/img/personal_center_pay.png" >
-        			<p>待付款</p>
-        		</a>
-        		<a href="#" @click="delivered">
-        			<img src="../../static/img/personal_center_delivered.png" >
-        			<p>待发货</p>
-        		</a>
-        		<a href="#" @click="receive">
-        			<img src="../../static/img/personal_center_receive.png" >
-        			<p>待收货</p>
-        		</a>
-        		<a href="#" @click="evaluated">
-        			<img src="../../static/img/personal_center_evaluated.png" >
-        			<p>待评价</p>
-        		</a>
-        		<a href="#" @click="refund">
-        			<img src="../../static/img/personal_center_refund.png" >
-        			<p>退款/售后</p>
-        		</a>
+              <div class="dingdan_center_a">
+                <a href="#" @click="payment">
+                  <img src="../../static/img/personal_center_pay.png" >
+                  <p>待付款</p>
+                </a>
+                <i class="iconfont icon-youjiantou"></i>
+               </div>
+               <div class="dingdan_center_a">
+                <a href="#" @click="delivered">
+                  <img src="../../static/img/personal_center_delivered.png" >
+                  <p>待发货</p>
+                </a>
+                <i class="iconfont icon-youjiantou"></i>
+               </div>
+               <div class="dingdan_center_a">
+                <a href="#" @click="receive">
+                  <img src="../../static/img/personal_center_receive.png" >
+                  <p>待收货</p>
+                </a>
+                <i class="iconfont icon-youjiantou"></i>
+               </div>
+               <div class="dingdan_center_a">
+                <a href="#" @click="evaluated">
+                  <img src="../../static/img/personal_center_evaluated.png" >
+                  <p>待评价</p>
+                </a>
+                <i class="iconfont icon-youjiantou"></i>
+               </div>
+               <div class="dingdan_center_a">
+                <a href="#" @click="refund">
+                  <img src="../../static/img/personal_center_refund.png" >
+                  <p>退款/售后</p>
+                </a>
+                <i class="iconfont icon-youjiantou"></i>
+               </div>
         	</div>
         </div>
         <!-- 服务项目 -->
-        <div class="center_bottom">
+        <!-- <div class="center_bottom">
         	<a href="#" @click="centercontact">
         		<img src="../../static/img/personal_centercontact.png" >
         		<p>联系客服</p>
@@ -125,7 +140,7 @@
         		<img src="../../static/img/personal_center_member.png" >
         		<p>会员中心</p>
         	</a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -193,6 +208,11 @@ export default {
     },
     //待评价
     evaluated:function(){
+      this.$router.push({
+         name: '',
+       })
+    },
+    refund(){
       this.$router.push({
          name: '',
        })

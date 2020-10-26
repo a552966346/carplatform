@@ -35,19 +35,19 @@
   /* 我的订单模块 */
   .personalcenter_cont_order{width: 100%;}
   /* 我的订单  */
-  .dingdan{width: 100%;padding: 0px 20px;/* background-color: #F5F5F5; */}
+  .dingdan{width: 100%;padding: 0px 20px;/* background-color: #F5F5F5; */border-top: 10px solid #f5f5f5;}
   .dingdan_top{height: 30%;background-color: #FFFFFF;border-bottom: 2px solid #F0F0F0;    padding: 20px 0px;}
   .dingdan_top>a{height: 100%;display: flex;justify-content: space-between;align-items: center;color: #888;}
   .dingdan_top>a>p:nth-child(1){font-size: 14px;color: #333;}
   .dingdan_top>a>p:nth-child(2){font-size: 12px;color: #666;}
   /* 我的订单块 */
-  .dingdan_center{display: flex;padding:15px 0px;background-color: #FFFFFF;}
-  .dingdan_center>a{width: 20%;text-align: center;}
-  .dingdan_center>a>img{width: 25px;height: 25px;}
-  .dingdan_center>a>p{padding-top: 15px;font-size: 12px;color: #6E6E6E;}
+  .dingdan_center{display: flex;/* padding:15px 0px; */background-color: #FFFFFF;flex-direction: column;}
+  .dingdan_center_a{display: flex;justify-content: space-between;align-items: flex-end;border-bottom: 1px solid #F0F0F0;padding-bottom: 5px;}
+  .dingdan_center_a>a{width: 100%;text-align: center;display: flex;height: 40px;align-items: flex-end;}
+  .dingdan_center_a>a>img{width: 28px;height: 28px;}
+  .dingdan_center_a>a>p{padding:5px 10px;font-size: 12px;color: #6E6E6E;}
   /* 服务项目 */
-  .center_bottom{width: 100%;display: flex;flex-wrap: wrap;padding: 0px 20px;padding-top: 30px;}
+  /* .center_bottom{width: 100%;display: flex;flex-wrap: wrap;padding: 0px 20px;padding-top: 30px;}
   .center_bottom>a{width: 25%;text-align: center;margin-bottom: 20px;}
   .center_bottom>a>img{height: 25px;width: 25px;}
-  .center_bottom>a>p{color: #6E6E6E;font-size: 12px;padding-top: 10px;}
-
+  .center_bottom>a>p{color: #6E6E6E;font-size: 12px;padding-top: 10px;} */

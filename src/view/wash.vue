@@ -10,7 +10,7 @@
   	</div>
   	<div class="wash_center">
   		<!-- 筛选 -->
-  		<div class="center_screen">
+  		<!-- <div class="center_screen">
   			<select name="data">
           <option >洗车方式</option>
   				<option v-for="(item,index) in category" :key="item.id" :value="item.name" >{{item.introduce}}</option>
@@ -18,7 +18,7 @@
   			<select name="sort">
            <option >店铺等级</option>
   				<option v-for="(item,index) in star" :key="item" value="1">{{item}}级</option>
-  			</select>
+  			</select> -->
   		<!-- 	<select name="screen">
   				<option >筛选</option>
   			</select> -->
@@ -35,12 +35,13 @@
         <el-dialog
           :visible.sync="centerDialogVisible"
           width="90%"
+          title="商家详情"
           modal
           :with-header="false"
           :show-close = "showcs"
           close-on-click-modal
           top=400px
-          center>
+          >
           <div class="shop" ref="total" v-for="(item,index) in merchant" :key="item.id" v-show="shows==item.id">
                     <div class="upper">
                       <div class="upper_img">
@@ -66,17 +67,17 @@
                     </div>
                     <div class="center">
                       <div class="center_left"><p>精选服务</p></div>
-                      <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>普洗</p></div>
-                      <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>精洗</p></div>
+                      <div class="center_right" v-for="(item,index) in item.service"><p>{{item}}</p></div>
+                     <!-- <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>精洗</p></div>
                       <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>全车内饰清洗</p></div>
-                      <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>打蜡</p></div>
+                      <div class="center_right"><img src="../../static/img/wash__layer_one.png" alt=""><p>打蜡</p></div> -->
                     </div>
                     <div class="bottom">
                       <div class="bottom_left">
                         <p>{{item.address}}</p>
                       </div>
                       <div class="bottom_right">
-                       <router-link to="appointment_details">立即预约</router-link>
+                       <a :href="'tel:'+item.mobile">立即预约</a>
                       </div>
                     </div>
                   </div>

@@ -23,16 +23,17 @@ import tyre from '@/view/tyre'
 import integral from '@/view/integral'
 import wash from '@/view/wash'
 import success from '@/view/success'
+import  expert  from '@/view/expert'
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
+    // {
+    //   path: '/',
+    //   name: 'HelloWorld',
+    //   component: HelloWorld
+    // },
     {
       path:'/login',
       name: 'login',
@@ -44,9 +45,13 @@ export default new Router({
       component:register
     },
     {
-      path:'/index',
+      path:'/',
       name: 'index',
-      component:index
+      component:index,
+      meta:{
+                      // 页面标题title
+                      title: '首页'
+                  }
     },
     {
       path:'/add_vehicle',
@@ -143,5 +148,10 @@ export default new Router({
         name: 'success',
         component:success
         },
+        {
+          path:'/expert',
+          name: 'expert',
+          component:expert
+          },
   ]
 })
