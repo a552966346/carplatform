@@ -71,11 +71,13 @@
             <!-- 内容 -->
             <div class="index_shop_cont">
               <div  v-for="(item,index) in merchant" :key="item.id">
-              <router-link  :to="{path:'/store_details',query:{ id:item.id }}" class="around">
+
                 <div class="index_shop_item" >
+                  <router-link  :to="{path:'/store_details',query:{ id:item.id }}" class="around">
                 	<div class="index_shop_picitem">
                 		<img :src="item.banner" />
                 	</div>
+                 </router-link>
                 	<div class="index_shop_textitem">
                 		<p class="index_centershop_toptitle">{{item.name}}</p>
                 		<div class="index_shop_centertext">
@@ -84,14 +86,14 @@
                 		</div>
                 		<p class="index_centershop_bottomtitle">{{item.address}}</p>
                 	</div>
-                  <a href="javascript:'">
+                  <a href=" #" @click="onClick(item.address)">
                     <div class="index_shop_righttext">
                         <img class="position_img" src="../../static/img/index_navigation.png">
                         <p>{{item.weigh}}km</p>
                     </div>
                   </a>
                 </div>
-               </router-link>
+
               </div>
             </div>
         </div>
@@ -193,6 +195,10 @@
              console.log('+++++')
             break;
           }
+      },
+      onClick(item) { //item是传递过来的高德地图、百度地图、腾讯地图
+        console.log(item)
+         this.$router.query(item)
       }
     }
   }
