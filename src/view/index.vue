@@ -86,7 +86,7 @@
                 		</div>
                 		<p class="index_centershop_bottomtitle">{{item.address}}</p>
                 	</div>
-                  <a href=" #" @click="onClick(item.address)">
+                  <a href=" #" @click="toMap(item)">
                     <div class="index_shop_righttext">
                         <img class="position_img" src="../../static/img/index_navigation.png">
                         <p>{{item.weigh}}km</p>
@@ -122,7 +122,10 @@
          require('../../static/img/stars_five.png')
         ],
         stats:[],
-        id:""
+        id:"",
+        llat:'',
+        llng:'',
+        address:''
       }
     },
     mounted:function() {
@@ -141,7 +144,21 @@
                                    this.doswiper()
                                  })
                               } )
+         let that = this
+      var geolocation = new qq.maps.Geolocation('W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4', '车平台');
+      // var positionNum = 0;
+      var options = {timeout: 10000000};
+      geolocation.getLocation(showPosition, showErr, options);
+      function showPosition(position) {
+          console.log(position)
+         that.llat = position.lat,
+         that.llng = position.lng,
+         that.laddress = position.address
 
+        }
+        function showErr() {
+          console.log("定位失败")
+        };
 
     },
     methods:{
@@ -196,10 +213,20 @@
             break;
           }
       },
-      onClick(item) { //item是传递过来的高德地图、百度地图、腾讯地图
-        console.log(item)
-         this.$router.query(item)
-      }
+      // onClick(item) { //item是传递过来的高德地图、百度地图、腾讯地图
+      //   console.log(item)
+      //    this.$router.query(item)
+      // },
+      toMap(res) {
+          let oudlat = this.llat,
+                oudlng = this.llng,
+                outaddress = this.address;
+            console.log(res)
+            let nlat = res.lat,
+            nlng = res.lng,
+            address = res.address;
+            window.location.href="https://apis.map.qq.com/uri/v1/routeplan?type=drive&from="+outaddress+"&fromcoord="+oudlat+","+oudlng+"&to="+address+"&tocoord="+nlat+","+nlng+"&policy=1&referer=W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4"
+      },
     }
   }
 </script>

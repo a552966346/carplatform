@@ -8,7 +8,7 @@
   		<div class="examination_center_one " v-show="isBreak">
   			<div class="examination_position">
   				<p>接车位置</p>
-            <input type="text" name="" placeholder="请选择机构位置" v-model="address" @click="toMap" value="">
+            <input type="text" name="" placeholder="请选择机构位置" v-model="address" @click="toMap">
   			</div>
         <div class="examination_location"  id="container" >
 
