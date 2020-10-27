@@ -1,12 +1,13 @@
 * {padding:0;margin:0;box-sizing:border-box;}
 .tyre_all {height:100%;}
-.tyre_top {height:25%;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:start;padding:10px;}
-.tyre_all>img {height:25%;width:100%;position:absolute;}
-.tyre_top>p:nth-child(1) {border-bottom:1px solid #8996A3;}
-.tyre_top>p:nth-child(2) {padding-top:15px;}
-.tyre_top>p {position:relative;color:#FFFFFF;font-size:12px;padding:5px 20px;}
-.tyre_center {height:75%;}
-.center_data {height:35%;background-color:#f5f5f5;}
+.tyre_top {height:35%;width:100%;padding:0 25px;background: url(../../../static/img/tyre_back.png)no-repeat 0.0;background-size: 100%;}
+.tyre_top_text{display:flex;justify-content:space-between;align-items:center;height: 50%;}
+.tyre_top_text>ul >li{font-size: 14px;color: #fff;}
+.tyre_top_text>span {font-size: 14px;color: #fff;}
+.type_tope_ech{width: 100%;background-color: #fff;border-radius: 10px;padding: 10px;box-shadow: 1px 1px 2px 5px #f5f5f5;flex: 1;}
+.tyre_center {height:65%;padding-top: 90px;}
+.center_data {height:100%;}
+.center_navigation{height: 80%;}
 /* 弹框 */
 .el-dialog--center .el-dialog__body{padding: 10px !important;}
 .shop {margin:0 auto;}

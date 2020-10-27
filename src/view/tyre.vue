@@ -1,19 +1,22 @@
 <template>
   <div class="tyre_all">
-  	<!-- banner -->
-  	<img :src="detailimages[0]" >
   	<div class="tyre_top">
-  		<p>轮胎更换</p>
-  		 <p>轮胎变形</p>
-  		 <p>轮胎鼓包、开裂</p>
-  		 <p>轮胎缺气碾压损坏</p>
-  		 <p>轮胎被化学物质侵蚀</p>
+      <div class="tyre_top_text">
+  		<ul>
+  			<li>轮胎变形</li>
+        <li>轮胎被化学物质侵蚀</li>
+  		</ul>
+      <span>详情<i class="iconfont icon-youjiantou"></i></span>
+      </div>
+      <div class="type_tope_ech">
+          <div class="center_data" id="myChart">
+
+          </div>
+      </div>
   	</div>
   	<div class="tyre_center">
-  		<!-- 大数据 -->
-  		<div class="center_data">
+  		<!-- echartd -->
 
-  		</div>
 
   		<div class="center_navigation" id="container" >
 
@@ -90,6 +93,65 @@
         }
       },
       mounted:function(){
+        //echarts
+             // 基于准备好的dom，初始化echarts实例
+                let myChart = this.$echarts.init(document.getElementById('myChart'))
+                // 绘制图表
+                var  option = {
+                   title: {
+                           text: '四大知名品牌市场占有率（%）',
+                          left: 'left',
+                          top: 20,
+                          textStyle: {
+                              color: '#000'
+                          }
+                      },
+                  tooltip: {
+                         trigger: 'item',
+                         formatter: '{a} <br/>{b}: {c} ({d}%)'
+                     },
+                   legend: {
+                           orient: 'vertical',
+                           left: "10",
+                           top:"bottom",
+                           data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎'],
+                       },
+                     series: [
+                         {
+                             name: '访问来源',
+                             type: 'pie',
+                              center: ['80%', '60%'],
+                             radius: "55%",
+                             // center: ['50%', '50%'],
+                             avoidLabelOverlap: false,
+                             label: {
+                                 show: false,
+                                 // position: 'center'
+                             },
+                             roseType: 'radius',
+                             emphasis: {
+                                 label: {
+                                     show: false,
+
+                                 }
+                             },
+                             labelLine: {
+                                 show: false
+                             },
+                             data: [
+                                 {value: 335, name: '直接访问'},
+                                 {value: 310, name: '邮件营销'},
+                                 {value: 234, name: '联盟广告'},
+                                 {value: 135, name: '视频广告'},
+                                 {value: 500, name: '搜索引擎'}
+                             ]
+
+                         }
+                     ]
+                }
+                myChart.setOption(option);
+
+
           this.$store.state.heard_title ='车平台 - 轮胎跟换'
           let that = this
         var markerss

@@ -11,12 +11,14 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import store from './store'
 import './assets/iconfont/iconfont.css'
+import echarts from 'echarts'
+
 axios.defaults.baseURL = "/api"
-axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
-// axios.defaults.headers.post['Content-type']='application/json'
+// axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+axios.defaults.headers.post['Content-type']='application/json'
 Vue.config.productionTip = false
 Vue.prototype.$addr= axios;
-
+Vue.prototype.$echarts = echarts //echarts
 /* eslint-disable no-new */
 Vue.use(ElementUI)
 Vue.use(MintUI)
