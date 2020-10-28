@@ -13,7 +13,9 @@
   .center_xiaoxi_top>p>span{font-size: 14px !important;padding-left: 10px;}
   .center_xiaoxi_top>p>img{height: 15px;}
   .center_xiaoxi_center{padding:10px 20px;}
+  .center_xiaoxi_center>p{font-size: 12px;}
   .xiaoxi_center_text{padding: 5px;display: flex;align-items: center;background-color: #f5f5f5;}
   .xiaoxi_center_text>img{height: 55px;}
   .xiaoxi_center_text>p{padding-left: 10px;}
+  .center_xiaoxi_bottom{display: flex;justify-content: flex-end;padding:0 15px 15px 0;}
   .back{background-color: #F5F5F5;}

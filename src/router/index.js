@@ -25,6 +25,9 @@ import wash from '@/view/wash'
 import success from '@/view/success'
 import  expert  from '@/view/expert'
 import  news  from '@/view/news'
+import appointment from '@/view/appointment'
+import details from '@/view/details'
+
 Vue.use(Router)
 
 export default new Router({
@@ -155,5 +158,15 @@ export default new Router({
             name: 'news',
             component:news
             },
+           {
+              path:'/appointment',
+              name: 'appointment',
+              component:appointment
+              },
+           {
+              path:'/details',
+              name: 'details',
+              component:details
+              },
   ]
 })

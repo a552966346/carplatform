@@ -137,13 +137,13 @@
               viewMode:'2D',
           });
           /* 点击地图添加marker*/
-         map.on("click", (evt) => {
+        /* map.on("click", (evt) => {
             console.log(evt)
               //that.removeMarker()
              markerLayer.add({
               position: evt.latLng
              });
-         });
+         }); */
           var markerLayer = new TMap.MultiMarker({
                       id: 'container',
                       map: map,
@@ -267,12 +267,12 @@
           　　path: '/success',
           });
       } */
-      removeMarker() {
+   /*   removeMarker() {
                   if (markerLayer) {
                       markerLayer.setMap(null);
                       markerLayer = null;
                   }
-              }
+              } */
      }
   }
 </script>

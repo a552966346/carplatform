@@ -108,6 +108,7 @@
   // @import 'https://at.alicdn.com/t/font_2118841_f4e5dnhf8iv.css';
   export default {
     name: 'index',
+
     data() {
       return {
         msg: 'index',
@@ -125,36 +126,46 @@
         id:"",
         llat:'',
         llng:'',
-        address:''
+        address:'',
+        km:'',
+        status:'',
+        lat:[],
+        lng:[]
       }
     },
     mounted:function() {
       this.$store.state.heard_title ='车平台 - 首页'
+
       console.log(this)
        this.$addr.get('/index/index/index')
                                .then(response => {
                                 // console.log(this)
-                                console.log(response.data.result)
+                                console.log( response.data.result.merchant)
                                  this.banner = response.data.result.banner;
                                  //console.log(this.banner)
                                  this.types = response.data.result.types;
+                                 this.status =  response.data.result.status
                                  this.merchant=response.data.result.merchant
                                  //console.log(this.merchant)
+
                                  this.$nextTick(function(){
                                    this.doswiper()
                                  })
                               } )
          let that = this
+         //定位
       var geolocation = new qq.maps.Geolocation('W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4', '车平台');
       // var positionNum = 0;
       var options = {timeout: 10000000};
       geolocation.getLocation(showPosition, showErr, options);
       function showPosition(position) {
-          console.log(position)
+          //console.log(position)
          that.llat = position.lat,
          that.llng = position.lng,
          that.laddress = position.address
 
+          that.distance()
+         // that.km = that.GetDistance( that.llat,  that.llng,  lat2,  lng2)
         }
         function showErr() {
           console.log("定位失败")
@@ -188,13 +199,15 @@
       // 项目挑传
       index_run(movieId){
         console.log(movieId)
-        // if(code == true){
+        if(this.status == true){
           this.$router.push({
-             name: movieId,
-           })
-        // }else{
-        //   name:Register,
-        // }
+             name: movieId
+              })
+        }else{
+           this.$router.push({
+              name:"/register",
+            })
+        }
 
       },
       index_star(str){
@@ -232,6 +245,28 @@
             address = res.address;
             window.location.href="https://apis.map.qq.com/uri/v1/routeplan?type=drive&from="+outaddress+"&fromcoord="+oudlat+","+oudlng+"&to="+address+"&tocoord="+nlat+","+nlng+"&policy=1&referer=W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4"
       },
+      //计算距离
+      distance(){
+        let that = this
+        for(let i=0;i<that.merchant.length;i++){
+              that.lat[i] = that.merchant[i].lat
+              that.lng[i] = that.merchant[i].lng
+              that.GetDistance( that.lat[i],  that.lng[i],  that.llat,  that.llng)
+        }
+      },
+      GetDistance( lat1,  lng1,  lat2,  lng2){
+        //console.log(lat1,  lng1,  lat2,  lng2)
+          var radLat1 = lat1*Math.PI / 180.0;
+          var radLat2 = lat2*Math.PI / 180.0;
+          var a = radLat1 - radLat2;
+          var  b = lng1*Math.PI / 180.0 - lng2*Math.PI / 180.0;
+          var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) +
+          Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2)));
+          s = s *6378.137 ;// EARTH_RADIUS;
+          s = Math.round(s * 10000) / 10000;
+          console.log
+          return s;
+      }
     }
   }
 </script>
