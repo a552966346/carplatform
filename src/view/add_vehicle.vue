@@ -70,7 +70,7 @@
         </p>
 
         <div class="check_btn">
-          <mt-button type="default" size="small" class="check" @click="query">立即查询</mt-button>
+          <mt-button type="default" size="small" class="check" @click="query">提交</mt-button>
           <mt-actionsheet :actions="actions" v-model="sheetVisible"></mt-actionsheet>
         </div>
       </div>
@@ -162,6 +162,15 @@ export default {
            })
                   .then(response => {
                     console.log(response)
+                    if(response.data.code == 200){
+                      layui.use('layer', function() {
+                        var layer = layui.layer;
+                          layer.msg("添加成功")
+                          that.$router.push({
+                            　path: '/exclusive_services',
+                            });
+                        })
+                    }
           })
          // }
        })

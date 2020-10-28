@@ -70,6 +70,7 @@ export default {
     }
   },
   mounted(){
+    this.$store.state.heard_title ='车平台 - 专家在线'
     this.isswiper()
   },
   methods:{

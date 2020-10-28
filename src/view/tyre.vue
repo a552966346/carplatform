@@ -93,6 +93,7 @@
         }
       },
       mounted:function(){
+        this.$store.state.heard_title ='车平台 - 轮胎更换'
         //echarts
              // 基于准备好的dom，初始化echarts实例
                 let myChart = this.$echarts.init(document.getElementById('myChart'))

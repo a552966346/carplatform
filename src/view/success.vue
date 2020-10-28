@@ -32,6 +32,9 @@
       return{
 
       }
+    },
+	mounted(){
+      this.$store.state.heard_title ='车平台 - 预约成功'
     }
   }
 </script>

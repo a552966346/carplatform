@@ -137,13 +137,13 @@
               viewMode:'2D',
           });
           /* 点击地图添加marker*/
-        /*  map.on("click", (evt) => {
+         map.on("click", (evt) => {
             console.log(evt)
               //that.removeMarker()
              markerLayer.add({
               position: evt.latLng
              });
-         }); */
+         });
           var markerLayer = new TMap.MultiMarker({
                       id: 'container',
                       map: map,
@@ -208,8 +208,9 @@
                        if(response.data.code==200){
                          layer.msg("已提交申请等待通知")
                          that.text = "等待通知"
-                        that.bled = true
+                          that.bled = true
                          console.log(that.bled)
+                          /* that.run() */
                        }
 
                      })
@@ -261,12 +262,17 @@
         this.address = this.$route.query.addr; //路由地址
         this.city = this.$route.query.city; //路由城市
       },
-      /* removeMarker() {
+     /* run(){    //预约成功后跳转
+        this.$router.push({
+          　　path: '/success',
+          });
+      } */
+      removeMarker() {
                   if (markerLayer) {
                       markerLayer.setMap(null);
                       markerLayer = null;
                   }
-              } */
+              }
      }
   }
 </script>

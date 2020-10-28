@@ -24,6 +24,7 @@ import integral from '@/view/integral'
 import wash from '@/view/wash'
 import success from '@/view/success'
 import  expert  from '@/view/expert'
+import  news  from '@/view/news'
 Vue.use(Router)
 
 export default new Router({
@@ -48,10 +49,6 @@ export default new Router({
       path:'/',
       name: 'index',
       component:index,
-      meta:{
-                      // 页面标题title
-                      title: '首页'
-                  }
     },
     {
       path:'/add_vehicle',
@@ -153,5 +150,10 @@ export default new Router({
           name: 'expert',
           component:expert
           },
+          {
+            path:'/news',
+            name: 'news',
+            component:news
+            },
   ]
 })

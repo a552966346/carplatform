@@ -188,9 +188,14 @@
       // 项目挑传
       index_run(movieId){
         console.log(movieId)
-        this.$router.push({
-           name: movieId,
-         })
+        // if(code == true){
+          this.$router.push({
+             name: movieId,
+           })
+        // }else{
+        //   name:Register,
+        // }
+
       },
       index_star(str){
           switch(str){
