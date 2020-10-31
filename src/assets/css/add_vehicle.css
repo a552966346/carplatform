@@ -24,8 +24,7 @@
 .car_number2 select{border: none; background-color: #fff;}
 
   .mint-cell-title{text-align: left;font-size: 14px;color: #333;}
-  .mint-field-core{text-align: right;font-size: 14px;color: #333;background: #fff !important;}
-  .mint-cell-value>input{background-color: #fff;}
+  .mint-field-core{text-align: right;font-size: 14px;color: #333;background: #fff ;}
   .add_vehicle_switch{display: flex;justify-content: space-between;align-items: center;min-height: 48px;}
 
   .mint-switch-core{width: 45px;height: 17px;}
@@ -36,4 +35,3 @@
   /* 按钮 */
   .check_btn{width: 100%;padding-top: 40px;text-align: center;}
   .check{width: 80%;margin: 0 auto;background-color:#F8D11F;color: #fff;border-radius:20px;height: 40px;}
-

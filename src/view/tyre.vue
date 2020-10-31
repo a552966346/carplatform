@@ -65,7 +65,7 @@
                       <p>{{item.address}}</p>
                     </div>
                     <div class="bottom_right">
-                      <a :href="'tel:'+item.mobile">立即预约</a>
+                      <router-link  :to="{path:'/store_details',query:{ id:item.id }}">立即预约</router-link>
                     </div>
                   </div>
                 </div>
@@ -101,8 +101,8 @@
                 var  option = {
                    title: {
                            text: '四大知名品牌市场占有率（%）',
-                          left: 'left',
-                          top: 20,
+                          left: 'center',
+                          top: 5,
                           textStyle: {
                               color: '#000'
                           }

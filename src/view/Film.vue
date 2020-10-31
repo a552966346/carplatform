@@ -52,7 +52,7 @@
                       <p>{{item.address}}</p>
                     </div>
                     <div class="bottom_right">
-                      <a :href="'tel:'+item.mobile">立即预约</a>
+                      <router-link  :to="{path:'/store_details',query:{ id:item.id }}">立即预约</router-link>
                     </div>
                   </div>
                 </div>
@@ -92,7 +92,7 @@
               that.category = that.data.category,
               that.detailimages = that.data.detailimages
               that.service= that.merchant.service
-
+               
               let center = new TMap.LatLng(that.merchant[1].lat, that.merchant[1].lng)
               //定义map变量，调用 TMap.Map() 构造函数创建地图
               let map = new TMap.Map(document.getElementById('container'), {

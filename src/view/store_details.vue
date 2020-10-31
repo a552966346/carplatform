@@ -60,7 +60,7 @@
         <a href="tel:400-500-600">
           <div>联系商家</div>
         </a>
-        <router-link to="appointment_details">
+        <router-link :to="{path:'/appointment_details',query:{id:id}}">
           <div>立即预约</div>
         </router-link>
       </div>

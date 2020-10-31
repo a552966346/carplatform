@@ -26,7 +26,7 @@ import success from '@/view/success'
 import  expert  from '@/view/expert'
 import  news  from '@/view/news'
 import appointment from '@/view/appointment'
-import details from '@/view/details'
+import isdetails from '@/view/isdetails'
 
 Vue.use(Router)
 
@@ -49,7 +49,7 @@ export default new Router({
       component:register
     },
     {
-      path:'/',
+      path:"/",
       name: 'index',
       component:index,
     },
@@ -164,9 +164,9 @@ export default new Router({
               component:appointment
               },
            {
-              path:'/details',
-              name: 'details',
-              component:details
+              path:'/isdetails',
+              name: 'isdetails',
+              component:isdetails
               },
   ]
 })

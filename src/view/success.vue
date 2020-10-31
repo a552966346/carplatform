@@ -20,7 +20,7 @@
             </div>
       </div>
       <div class="success_center">
-              <button>查看订单</button>
+              <button @click="run">查看订单</button>
       </div>
   </div>
 </template>
@@ -35,6 +35,11 @@
     },
 	mounted(){
       this.$store.state.heard_title ='车平台 - 预约成功'
+    },
+    methods:{
+      run(){
+        this.$router.push("/isdetails")
+      }
     }
   }
 </script>

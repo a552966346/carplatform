@@ -210,7 +210,7 @@
                          that.text = "等待通知"
                           that.bled = true
                          console.log(that.bled)
-                          /* that.run() */
+                          that.run()
                        }
 
                      })
@@ -248,7 +248,7 @@
         }
         sessionStorage.setItem("nickname", this.nickname);
         sessionStorage.setItem("tel", this.tel);
-        window.location.href="https://apis.map.qq.com/tools/locpicker?search=1&type=0&backurl=http://localhost:8080/examination&key=W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4&referer=车平台"
+        window.location.href="https://apis.map.qq.com/tools/locpicker?search=1&type=0&backurl=http://localhost:8081/examination&key=W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4&referer=车平台"
     },
     //获取地图返回的参数
     getLocation() {
@@ -262,11 +262,11 @@
         this.address = this.$route.query.addr; //路由地址
         this.city = this.$route.query.city; //路由城市
       },
-     /* run(){    //预约成功后跳转
+     run(){    //预约成功后跳转
         this.$router.push({
           　　path: '/success',
           });
-      } */
+      }
    /*   removeMarker() {
                   if (markerLayer) {
                       markerLayer.setMap(null);

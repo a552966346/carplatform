@@ -73,7 +73,7 @@
 
 <script>
   export default{
-    name:"details",
+    name:"isdetails",
     data(){
       return{
         border_down:true,

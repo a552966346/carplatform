@@ -37,7 +37,7 @@
 <script>
   // import { Indicator } from 'mint-ui';
 export default {
-  name: 'add_vehicle',
+  name: 'appointment_details',
   data () {
     return {
           msg: 'add',
@@ -48,38 +48,67 @@ export default {
           service:'',
           isservice:[],
           remarks:'',
+          id:'',
+          merchant:''
       }
   },
   mounted:function(){
         this.$store.state.heard_title ='车平台 - 预约'
+        this.merchant= this.$route.query.id
+        console.log( this.merchant)
         this.$addr.get("/index/service/subscribe")
         .then(res=>{
           console.log(res.data.result)
           this.isservice = res.data.result.service
           this.carnub =res.data.result.userinfo.number
           this.phone =res.data.result.userinfo.mobile
-          
+          this.id = res.data.result.userinfo.id
         })
   },
   methods:{
       submit:function(){
         var that = this
-        console.log(that.phone)
-
-      /*  that.$addr.post('v1/bpi/currentprice.json', this.item)
-          .then(function (response) {
-            console.log(response);
+       layui.use('layer', function(){
+            var layer = layui.layer;
+        console.log(that.id)
+        if(that.username==''){
+          layer.msg("请输入联系人姓名")
+        }
+        if(that.service == ''){
+          layer.msg("请选择预约服务")
+        }
+        if(that.time==''){
+          layer.msg("请选择预约时间")
+        }else{
+          that.$addr.post('/index/service/record', {
+             name : that.username,
+             booktime : that.time,
+             service : that.service,
+             mark : that.remarks,
+             id: that.id,
+             merchant:that.merchant
           })
-          .catch(function (error) {
-            console.log(error);
-          }); */
+             .then(function (response) {
+               console.log(response);
+               if(response.data.code==200){
+                 layer.msg("预约成功")
+                 that.$router.push("/")
+               }
+             })
+             .catch(function (error) {
+               console.log(error);
+             });
+        }
         //  var that = this;
         // Indicator.open('加载中...')
-
+          })
       },
       reset:function(){
          console.log('重置')
-         console.log(this.item)
+         this.username = '',
+         this.time = '',
+         this.service = '',
+         this.remarks = ''
       }
   }
 }

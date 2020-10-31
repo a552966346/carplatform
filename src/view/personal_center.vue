@@ -21,7 +21,7 @@
     	</div>
     	<!-- 我的 -->
     	<div class="personalcenter_bottom">
-    		<router-link to="">
+    		<router-link to="/isdetails">
     			<div class="personalcenter_bottom_item">
     				<p>5</p>
     				<p>我的预约</p>
@@ -123,7 +123,7 @@ export default {
         this.$store.state.heard_title ='车平台 - 个人中心'
   },
   methods:{
-   
+
   }
 }
 </script>

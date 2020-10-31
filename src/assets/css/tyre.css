@@ -6,7 +6,7 @@
 .tyre_top_text>span {font-size: 14px;color: #fff;}
 .type_tope_ech{width: 100%;background-color: #fff;border-radius: 10px;padding: 10px;box-shadow: 1px 1px 2px 5px #f5f5f5;flex: 1;}
 .tyre_center {height:65%;padding-top: 90px;}
-.center_data {height:100%;}
+.center_data {height:150px;}
 .center_navigation{height: 80%;}
 /* 弹框 */
 .el-dialog--center .el-dialog__body{padding: 10px !important;}
