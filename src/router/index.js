@@ -27,6 +27,8 @@ import  expert  from '@/view/expert'
 import  news  from '@/view/news'
 import appointment from '@/view/appointment'
 import isdetails from '@/view/isdetails'
+import order from '@/view/order'
+import after_sale from '@/view/after_sale'
 
 Vue.use(Router)
 
@@ -168,5 +170,15 @@ export default new Router({
               name: 'isdetails',
               component:isdetails
               },
+              {
+                 path:'/order',
+                 name: 'order',
+                 component:order
+                 },
+               {
+                 path:'/after_sale',
+                 name: 'after_sale',
+                 component:after_sale
+                 },
   ]
 })

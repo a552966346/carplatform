@@ -39,7 +39,7 @@
     				<p>票券</p>
     			</div>
     		</router-link>
-        <router-link to="">
+        <router-link to="order">
         	<div class="personalcenter_bottom_item">
         		<p><img src="../../static/img/personalcenter_gouwu.png"> </p>
         		<p>购物车</p>
@@ -63,42 +63,42 @@
         <!-- 我的订单 -->
         <div class="dingdan">
         	<div class="dingdan_top">
-        		<router-link to="">
+        		<router-link to="order">
         			<p>我的订单</p>
         			<p><span>全部订单</span><i class="iconfont icon-youjiantou"></i></p>
         		 </router-link>
         	</div>
           <div class="dingdan_center">
               <div class="dingdan_center_a">
-                <router-link to="">
+                <router-link to="order">
                   <img src="../../static/img/personal_center_pay.png" >
                   <p>待付款</p>
                 </router-link>
                 <i class="iconfont icon-youjiantou"></i>
                </div>
                <div class="dingdan_center_a">
-                <router-link to="">
+                <router-link to="order">
                   <img src="../../static/img/personal_center_delivered.png" >
                   <p>待发货</p>
                 </router-link>
                 <i class="iconfont icon-youjiantou"></i>
                </div>
                <div class="dingdan_center_a">
-                <router-link to="">
+                <router-link to="order">
                   <img src="../../static/img/personal_center_receive.png" >
                   <p>待收货</p>
                 </router-link>
                 <i class="iconfont icon-youjiantou"></i>
                </div>
                <div class="dingdan_center_a">
-               <router-link to="">
+               <router-link to="order">
                   <img src="../../static/img/personal_center_evaluated.png" >
                   <p>待评价</p>
                  </router-link>
                 <i class="iconfont icon-youjiantou"></i>
                </div>
                <div class="dingdan_center_a">
-                <router-link to="">
+                <router-link to="order">
                   <img src="../../static/img/personal_center_refund.png" >
                   <p>退款/售后</p>
                 </router-link>
