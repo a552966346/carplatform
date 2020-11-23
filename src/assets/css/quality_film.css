@@ -111,18 +111,18 @@
     padding: 10px 15px 10px 20px;
 }
 .bottom_top>p:first-child{
-  font-size: 14px;
+  font-size: 15px;
 }
 .bottom_top>p:last-child{
   display: flex;
   justify-content: space-between;
 }
 .bottom_top>p:last-child>span:first-child{
-  font-size: 10px;
+  font-size: 12px;
   color: #aaa;
 }
 .bottom_top>p:last-child>span:last-child{
-  font-size: 10px;
+  font-size: 12px;
   color: #F8D11F;
 }
 .bottom_top>p:last-child>span:last-child>img{
@@ -208,7 +208,7 @@
   width: 100%;
   border: none;
   resize: none;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.5;
 }
 .center_bottom{

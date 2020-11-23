@@ -26,14 +26,15 @@
                 <!-- 审车代办 -->
                 <div class="swiper-slide" v-for="(item,index) in types" :key='index'>
                   <div class="index_menu_item">
-                    <a href="#" @click="index_run(item.vue)">
+                   <!-- <a href="#" @click="index_run(item.vue)"> -->
+                    <router-link @click="index_run(item.vue)">
                       <div class="index_menu_item1">
                         <div class="activity_management">
                           <img :src="item.logoimage" />
                         </div>
                         <div class="common_title">{{item.name}}</div>
                       </div>
-                    </a>
+                   </router-link>
                   </div>
                 </div>
               </div>
