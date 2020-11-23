@@ -142,27 +142,28 @@
         console.log(param)
         if(param){
           localStorage.setItem("token",param);
+          token = param;
         }else{
-          window.location.href = "/api/index/index/index"
+          window.location.href = "/api/index/index/login"
         }
       }
       let that = this
-        console.log(that)
-         that.$addr.get('/index/index/index')
-                                 .then(response => {
-                                  // console.log(this)
-                                  console.log( response.data.result.merchant)
-                                   that.banner = response.data.result.banner;
-                                   //console.log(this.banner)
-                                   that.types = response.data.result.types;
-                                   that.status =  response.data.result.status
-                                   that.merchant=response.data.result.merchant
-                                   //console.log(this.merchant)
+      console.log(token)
+         that.$addr.post('/index/index/index',{token:token})
+               .then(response => {
+                // console.log(this)
+                console.log(response.data)
+                 that.banner = response.data.result.banner;
+                 //console.log(this.banner)
+                 that.types = response.data.result.types;
+                 that.status =  response.data.result.status
+                 that.merchant=response.data.result.merchant
+                 console.log(this.merchant)
 
-                                   that.$nextTick(function(){
-                                     that.doswiper()
-                                   })
-                                } )
+                 that.$nextTick(function(){
+                   that.doswiper()
+                 })
+        } )
 
            //定位
         var geolocation = new qq.maps.Geolocation('W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4', '车平台');
@@ -170,7 +171,7 @@
         var options = {timeout: 10000000};
         geolocation.getLocation(showPosition, showErr, options);
         function showPosition(position) {
-            //console.log(position)
+            console.log(position)
            that.llat = position.lat,
            that.llng = position.lng,
            that.laddress = position.address
@@ -272,9 +273,10 @@
       distance(){
         let that = this
         let km = []
+        console.log(merchant)
         for(let i=0;i<that.merchant.length;i++){
-              that.lat[i] = that.merchant[i].lat
-              that.lng[i] = that.merchant[i].lng
+              that.lat[i] =that.merchant[i].lat
+              that.lng[i] =that.merchant[i].lng
               km[i]=that.GetDistance( that.lat[i],  that.lng[i],  that.llat,  that.llng)
         }
         return km
