@@ -170,15 +170,15 @@ export default new Router({
               name: 'isdetails',
               component:isdetails
               },
-              {
-                 path:'/order',
-                 name: 'order',
-                 component:order
-                 },
-               {
-                 path:'/after_sale',
-                 name: 'after_sale',
-                 component:after_sale
-                 },
+	      {
+		 path:'/order',
+		 name: 'order',
+		 component:order
+		 },
+	       {
+		 path:'/after_sale',
+		 name: 'after_sale',
+		 component:after_sale
+		 },
   ]
 })

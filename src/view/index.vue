@@ -3,7 +3,7 @@
   <div class="index">
     <!-- 导航 -->
     <div class="index_top">
-      <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=324399191,4253983438&fm=11&gp=0.jpg">
+      <img src="../../static/img/index_top.jpg">
       <div class="index_text">
         <p>汽车服务</p>
         <p>顺通大广汽车服务有限公司</p>
@@ -135,6 +135,7 @@
       }
     },
     mounted:function() {
+
       this.$store.state.heard_title ='车平台 - 首页'
      let token = localStorage.getItem("token")
      if(token == null){
@@ -159,7 +160,6 @@
                  that.status =  response.data.result.status
                  that.merchant=response.data.result.merchant
                  console.log(this.merchant)
-
                  that.$nextTick(function(){
                    that.doswiper()
                  })
@@ -190,7 +190,6 @@
         // swiper
         setTimeout(()=>{
           var swiper = new Swiper('.swiper-container1', {
-
               slidesPerView: 4,
               slidesPerColumn:2,
               spaceBetween: 0,
@@ -218,7 +217,7 @@
               })
         }else{
            this.$router.push({
-              name:"/register",
+              name:"register",
             })
         }
 
@@ -244,14 +243,12 @@
             break;
             case '3' :
             return this.star[2];
-             console.log("------")
             break;
             case '4' :
            return  this.star[3];
             break;
             case '5':
             return this.star[4];
-             console.log('+++++')
             break;
           }
       },
@@ -273,7 +270,6 @@
       distance(){
         let that = this
         let km = []
-        console.log(merchant)
         for(let i=0;i<that.merchant.length;i++){
               that.lat[i] =that.merchant[i].lat
               that.lng[i] =that.merchant[i].lng

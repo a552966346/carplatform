@@ -134,7 +134,6 @@ export default {
                              })
                          },
                            geometries: markerss,
-
                         })
                         marker.on("click", that.drawer)
       })
