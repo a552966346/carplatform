@@ -26,15 +26,14 @@
                 <!-- 审车代办 -->
                 <div class="swiper-slide" v-for="(item,index) in types" :key='index'>
                   <div class="index_menu_item">
-                   <!-- <a href="#" @click="index_run(item.vue)"> -->
-                    <router-link @click="index_run(item.vue)">
+                    <a href="#" @click="index_run(item.vue)">
                       <div class="index_menu_item1">
                         <div class="activity_management">
                           <img :src="item.logoimage" />
                         </div>
                         <div class="common_title">{{item.name}}</div>
                       </div>
-                   </router-link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -66,8 +65,8 @@
         <div class="index_shop">
             <!-- 标题 -->
             <div class="index_shop_title">
-            	<p>附近商家</p>
-            	<a href="javascript:;">更多<i class="iconfont icon-youjiantou"></i></a>
+              <p>附近商家</p>
+              <a href="javascript:;">更多<i class="iconfont icon-youjiantou"></i></a>
             </div>
             <!-- 内容 -->
             <div class="index_shop_cont">
@@ -75,18 +74,18 @@
 
                 <div class="index_shop_item" >
                   <router-link  :to="{path:'/store_details',query:{ id:item.id }}" class="around">
-                	<div class="index_shop_picitem">
-                		<img :src="item.banner" />
-                	</div>
+                  <div class="index_shop_picitem">
+                    <img :src="item.banner" />
+                  </div>
                  </router-link>
-                	<div class="index_shop_textitem">
-                		<p class="index_centershop_toptitle">{{item.name}}</p>
-                		<div class="index_shop_centertext">
-                			<p class="index_centershop_centertitle">维修保养</p>
-                			<img :src=" index_star(item.star)">
-                		</div>
-                		<p class="index_centershop_bottomtitle">{{item.address}}</p>
-                	</div>
+                  <div class="index_shop_textitem">
+                    <p class="index_centershop_toptitle">{{item.name}}</p>
+                    <div class="index_shop_centertext">
+                      <p class="index_centershop_centertitle">维修保养</p>
+                      <img :src=" index_star(item.star)">
+                    </div>
+                    <p class="index_centershop_bottomtitle">{{item.address}}</p>
+                  </div>
                   <a href=" #" @click="toMap(item)">
                     <div class="index_shop_righttext">
                         <img class="position_img" src="../../static/img/index_navigation.png">
@@ -109,7 +108,6 @@
   // @import 'https://at.alicdn.com/t/font_2118841_f4e5dnhf8iv.css';
   export default {
     name: 'index',
-
     data() {
       return {
         msg: 'index',
@@ -135,58 +133,52 @@
         token:''
       }
     },
-    mounted:function() {
 
-      this.$store.state.heard_title ='车平台 - 首页'
-     let token = localStorage.getItem("token")
+    mounted:function() {
+     this.$store.state.heard_title ='车平台 - 首页'
+      let token = localStorage.getItem("token")
      if(token == null){
         let param = this.getUrlParam('token');
-        console.log(param)
         if(param){
           localStorage.setItem("token",param);
           token = param;
         }else{
-          window.location.href = "/api/index/index/login"
+          window.location.href = "/api/index/index/login" 
+
         }
       }
       let that = this
-      console.log(token)
          that.$addr.post('/index/index/index',{token:token})
                .then(response => {
-                // console.log(this)
-                console.log(response.data)
                  that.banner = response.data.result.banner;
-                 //console.log(this.banner)
                  that.types = response.data.result.types;
                  that.status =  response.data.result.status
                  that.merchant=response.data.result.merchant
-                 console.log(this.merchant)
                  that.$nextTick(function(){
                    that.doswiper()
                  })
         } )
-
-           //定位
+        this.dingwei()
+    },
+   
+    methods:{
+      dingwei(){
+      var that = this
+    //定位
         var geolocation = new qq.maps.Geolocation('W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4', '车平台');
-        // var positionNum = 0;
         var options = {timeout: 10000000};
         geolocation.getLocation(showPosition, showErr, options);
-        function showPosition(position) {
-            console.log(position)
-           that.llat = position.lat,
-           that.llng = position.lng,
-           that.laddress = position.address
-          that.km =  that.distance()
-           console.log( that.km)
-           // that.km = that.GetDistance( that.llat,  that.llng,  lat2,  lng2)
+          function showPosition(position) {
+             that.llat = position.lat,
+             that.llng = position.lng,
+             that.laddress = position.address
+              that.km =  that.distance()
+              //console.log(that.km)
           }
           function showErr() {
             console.log("定位失败")
           };
-
-
-    },
-    methods:{
+      },
       doswiper(){
         // swiper
         setTimeout(()=>{
@@ -211,7 +203,6 @@
       },
       // 项目挑传
       index_run(movieId){
-        console.log(this.status)
         if(this.status == true){
           this.$router.push({
              name: movieId
@@ -259,9 +250,8 @@
       // },
       toMap(res) {
           let oudlat = this.llat,
-                oudlng = this.llng,
-                outaddress = this.address;
-            console.log(res)
+            oudlng = this.llng,
+            outaddress = this.address;
             let nlat = res.lat,
             nlng = res.lng,
             address = res.address;
@@ -276,10 +266,10 @@
               that.lng[i] =that.merchant[i].lng
               km[i]=that.GetDistance( that.lat[i],  that.lng[i],  that.llat,  that.llng)
         }
+        
         return km
       },
       GetDistance( lat1,  lng1,  lat2,  lng2){
-        //console.log(lat1,  lng1,  lat2,  lng2)
           var radLat1 = lat1*Math.PI / 180.0;
           var radLat2 = lat2*Math.PI / 180.0;
           var a = radLat1 - radLat2;
