@@ -26,7 +26,7 @@
                 <!-- 审车代办 -->
                 <div class="swiper-slide" v-for="(item,index) in types" :key='index'>
                   <div class="index_menu_item">
-                    <a href="#" @click="index_run(item.vue)">
+                    <a @click="index_run(item.vue)">
                       <div class="index_menu_item1">
                         <div class="activity_management">
                           <img :src="item.logoimage" />
@@ -86,7 +86,7 @@
                     </div>
                     <p class="index_centershop_bottomtitle">{{item.address}}</p>
                   </div>
-                  <a href=" #" @click="toMap(item)">
+                  <a  @click="toMap(item)">
                     <div class="index_shop_righttext">
                         <img class="position_img" src="../../static/img/index_navigation.png">
                         <p>{{km[index]}}km</p>
@@ -143,7 +143,7 @@
           localStorage.setItem("token",param);
           token = param;
         }else{
-          window.location.href = "/api/index/index/login" 
+          window.location.href = "/api/index/index/login"
 
         }
       }
@@ -160,7 +160,7 @@
         } )
         this.dingwei()
     },
-   
+
     methods:{
       dingwei(){
       var that = this
@@ -205,11 +205,11 @@
       index_run(movieId){
         if(this.status == true){
           this.$router.push({
-             name: movieId
+             path: movieId
               })
         }else{
            this.$router.push({
-              name:"register",
+              path:"register",
             })
         }
 
@@ -266,7 +266,7 @@
               that.lng[i] =that.merchant[i].lng
               km[i]=that.GetDistance( that.lat[i],  that.lng[i],  that.llat,  that.llng)
         }
-        
+
         return km
       },
       GetDistance( lat1,  lng1,  lat2,  lng2){

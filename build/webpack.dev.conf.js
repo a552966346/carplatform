@@ -22,11 +22,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
+    host: '127.0.0.1',
+    port: 8080,
     clientLogLevel: 'warning',
     disableHostCheck: true,
     historyApiFallback: {
-      rewrites: [
-        { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
+    rewrites: [
+    { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
       ],
     },
     hot: true,

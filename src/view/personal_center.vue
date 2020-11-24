@@ -218,61 +218,47 @@ export default {
     //待评价
     evaluated:function(){
       this.$router.push({
-         name: '',
+         path: '',
        })
     },
     refund(){
       this.$router.push({
-         name: '',
+         path: '',
        })
     },
     //联系客服
     centercontact:function(){
       this.$router.push({
-         name: '',
+         path: '',
        })
     },
     //审车代办
     examination:function(){
-      this.$router.push({
-         name: 'examination',
-       })
+      this.$router.push({path: 'examination'})
     },
     //维修与救援
     repair:function(){
-      this.$router.push({
-         name: 'quality_film',
-       })
+      this.$router.push({path: 'quality_film'})
     },
     //快修与保养
     maintain:function(){
-      this.$router.push({
-         name: 'repair_maintenance',
-       })
+      this.$router.push({path: 'repair_maintenance'})
     },
     //轮胎更换
     tire:function(){
-      this.$router.push({
-         name: 'tyre',
-       })
+      this.$router.push({path: 'tyre'})
     },
     //专家在线
     expert:function(){
-      this.$router.push({
-         name: 'expert_online',
-       })
+      this.$router.push({path: 'expert_online'})
     },
     //品质贴膜
     quality:function(){
-      this.$router.push({
-         name: 'Film',
-       })
+      this.$router.push({ path: 'Film'})
     },
     //会员中心
     member:function(){
-      this.$router.push({
-         name: 'exclusive_services',
-       })
+      this.$router.push({ path: 'exclusive_services'})
     },
   }
 }
