@@ -106,41 +106,7 @@
                </div>
           </div>
         </div>
-        <!-- 服务项目 -->
-        <!-- <div class="center_bottom">
-          <a href="#" @click="centercontact">
-            <img src="../../static/img/personal_centercontact.png" >
-            <p>联系客服</p>
-          </a>
-          <a href="#" @cliack="examination">
-            <img src="../../static/img/personal_center_car.png" >
-            <p>审车代办</p>
-          </a>
-          <a href="#" @click="repair">
-            <img src="../../static/img/personal_center_repair.png" >
-            <p>维修与救援</p>
-          </a>
-          <a href="#" @click="maintain">
-            <img src="../../static/img/personal_center_maintain.png" >
-            <p>快修与保养</p>
-          </a>
-          <a href="#" @click="tire">
-            <img src="../../static/img/personal_center_tire.png" >
-            <p>轮胎更换</p>
-          </a>
-          <a href="#" @click="expert">
-            <img src="../../static/img/personal_center_expert.png" >
-            <p>专家在线</p>
-          </a>
-          <a href="#" @click="quality">
-            <img src="../../static/img/personal_center_quality.png" >
-            <p>品质贴膜</p>
-          </a>
-          <a href="#" @click="member">
-            <img src="../../static/img/personal_center_member.png" >
-            <p>会员中心</p>
-          </a>
-        </div> -->
+
       </div>
     </div>
   </div>
@@ -170,19 +136,19 @@ export default {
     //积分
     integral:function(){
       this.$router.push({
-         name: '',
+         name: 'integral',
        })
     },
     //待办
     agency:function(){
       this.$router.push({
-         name: '',
+         name: 'news',
        })
     },
     //我的预约
     appointment:function(){
       this.$router.push({
-         name: '',
+         name: 'isdetails',
        })
     },
     //券票
@@ -194,72 +160,39 @@ export default {
     //全部订单
     order:function(){
       this.$router.push({
-         name: '',
+         path: 'order',
        })
     },
     //待付款
     payment:function(){
       this.$router.push({
-         name: '',
+         name: 'order',
        })
     },
     //代发货
     delivered:function(){
       this.$router.push({
-         name: '',
+         name: 'order',
        })
     },
     //待收货
     receive:function(){
       this.$router.push({
-         name: '',
+         name: 'order',
        })
     },
     //待评价
     evaluated:function(){
       this.$router.push({
-         path: '',
+         path: 'order',
        })
     },
     refund(){
       this.$router.push({
-         path: '',
+         path: 'after_sale',
        })
     },
-    //联系客服
-    centercontact:function(){
-      this.$router.push({
-         path: '',
-       })
-    },
-    //审车代办
-    examination:function(){
-      this.$router.push({path: 'examination'})
-    },
-    //维修与救援
-    repair:function(){
-      this.$router.push({path: 'quality_film'})
-    },
-    //快修与保养
-    maintain:function(){
-      this.$router.push({path: 'repair_maintenance'})
-    },
-    //轮胎更换
-    tire:function(){
-      this.$router.push({path: 'tyre'})
-    },
-    //专家在线
-    expert:function(){
-      this.$router.push({path: 'expert_online'})
-    },
-    //品质贴膜
-    quality:function(){
-      this.$router.push({ path: 'Film'})
-    },
-    //会员中心
-    member:function(){
-      this.$router.push({ path: 'exclusive_services'})
-    },
+
   }
 }
 </script>
