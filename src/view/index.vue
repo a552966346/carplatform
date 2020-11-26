@@ -143,7 +143,7 @@
               localStorage.setItem("token",param);
               token = param;
             }else{
-              window.location.href = "/index/index/index" 
+              window.location.href = "/index/index/index"
             }
           }
       let that = this
@@ -263,24 +263,24 @@
         for(let i=0;i<that.merchant.length;i++){
               that.lat[i] =that.merchant[i].lat
               that.lng[i] =that.merchant[i].lng
-              km[i]=that.GetDistance( that.lat[i],  that.lng[i],  that.llat,  that.llng)
+              km[i]=that.getGreatCircleDistance( that.lat[i],  that.lng[i],  that.llat,  that.llng)
         }
-
         return km
       },
-      GetDistance( lat1,  lng1,  lat2,  lng2){
-          var radLat1 = lat1*Math.PI / 180.0;
-          var radLat2 = lat2*Math.PI / 180.0;
-          var a = radLat1 - radLat2;
-          var  b = lng1*Math.PI / 180.0 - lng2*Math.PI / 180.0;
-          var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) +
-          Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2)));
-          s = s *6378.137 ;// EARTH_RADIUS;
-          s = Math.round(s) ;
-          //console.log(s)
-          return s;
-      }
-
+    getGreatCircleDistance(lat1,lng1,lat2,lng2){
+            var radLat1 = this.getRad(lat1);
+            var radLat2 = this.getRad(lat2);
+            var a = radLat1 - radLat2;
+            var b = this.getRad(lng1) - this.getRad(lng2);
+            var s = 2*Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) + Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2)));
+            s = s*EARTH_RADIUS;
+            s = Math.round(s*10000)/10000.0;
+            return s;
+        },
+      getRad(d){
+          var PI = Math.PI;
+        return d*PI/180.0;
+        }
     }
   }
 </script>
