@@ -136,19 +136,18 @@
 
     mounted:function() {
      this.$store.state.heard_title ='车平台 - 首页'
-      let token = localStorage.getItem("token")
-     if(token == null){
-        let param = this.getUrlParam('token');
-        if(param){
-          localStorage.setItem("token",param);
-          token = param;
-        }else{
-          window.location.href = "/api/index/index/login"
-
-        }
-      }
+     let token = localStorage.getItem("token")
+         if(token == null){
+            let param = this.getUrlParam('token');
+            if(param){
+              localStorage.setItem("token",param);
+              token = param;
+            }else{
+              window.location.href = "/index/index/index" 
+            }
+          }
       let that = this
-         that.$addr.post('/index/index/index',{token:token})
+         that.$addr.post('/index/index/index')
                .then(response => {
                  that.banner = response.data.result.banner;
                  that.types = response.data.result.types;
