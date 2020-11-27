@@ -86,20 +86,17 @@
           this.$store.state.heard_title ='车平台 - 商家店面'
           let that = this
           that.id = that.$route.query.id
-            console.log(that.id)
              that.$addr.post("index/index/merchant",{
                 id:that.id
             })
              .then(res=>{
               that.merchant = res.data.result.merchant
-              console.log(that.merchant)
               that.isimg = that.merchant.bannerimages
               that.service = that.merchant.service
              })
     },
     methods:{
       isactive(index){
-          console.log(index)
           this.nub = index
       }
     }

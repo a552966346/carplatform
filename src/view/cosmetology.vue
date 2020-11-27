@@ -102,7 +102,8 @@
       centerDialogVisible: false,
       shows:'',
       showcs:false,
-	  service:[]
+	service:[],
+	img:require('../../static/img/wash_weizhi.png')
       }
     },
     mounted:function(){
@@ -111,11 +112,9 @@
           var markerss
           that.$addr.get('/index/service/vehicle')
               .then(res=>{
-                 console.log(res.data)
                   that.data = res.data.result.data,
                   that.merchant = that.data.merchant,
                   that.category = that.data.category,
-                  // console.log(that.merchant)
                   that.detailimages = that.data.detailimages
                   that.service= that.merchant.service
                   let center = new TMap.LatLng(that.merchant[1].lat, that.merchant[1].lng)
@@ -134,7 +133,7 @@
                                          "width": 25,
                                          "height": 35,
                                          "anchor": { x: 16, y: 32 },
-                                         "src": '../../static/img/wash_weizhi.png'
+                                         "src": that.img
                                      })
                                  },
                                    geometries: markerss,
@@ -145,21 +144,13 @@
     },
     methods:{
       shop(evt) {
-         console.log(evt)
          this.shows =evt.geometry.id
          this.centerDialogVisible = true
-      },
-      division(str){
-        console.log(str)
-        // let service =str.split("@");
-        // (this.message.message || "").split("\n");
       },
       marker(ent){
         let that = this
         let id = []
         let pos = [],name = [], str = '',markers = []
-       //console.log(ent[0].lat)
-          //console.log(ent[i].lat)
           for(let i= 0 ; i<ent.length; i++){
             // that.marker(that.merchant[i])
             let position =  new TMap.LatLng(ent[i].lat,ent[i].lng)

@@ -104,6 +104,7 @@ import Swiper from 'swiper';
         centerDialogVisible: false,
         shows:'',
         showcs:false,
+        img:require('../../static/img/wash_weizhi.png')
       }
     },
     mounted:function(){
@@ -113,11 +114,9 @@ import Swiper from 'swiper';
         //定义地图中心点坐标
         that.$addr.get('index/service/wash')
             .then(res=>{
-                console.log(res.data.result)
                 that.data = res.data.result.data,
                 that.merchant = that.data.merchant,
                 that.category = that.data.category,
-                console.log(that.merchant)
                 that.detailimages = that.data.detailimages
                 that.$nextTick(function(){
                   that.doswiper()
@@ -140,7 +139,7 @@ import Swiper from 'swiper';
                                        "width": 25,
                                        "height": 35,
                                        "anchor": { x: 16, y: 32 },
-                                       "src": '../../static/img/wash_weizhi.png'
+                                       "src": that.img
                                    })
                                },
                                  geometries: markerss,

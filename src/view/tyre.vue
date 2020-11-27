@@ -89,7 +89,8 @@
             centerDialogVisible: false,
             shows:'',
             showcs:false,
-            service:[]
+            service:[],
+            img:require('../../static/img/wash_weizhi.png')
         }
       },
       mounted:function(){
@@ -181,7 +182,7 @@
                                        "width": 25,
                                        "height": 35,
                                        "anchor": { x: 16, y: 32 },
-                                       "src": '../../static/img/wash_weizhi.png'
+                                       "src": that.img
                                    })
                                },
                                  geometries: markerss,

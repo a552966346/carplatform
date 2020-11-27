@@ -80,7 +80,7 @@
     },
     methods:{
       change(){
-        console.log("aaa")
+        
 
       }
     }

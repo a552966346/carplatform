@@ -135,7 +135,6 @@
     methods:{
       int_sign:function(){
         var that = this;
-        console.log(that.urls)
         layui.use('layer', function() {
           var layer = layui.layer;
           })

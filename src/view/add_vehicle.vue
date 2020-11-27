@@ -120,7 +120,7 @@ export default {
             this.$refs.picker.open();
           },
     phone:function(){
-      // console.log(this)
+
        this.sheetVisible = true;
     },
     getCamera: function(){
@@ -134,19 +134,19 @@ export default {
        var  that = this;
      layui.use('layer', function(){
          var layer = layui.layer;
-       // if(that.cnub.length!=6){
-       //   layer.msg("请输入正确车牌号!");
-       // }else if(that.plate = ''){
-       //   layer.msg("请选择车牌归属地")
-       // }else if(that.cnub = ''){
-       //   layer.msg("请填写车牌号")
-       // }else if(that.bodynub = ''){
-       //   layer.msg("请填写车身架号")
-       // }else if(that.engnub = ''){
-       //   layer.msg("请填写发动机架号")
-       // }else if(that.phone_nub = ''){
-       //   layer.msg("请填写手机号码")
-       // }else {
+       if(that.cnub.length!=6){
+         layer.msg("请输入正确车牌号!");
+       }else if(that.plate = ''){
+         layer.msg("请选择车牌归属地")
+       }else if(that.cnub = ''){
+         layer.msg("请填写车牌号")
+       }else if(that.bodynub = ''){
+         layer.msg("请填写车身架号")
+       }else if(that.engnub = ''){
+         layer.msg("请填写发动机架号")
+       }else if(that.phone_nub = ''){
+         layer.msg("请填写手机号码")
+       }else {
            that.$addr.post('/index/vehicle/add',{
              number:that.plate+that.cnub,
              imei: that.bodynub,
@@ -161,7 +161,7 @@ export default {
               illega:that.illega
            })
                   .then(response => {
-                    console.log(response)
+           
                     if(response.data.code == 200){
                       layui.use('layer', function() {
                         var layer = layui.layer;
@@ -172,13 +172,13 @@ export default {
                         })
                     }
           })
-         // }
+         }
        })
      }
   }
 }
 </script>
 <style scoped>
-  @import '../assets/css/add_vehicle.css'
+  @import '../assets/css/add_vehicle.css';
 
 </style>

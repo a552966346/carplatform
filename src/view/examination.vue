@@ -115,12 +115,12 @@
       //var  ss = this.$route.query
       var that = this;
         that.$store.state.heard_title ='车平台 - 审车代办';
-        var geolocation = new qq.maps.Geolocation('W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4', 'myapp');
-        // var positionNum = 0;
-        var options = {timeout: 10000000};
-        geolocation.getLocation(showPosition, showErr, options);
+       var geolocation = new qq.maps.Geolocation();
+       var options = {
+           timeout: 600000
+       };
+       geolocation.getLocation(showPosition, showErr, options);
         function showPosition(position) {
-           console.log(position)
           //定义地图中心点坐标
           if(that.latitude == ''){
             that.latitude = position.lat;
@@ -136,14 +136,7 @@
               zoom: 11,   //设置地图缩放级别
               viewMode:'2D',
           });
-          /* 点击地图添加marker*/
-        /* map.on("click", (evt) => {
-            console.log(evt)
-              //that.removeMarker()
-             markerLayer.add({
-              position: evt.latLng
-             });
-         }); */
+
           var markerLayer = new TMap.MultiMarker({
                       id: 'container',
                       map: map,
@@ -209,7 +202,6 @@
                          layer.msg("已提交申请等待通知")
                          that.text = "等待通知"
                           that.bled = true
-                         console.log(that.bled)
                           that.run()
                        }
 
@@ -233,7 +225,6 @@
                          layer.msg("已提交申请等待通知")
                          that.text = "等待通知"
                         that.bled = true
-                         console.log(that.bled)
                        }
 
                      })
@@ -246,9 +237,10 @@
         if(this.brand_id == null) {
             this.brand_id = 0;
         }
+        var url = window.location.href
         sessionStorage.setItem("nickname", this.nickname);
         sessionStorage.setItem("tel", this.tel);
-        window.location.href="https://apis.map.qq.com/tools/locpicker?search=1&type=0&backurl=http://localhost:8081/examination&key=W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4&referer=车平台"
+        window.location.href="https://apis.map.qq.com/tools/locpicker?search=1&type=0&backurl="+url+"&key=W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4&referer=车平台"
     },
     //获取地图返回的参数
     getLocation() {

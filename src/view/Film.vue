@@ -77,7 +77,8 @@
           centerDialogVisible: false,
           shows:'',
           showcs:false,
-          service:[]
+          service:[],
+	  img:require('../../static/img/wash_weizhi.png')
       }
     },
     mounted:function(){
@@ -86,13 +87,13 @@
       var markerss
       that.$addr.get('index/service/pasting')
           .then(res=>{
-             // console.log(res.data.result)
+
               that.data = res.data.result.data,
               that.merchant = that.data.merchant,
               that.category = that.data.category,
               that.detailimages = that.data.detailimages
               that.service= that.merchant.service
-               
+
               let center = new TMap.LatLng(that.merchant[1].lat, that.merchant[1].lng)
               //定义map变量，调用 TMap.Map() 构造函数创建地图
               let map = new TMap.Map(document.getElementById('container'), {
@@ -109,7 +110,7 @@
                                      "width": 25,
                                      "height": 35,
                                      "anchor": { x: 16, y: 32 },
-                                     "src": '../../static/img/wash_weizhi.png'
+                                     "src": that.img
                                  })
                              },
                                geometries: markerss,
@@ -120,7 +121,6 @@
     },
     methods: {
       shop(evt) {
-           console.log(evt)
            this.shows =evt.geometry.id
            this.centerDialogVisible = true
         },

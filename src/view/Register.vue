@@ -113,14 +113,12 @@
               }); */
                 let reg1 = /^[1][3,4,5,7,8][0-9]{9}$/;
                  let phone = that.phone_number.trim()
-                 //console.log(reg1.test(phone))
                 if(reg1.test(phone)){
                     that.bled = true
                     that.$addr.post('/index/register/input',{
                         telephone:that.phone_number
                       })
                            .then(res => {
-                            console.log(res)
                             if(res.data.code == 0){
                               layer.close( layer.load(1, {
                                   shade: [0.1, '#fff'] //0.1透明度的白色背景
@@ -157,8 +155,6 @@
               var that = this;
               layui.use('layer', function(){
                 var layer = layui.layer;
-
-               //console.log(that)
               //判断输入
               if(that.phone_number==""){
                 layer.msg('请输入手机号');
@@ -193,7 +189,6 @@
                     km: that.kilometre
                 })
                   .then(response => {
-                    console.log(response)
                     layui.use('layer', function(){
                       var layer = layui.layer;
                     if(response.data.code == 200){

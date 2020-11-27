@@ -125,7 +125,6 @@ export default {
   mounted:function(){
         this.$store.state.heard_title ='车平台 - 个人中心';
         var token = localStorage.getItem("token");
-        console.log(token);
         this.$addr.post('/index/index/userInfo',{token:token})
               .then(response => {
                 this.avatar = response.data.result.user.avatar;

@@ -55,10 +55,8 @@ export default {
   mounted:function(){
         this.$store.state.heard_title ='车平台 - 预约'
         this.merchant= this.$route.query.id
-        console.log( this.merchant)
         this.$addr.get("/index/service/subscribe")
         .then(res=>{
-          console.log(res.data.result)
           this.isservice = res.data.result.service
           this.carnub =res.data.result.userinfo.number
           this.phone =res.data.result.userinfo.mobile
@@ -70,7 +68,6 @@ export default {
         var that = this
        layui.use('layer', function(){
             var layer = layui.layer;
-        console.log(that.id)
         if(that.username==''){
           layer.msg("请输入联系人姓名")
         }
@@ -89,7 +86,6 @@ export default {
              merchant:that.merchant
           })
              .then(function (response) {
-               console.log(response);
                if(response.data.code==200){
                  layer.msg("预约成功")
                  that.$router.push("/")

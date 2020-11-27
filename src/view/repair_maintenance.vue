@@ -59,12 +59,10 @@ export default {
     }
   },
   mounted:function(){
-    console.log(this)
     this.$store.state.heard_title='车平台 - 快修与保养';
       let that = this
       that.$addr.get("index/service/repair")
           .then(res=>{
-            console.log(res.data.result.data)
             that.category = res.data.result.data.category
           })
   }

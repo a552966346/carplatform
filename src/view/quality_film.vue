@@ -99,7 +99,8 @@ export default {
       longitude:'',
       table:false,
       isbreak: true,
-      isID:""
+      isID:"",
+      img:require('../../static/img/wash_weizhi.png')
     }
   },
   mounted:function(){
@@ -111,7 +112,6 @@ export default {
           that.data = res.data.result.data,
           that.merchant = that.data.merchant,
           that.category = that.data.category,
-          console.log(that.merchant)
           that.detailimages = that.data.detailimages
            that.isID = that.merchant[0].id
           let center = new TMap.LatLng(that.merchant[1].lat, that.merchant[1].lng)
@@ -130,7 +130,7 @@ export default {
                                  "width": 25,
                                  "height": 35,
                                  "anchor": { x: 16, y: 32 },
-                                 "src": '../../static/img/wash_weizhi.png'
+                                 "src": that.img
                              })
                          },
                            geometries: markerss,
@@ -146,8 +146,6 @@ export default {
         let that = this
         let id = []
         let pos = [],name = [], str = '',markers = []
-       //console.log(ent[0].lat)
-          //console.log(ent[i].lat)
           for(let i= 0 ; i<ent.length; i++){
             // that.marker(that.merchant[i])
             let position =  new TMap.LatLng(ent[i].lat,ent[i].lng)
