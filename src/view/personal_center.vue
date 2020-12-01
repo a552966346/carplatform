@@ -126,9 +126,9 @@ export default {
         this.$store.state.heard_title ='车平台 - 个人中心';
         var token = localStorage.getItem("token");
         this.$addr.post('/index/index/userInfo',{token:token})
-              .then(response => {
-                this.avatar = response.data.result.user.avatar;
-                this.nickname = response.data.result.user.nickname;
+              .then(res => {
+                this.avatar = res.data.result.user.avatar;
+                this.nickname = res.data.result.user.nickname;
         } )
   },
   methods:{

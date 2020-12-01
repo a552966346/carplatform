@@ -47,7 +47,7 @@
                       <div class="upper_text">
                         <div class="upper_text_top">
                           <p>{{item.name}}</p>
-                          <a href="#"><img src="../../static/img/daohang.png">
+                          <a href="#" @click="toMap(item)"><img src="../../static/img/daohang.png">
                           导航</a>
                         </div>
                         <div class="upper_text_score">
@@ -74,7 +74,7 @@
                         <p>{{item.address}}</p>
                       </div>
                       <div class="bottom_right">
-                       <a :href="'tel:'+item.mobile">立即预约</a>
+                       <a :href="'tel:'+item.mobile">电话预约</a>
                       </div>
                     </div>
                   </div>
@@ -205,6 +205,18 @@ import Swiper from 'swiper';
                  hideOnClick: true,
                 },
         	})
+      },
+      toMap(res) {
+          var oudlat = this.llat,
+              oudlng = this.llng,
+              outaddress = this.address;
+          var nlat = res.lat,
+              nlng = res.lng,
+              address = res.address;
+          window.location.href = "https://apis.map.qq.com/uri/v1/routeplan?type=drive&from=" + outaddress +
+              "&fromcoord=" +
+              oudlat + "," + oudlng + "&to=" + address + "&tocoord=" + nlat + "," + nlng +
+              "&policy=1&referer=W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4"
       },
     }
   }

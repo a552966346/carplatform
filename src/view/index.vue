@@ -8,7 +8,7 @@
                 <p>汽车服务</p>
                 <p>顺通大广汽车服务有限公司</p>
                 <p><i>心中有梦，志在远方~</i></p>
-                <a href="javascript:;">查看详情</a>
+                <!-- <a href="javascript:;">查看详情</a> -->
             </div>
             <!-- 服务 -->
             <div class="index_center">

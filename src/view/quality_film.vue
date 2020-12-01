@@ -28,7 +28,7 @@
               <p>{{item.name}}</p>
                <p>
                   <span>{{item.address}}</span>
-                  <span>导航<img src="../../static/img/daohang.png"></span>
+                  <span @click="toMap(item)">导航<img src="../../static/img/daohang.png"></span>
                 </p>
             </div>
             <div class="bottom_bottom">
@@ -173,6 +173,18 @@ export default {
              return markers
 
        },
+       toMap(res) {
+           var oudlat = this.llat,
+               oudlng = this.llng,
+               outaddress = this.address;
+           var nlat = res.lat,
+               nlng = res.lng,
+               address = res.address;
+           window.location.href = "https://apis.map.qq.com/uri/v1/routeplan?type=drive&from=" + outaddress +
+               "&fromcoord=" +
+               oudlat + "," + oudlng + "&to=" + address + "&tocoord=" + nlat + "," + nlng +
+               "&policy=1&referer=W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4"
+       }
   }
 }
 </script>

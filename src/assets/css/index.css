@@ -12,7 +12,7 @@
     /* 全部版块*/
     .index_center{width: 100%;/* padding: 5px 15px; */position: absolute;top: 160px;}
     .index_center1{width: 100%;padding: 0px 15px;}
-    .center_content{width: 100%;background-color: #FFFFFF;border-radius: 20px;/* box-shadow: 1px 1px 5px #ccc; */padding: 5px 20px;}
+    .center_content{width: 100%;background-color: #FFFFFF;border-radius: 20px;box-shadow: 1px 1px 5px #ccc;padding: 5px 20px;margin-bottom: 10px;}
     /* 喇叭*/
     .center_content_service{width: 100%;border-bottom: 1px solid #ebeff2;display: flex;align-items: center;padding: 5px 0px;}
     .center_content_service>img{padding-left: 5px;width: 20px;}
@@ -40,7 +40,7 @@
     .index_shop_title>a{font-size: 14px;color: #999;}
     /* 附近商家内容 */
     .index_shop_cont{width: 100%;padding: 25px 15px;}
-    .index_shop_item{width: 100%;padding: 10px;box-shadow: 1px 1px 5px #ccc;border-radius: 10px;margin-bottom:15px;height: 100px;display: flex;}
+    .index_shop_item{width: 100%;padding: 15px;box-shadow: 1px 1px 5px #ccc;border-radius: 10px;margin-bottom:15px;height: 110px;display: flex;}
     .around{display: flex;width: 75%;}
     /* 左侧内容 */
     .index_shop_picitem{width: 35%;}
