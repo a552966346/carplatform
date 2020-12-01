@@ -14,7 +14,7 @@ import store_details from '@/view/store_details'
 import quality_film from '@/view/quality_film'
 import Film from '@/view/Film'
 import payment from '@/view/payment'
-import cosmetology from'@/view/cosmetology'
+import cosmetology from '@/view/cosmetology'
 import examination from '@/view/examination'
 import detailed from '@/view/detailed'
 import exchange from '@/view/exchange'
@@ -23,8 +23,8 @@ import tyre from '@/view/tyre'
 import integral from '@/view/integral'
 import wash from '@/view/wash'
 import success from '@/view/success'
-import  expert  from '@/view/expert'
-import  news  from '@/view/news'
+import expert from '@/view/expert'
+import news from '@/view/news'
 import appointment from '@/view/appointment'
 import isdetails from '@/view/isdetails'
 import order from '@/view/order'
@@ -33,152 +33,153 @@ import after_sale from '@/view/after_sale'
 Vue.use(Router)
 
 export default new Router({
-  // mode: 'history',
-  routes: [
-    // {
-    //   path: '/',
-    //   name: 'HelloWorld',
-    //   component: HelloWorld
-    // },
-    {
-      path:'/login',
-      name: 'login',
-      component:login
-    },
-    {
-      path:'/register',
-      name: 'register',
-      component:register
-    },
-    {
-      path:"/",
-      name: 'index',
-      component:index,
-    },
-    {
-      path:'/add_vehicle',
-      name: 'add_vehicle',
-      component:add_vehicle
-    },
-    {
-      path:'/appointment_details',
-      name: 'appointment_details',
-      component:appointment_details
-    },
-    {
-      path:'/exclusive_services',
-      name: 'exclusive_services',
-      component:exclusive_services
-    },
-    {
-      path:'/expert_online',
-      name: 'expert_online',
-      component:expert_online
-    },
-    {
-      path:'/personal_center',
-      name: 'personal_center',
-      component:personal_center
-    },
-    {
-      path:'/repair_maintenance',
-      name: 'repair_maintenance',
-      component:repair_maintenance
-    },
-    {
-      path:'/store_details',
-      name: 'store_details',
-      component:store_details
-    },
-    {
-      path:'/quality_film',
-      name: 'quality_film',
-      component:quality_film
-    },
-    {
-      path:'/Film',
-      name: 'Film',
-      component:Film
-    },
-    {
-      path:'/payment',
-      name: 'payment',
-      component:payment
-    },
-    {
-      path:'/cosmetology',
-      name: 'cosmetology',
-      component:cosmetology
-    },
-    {
-      path:'/examination',
-      name: 'examination',
-      component:examination
-    },
-    {
-      path:'/detailed',
-      name: 'detailed',
-      component:detailed
-    },
-  {
-      path:'/exchange',
-      name: 'exchange',
-      component:exchange
-    },
-    {
-        path:'/rule',
-        name: 'rule',
-        component:rule
-      },
-      {
-        path:'/tyre',
-        name: 'tyre',
-        component:tyre
-      },
-      {
-        path:'/integral',
-        name: 'integral',
-        component:integral
-      },
-      {
-        path:'/wash',
-        name: 'wash',
-        component:wash
-      },
-      {
-        path:'/success',
-        name: 'success',
-        component:success
+    // mode: 'history',
+    // base: '/dist/index.html/',
+    routes: [
+        // {
+        //   path: '/',
+        //   name: 'HelloWorld',
+        //   component: HelloWorld
+        // },
+        {
+            path: '/login',
+            name: 'login',
+            component: login
         },
         {
-          path:'/expert',
-          name: 'expert',
-          component:expert
-          },
-          {
-            path:'/news',
+            path: '/register',
+            name: 'register',
+            component: register
+        },
+        {
+            path: "/",
+            name: 'index',
+            component: index,
+        },
+        {
+            path: '/add_vehicle',
+            name: 'add_vehicle',
+            component: add_vehicle
+        },
+        {
+            path: '/appointment_details',
+            name: 'appointment_details',
+            component: appointment_details
+        },
+        {
+            path: '/exclusive_services',
+            name: 'exclusive_services',
+            component: exclusive_services
+        },
+        {
+            path: '/expert_online',
+            name: 'expert_online',
+            component: expert_online
+        },
+        {
+            path: '/personal_center',
+            name: 'personal_center',
+            component: personal_center
+        },
+        {
+            path: '/repair_maintenance',
+            name: 'repair_maintenance',
+            component: repair_maintenance
+        },
+        {
+            path: '/store_details',
+            name: 'store_details',
+            component: store_details
+        },
+        {
+            path: '/quality_film',
+            name: 'quality_film',
+            component: quality_film
+        },
+        {
+            path: '/Film',
+            name: 'Film',
+            component: Film
+        },
+        {
+            path: '/payment',
+            name: 'payment',
+            component: payment
+        },
+        {
+            path: '/cosmetology',
+            name: 'cosmetology',
+            component: cosmetology
+        },
+        {
+            path: '/examination',
+            name: 'examination',
+            component: examination
+        },
+        {
+            path: '/detailed',
+            name: 'detailed',
+            component: detailed
+        },
+        {
+            path: '/exchange',
+            name: 'exchange',
+            component: exchange
+        },
+        {
+            path: '/rule',
+            name: 'rule',
+            component: rule
+        },
+        {
+            path: '/tyre',
+            name: 'tyre',
+            component: tyre
+        },
+        {
+            path: '/integral',
+            name: 'integral',
+            component: integral
+        },
+        {
+            path: '/wash',
+            name: 'wash',
+            component: wash
+        },
+        {
+            path: '/success',
+            name: 'success',
+            component: success
+        },
+        {
+            path: '/expert',
+            name: 'expert',
+            component: expert
+        },
+        {
+            path: '/news',
             name: 'news',
-            component:news
-            },
-           {
-              path:'/appointment',
-              name: 'appointment',
-              component:appointment
-              },
-           {
-              path:'/isdetails',
-              name: 'isdetails',
-              component:isdetails
-              },
-	      {
-		 path:'/order',
-		 name: 'order',
-		 component:order
-		 },
-	       {
-		 path:'/after_sale',
-		 name: 'after_sale',
-		 component:after_sale
-		 },
-  ]
+            component: news
+        },
+        {
+            path: '/appointment',
+            name: 'appointment',
+            component: appointment
+        },
+        {
+            path: '/isdetails',
+            name: 'isdetails',
+            component: isdetails
+        },
+        {
+            path: '/order',
+            name: 'order',
+            component: order
+        },
+        {
+            path: '/after_sale',
+            name: 'after_sale',
+            component: after_sale
+        },
+    ]
 })

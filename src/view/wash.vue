@@ -24,9 +24,6 @@
   			</select> -->
 
   		</div>
-      <div class="center_text">
-
-      </div>
   			<!-- 导航 -->
   		<div class="center_navigation" id="container" >
 
@@ -104,7 +101,9 @@ import Swiper from 'swiper';
         centerDialogVisible: false,
         shows:'',
         showcs:false,
-        img:require('../../static/img/wash_weizhi.png')
+        img:require('../../static/img/wash_weizhi.png'),
+        llat:'',
+        llng:''
       }
     },
     mounted:function(){
@@ -112,6 +111,19 @@ import Swiper from 'swiper';
       let markerss = []
        that.$store.state.heard_title ='车平台 - 洗车'
         //定义地图中心点坐标
+        // 定位
+        var geolocation = new qq.maps.Geolocation();
+        var options = {
+            timeout: 600000
+        };
+        geolocation.getLocation(showPosition, showErr, options);
+        function showPosition(position) {
+            that.llat = position.lat,
+             that.llng = position.lng
+        };
+        function showErr() {
+            console.log("定位失败")
+        };
         that.$addr.get('index/service/wash')
             .then(res=>{
                 that.data = res.data.result.data,
@@ -120,10 +132,9 @@ import Swiper from 'swiper';
                 that.detailimages = that.data.detailimages
                 that.$nextTick(function(){
                   that.doswiper()
-
                   // console.log(that.marker(that.merchant))
                 })
-                let center = new TMap.LatLng(that.merchant[1].lat, that.merchant[1].lng)
+                let center = new TMap.LatLng(that.llat, that.llng)
                 //定义map变量，调用 TMap.Map() 构造函数创建地图
                 let map = new TMap.Map(document.getElementById('container'), {
                     center: center,//设置地图中心点坐标

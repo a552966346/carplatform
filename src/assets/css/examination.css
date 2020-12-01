@@ -24,7 +24,7 @@
 .examination_bottom {height:450px;}
 .bottom_header {height:36px;line-height:36px;text-align:center;padding:0 20px;}
 .line {display:inline-block;width:25%;border-top:1px solid #cccccc;vertical-align:5px;}
-.text {color:#818181;font-size:12px;}
+.text {color:#818181;font-size:12px;border: none;}
 .bottom_text {height:264px;padding:0 20px;}
 .text {color:#8D8D8D;font-size:12px;padding-top:20px;}
 .text_two {padding:0 10px;}

@@ -237,7 +237,11 @@
         if(this.brand_id == null) {
             this.brand_id = 0;
         }
-        var url = window.location.href
+       let url = escape(
+         `${window.location.origin}${window.location.pathname}#/examination`
+       )
+       console.log(url)
+       this.$router.go(-1)
         sessionStorage.setItem("nickname", this.nickname);
         sessionStorage.setItem("tel", this.tel);
         window.location.href="https://apis.map.qq.com/tools/locpicker?search=1&type=0&backurl="+url+"&key=W24BZ-WXDCO-JJGWX-SOQQZ-2HQRO-5JBJ4&referer=车平台"
@@ -250,7 +254,6 @@
             this.latitude = arr[0]; //拆分分纬度
             this.longitude = arr[1]; //拆分出经度
         }
-
         this.address = this.$route.query.addr; //路由地址
         this.city = this.$route.query.city; //路由城市
       },
@@ -270,6 +273,6 @@
 </script>
 
 <style scoped>
-  @import '../assets/css/examination.css'
+  @import '../assets/css/examination.css';
 
 </style>

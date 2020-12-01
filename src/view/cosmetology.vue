@@ -13,23 +13,6 @@
   		</div>
      </div>
      <div class=" cosmetology_center">
-       <!-- 筛选 -->
-     <!--  <div class="center_screen">
-         <select name="data">
-           <option>洗车方式</option>
-           <option v-for="item in category" :key="item.id" :value="item.id">{{item.name}}</option>
-         </select>
-         <select name="sort">
-           <option>店铺等级</option>
-           <option v-for="item in star" :key="item" :value="item">{{item}}</option>
-         </select>
-         <select name="screen">
-           <option value="0">智能排序</option>
-           <option value="1">好评优先</option>
-           <option value="2">距离优先</option>
-         </select>
-       </div> -->
-       <!-- 导航 -->
        <div class="center_navigation" id="container">
 
          </div>
@@ -103,13 +86,28 @@
       shows:'',
       showcs:false,
 	service:[],
-	img:require('../../static/img/wash_weizhi.png')
+	img:require('../../static/img/wash_weizhi.png'),
+    llat:'',
+    llng:''
       }
     },
     mounted:function(){
           this.$store.state.heard_title ='车平台 - 车辆美容';
           var that =this
           var markerss
+      // 定位
+      var geolocation = new qq.maps.Geolocation();
+      var options = {
+          timeout: 600000
+      };
+      geolocation.getLocation(showPosition, showErr, options);
+      function showPosition(position) {
+          that.llat = position.lat,
+           that.llng = position.lng
+      };
+      function showErr() {
+          console.log("定位失败")
+      };
           that.$addr.get('/index/service/vehicle')
               .then(res=>{
                   that.data = res.data.result.data,
@@ -117,7 +115,7 @@
                   that.category = that.data.category,
                   that.detailimages = that.data.detailimages
                   that.service= that.merchant.service
-                  let center = new TMap.LatLng(that.merchant[1].lat, that.merchant[1].lng)
+                  let center = new TMap.LatLng(that.llat, that.llng)
                   //定义map变量，调用 TMap.Map() 构造函数创建地图
                   let map = new TMap.Map(document.getElementById('container'), {
                       center: center,//设置地图中心点坐标
@@ -143,6 +141,7 @@
               })
     },
     methods:{
+
       shop(evt) {
          this.shows =evt.geometry.id
          this.centerDialogVisible = true

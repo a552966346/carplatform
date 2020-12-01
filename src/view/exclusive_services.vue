@@ -112,6 +112,6 @@ export default {
 }
 </script>
 <style scoped>
-  @import '../assets/css/exclusive_services.css'
+  @import '../assets/css/exclusive_services.css';
 
 </style>

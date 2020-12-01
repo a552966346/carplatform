@@ -100,13 +100,28 @@ export default {
       table:false,
       isbreak: true,
       isID:"",
-      img:require('../../static/img/wash_weizhi.png')
+      img:require('../../static/img/wash_weizhi.png'),
+      llat:'',
+      llng:''
     }
   },
   mounted:function(){
       this.$store.state.heard_title='车平台 - 维修与救援'
       var that = this
       var markerss
+      // 定位
+      var geolocation = new qq.maps.Geolocation();
+      var options = {
+          timeout: 600000
+      };
+      geolocation.getLocation(showPosition, showErr, options);
+      function showPosition(position) {
+          that.llat = position.lat,
+           that.llng = position.lng
+      };
+      function showErr() {
+          console.log("定位失败")
+      };
       that.$addr.get('index/service/help')
       .then(res=>{
           that.data = res.data.result.data,
@@ -114,7 +129,7 @@ export default {
           that.category = that.data.category,
           that.detailimages = that.data.detailimages
            that.isID = that.merchant[0].id
-          let center = new TMap.LatLng(that.merchant[1].lat, that.merchant[1].lng)
+          let center = new TMap.LatLng(that.llat, that.llng)
           //定义map变量，调用 TMap.Map() 构造函数创建地图
           let map = new TMap.Map(document.getElementById('container'), {
               center: center,//设置地图中心点坐标

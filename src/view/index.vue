@@ -73,7 +73,7 @@
                         <div v-for="(item,index) in merchant" :key="item.id">
 
                             <div class="index_shop_item">
-                                <router-link :to="{path:'/store_details',query:{ id:item.id }}" class="around">
+                                <router-link :to="{path:'/store_details',query:{ id:item.id,km:km[index]}}" class="around">
                                     <div class="index_shop_picitem">
                                         <img :src="item.banner" />
                                     </div>
@@ -86,7 +86,7 @@
                                         <p class="index_centershop_bottomtitle">{{item.address}}</p>
                                     </div>
                                 </router-link>
-                                <a @click="toMap(item)">
+                                <a @click="toMap(item)" class="last_a">
                                     <div class="index_shop_righttext">
                                         <img class="position_img" src="../../static/img/index_navigation.png">
                                         <p>{{km[index]}}km</p>

@@ -38,7 +38,7 @@
             <div class="store_swiper_address">
                 <div class="store_swiper_leftaddress">
                    <p>{{merchant.address}}</p>
-                  <p><i class="iconfont icon-dingwei"></i>距离您987.9km</p>
+                  <p><i class="iconfont icon-dingwei"></i>距离您{{km}}km</p>
                 </div>
                 <div class="store_swiper_rightaddress">
                     <a :href="'tel:'+merchant.mobile"> <span class="dianhua"><i class="iconfont icon-dianhua"></i></span></a>
@@ -79,13 +79,15 @@
         merchant:{},
         isimg:[],
         service:[],
-        nub:0
+        nub:0,
+        km:''
       }
     },
     mounted:function(){
           this.$store.state.heard_title ='车平台 - 商家店面'
           let that = this
           that.id = that.$route.query.id
+          that.km = that.$route.query.km
              that.$addr.post("index/index/merchant",{
                 id:that.id
             })
@@ -104,6 +106,5 @@
 </script>
 
 <style scoped>
-  @import '../assets/css/store_details.css'
-
+  @import '../assets/css/store_details.css';
 </style>
