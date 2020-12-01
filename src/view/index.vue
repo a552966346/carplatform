@@ -142,22 +142,35 @@
                 if (param) {
                     localStorage.setItem("token", param);
                     token = param;
+                    var that = this
+                    that.$addr.post('/index/index/index')
+                        .then(response => {
+                            that.banner = response.data.result.banner;
+                            that.types = response.data.result.types;
+                            that.status = response.data.result.status
+                            that.merchant = response.data.result.merchant
+                            that.$nextTick(function() {
+                                that.doswiper()
+                                that.dingwei()
+                        })
+                    })
                 } else {
                     window.location.href = "/index/index/index"
                 }
-            }
-            var that = this
-            that.$addr.post('/index/index/index')
-                .then(response => {
-                    that.banner = response.data.result.banner;
-                    that.types = response.data.result.types;
-                    that.status = response.data.result.status
-                    that.merchant = response.data.result.merchant
-                    that.$nextTick(function() {
-                        that.doswiper()
-                        that.dingwei()
+            } else {
+                var that = this
+                that.$addr.post('/index/index/index')
+                    .then(response => {
+                        that.banner = response.data.result.banner;
+                        that.types = response.data.result.types;
+                        that.status = response.data.result.status
+                        that.merchant = response.data.result.merchant
+                        that.$nextTick(function() {
+                            that.doswiper()
+                            that.dingwei()
                     })
                 })
+            }
 
         },
         methods: {
