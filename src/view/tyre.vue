@@ -91,7 +91,8 @@
                 llat: '',
                 llng: '',
                 name: [],
-                value: []
+                value: [],
+                topname:''
             }
         },
         mounted: function() {
