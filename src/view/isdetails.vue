@@ -3,49 +3,49 @@
     <!-- 头部 -->
         <div class="details_top">
             <p :class="{border_down:border_down}" @click="isborder_one">已预约</p>
-            <p :class="{border_down:!border_down}" @click="isborder_two">预约历史</p>
+            <!-- <p :class="{border_down:!border_down}" @click="isborder_two">预约历史</p> -->
         </div>
         <!-- 已预约内容 -->
         <div class="details_center"v-show="border_down">
           <!-- 预约服务 -->
             <div class="details_center_up">
                 <span class="back_color">审车</span>
-                <span>贴膜</span>
+                <!-- <span>贴膜</span>
                 <span>洗车</span>
-                <span>轮胎更换</span>
+                <span>轮胎更换</span> -->
             </div>
             <!-- 预约卡 -->
-            <div class="center_up_xiang">
+            <div class="center_up_xiang" v-for="(item) in yuyue" :key="item.id">
                 <div class="xing_time">
-                  <p>预约时间 2020-10-3 15:30</p>
-                  <p>预约成功</p>
+                  <p>预约时间 {{item.booktime_text}}</p>
+                  <p>{{item.status}}</p>
                 </div>
                 <div class="xing_center">
                   <img src="../../static/img/index_shop.png" alt="">
                   <div class="xiang_center_text">
-                    <p>贴膜</p>
-                    <p>预约门店：路虎养车 <img src="../../static/img/expert_phone.png" alt=""></p>
-                    <p>地址：山西省晋中市榆次区顺城街店</p>
+                    <p>审车代办</p>
+                    <!-- <p>预约门店：路虎养车 <img src="../../static/img/expert_phone.png" alt=""></p> -->
+                    <p v-show="item.category==1">地址：{{item.position}}</p>
                   </div>
                 </div>
                 <div class="xing_button">
-                  <p>距离服务开始还有3小时50分钟</p>
-                  <p>
+                  <p v-show="item.status == '请求通过'">请您于{{item.booktime_text.split(' ')[0]}}当日前往</p>
+                  <!-- <p>
                       <button>取消预约</button>
                       <button>确认服务</button>
-                  </p>
+                  </p> -->
                 </div>
             </div>
         </div>
-        <div class="details_center" v-show="!border_down">
-          <!-- 预约服务 -->
+       <!-- <div class="details_center" v-show="!border_down">
+
             <div class="details_center_up">
                 <span class="back_color">审车</span>
                 <span>贴膜</span>
                 <span>洗车</span>
                 <span>轮胎更换</span>
             </div>
-            <!-- 预约卡 -->
+
             <div class="center_up_xiang">
                 <div class="xing_time">
                   <p>预约时间 2020-10-3 15:30</p>
@@ -59,15 +59,8 @@
                     <p>地址：山西省晋中市榆次区顺城街店</p>
                   </div>
                 </div>
-                <!-- <div class="xing_button">
-                  <p>距离服务开始还有3小时50分钟</p>
-                  <p>
-                      <button>取消预约</button>
-                      <button>确认服务</button>
-                  </p>
-                </div> -->
             </div>
-        </div>
+        </div> -->
   </div>
 </template>
 
@@ -77,18 +70,24 @@
     data(){
       return{
         border_down:true,
+        yuyue:''
       }
     },
     mounted(){
      this.$store.state.heard_title = "车平台 - 我的预约"
+     this.$addr.get('/index/user/book')
+         .then(res => {
+            this.yuyue = res.data.result.data
+         })
+
     },
     methods:{
       isborder_one(){
         this.border_down = true
       },
-      isborder_two(){
-        this.border_down =false
-      }
+      // isborder_two(){
+      //   this.border_down =false
+      // },
     }
   }
 </script>
@@ -116,6 +115,8 @@
   .details_center{
     flex: 1;
     padding: 0 20px;
+    padding-bottom: 50px;
+    overflow: auto;
   }
   .details_center_up{
       padding: 15px;

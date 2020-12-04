@@ -6,13 +6,13 @@
          <mt-field label="车牌号码:" :placeholder="carnub" v-model="carnub" readonly></mt-field>
        </p>
       <p>
-        <mt-field label="联系人:" placeholder="请输入联系人姓名" v-model="username" ></mt-field>
+        <mt-field label="联系人:" placeholder="请输入联系人姓名" v-model="username"></mt-field>
       </p>
       <p>
         <mt-field label="手机号码:" :placeholder="phone" type="number" v-model="phone"readonly></mt-field>
       </p>
       <p>
-        <mt-field label="时间:" placeholder="请输入时间" type="datetime-local" v-model="time"></mt-field>
+        <mt-field label="时间:" placeholder="请输入时间" type="datetime-local" v-model="time" ></mt-field>
       </p>
       <p class="appointment_details_chooseseevice">
         <span>选择服务:</span>

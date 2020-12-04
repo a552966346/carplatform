@@ -4,17 +4,17 @@
     <!--开通模块 -->
     <div class="exclusive_title">
 
-        <div class="exclusive_top" style="display: none;">
+        <div class="exclusive_top" v-show="show">
             <a href="#" @click="add">
               <img src="../../static/img/exclusive_add.png" >
             </a>
             <p>请立即添加您的爱车</p>
         </div>
-        <div class="exclusive_top exclusive_two">
-            <img src="../../static/img/portrait.jpg" alt="">
+        <div class="exclusive_top exclusive_two" v-show="!show">
+            <img :src="img" alt="">
             <div class="exclusive_top_center">
-                <p>王先生</p>
-                <p>晋K&nbsp;&nbsp;&nbsp;671987</p>
+                <p>{{nickname}}</p>
+                <p>{{number}}</p>
                 <p>欢迎开启您的专属服务</p>
             </div>
         </div>
@@ -83,30 +83,50 @@ export default {
   data () {
     return {
         msg: 'exclusive_services',
+        show:false,
+        name:'',
+        img:'',
+        number:'',
+        nickname:''
     }
   },
   mounted(){
     this.$store.state.heard_title ='车平台 - 专属服务'
-      var swiper = new Swiper('.swiper-container', {
-           slidesPerView: 1,
-           spaceBetween: 0,
-           // loop: true,
-           pagination: {
-             el: '.swiper-pagination',
-             // clickable: true,
-             type:'progressbar'
-           },
-         });
+        var that = this
+        var data
+        that.$addr.get('/index/service/isReg')
+        .then(res=>{
+            console.log(res.data)
+            data= res.data.result
+            if(data.status==0){
+                that.show = true
+            }else{
+                 that.show = false
+                that.img = data.data.avatar,
+                that.number = data.data.number
+                that.nickname = data.data.nickname
+            }
+            that.$nextTick(function(){
+                that.swiper()
+            })
+        })
   },
  methods:{
-    vip(){
-        console.log("开通会员");
-      this.$router.push('/add_vehicle')
-    },
     add(){
       this.$router.push('/add_vehicle')
-      console.log("添加车辆")
     },
+    swiper(){
+        var swiper = new Swiper('.swiper-container', {
+             slidesPerView: 1,
+             spaceBetween: 0,
+             // loop: true,
+             pagination: {
+               el: '.swiper-pagination',
+               // clickable: true,
+               type:'progressbar'
+             },
+           });
+    }
   }
 
 }

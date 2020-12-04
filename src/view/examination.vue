@@ -176,6 +176,9 @@
       },
         appointment(){
           var that = this
+          let reg1 = /^[1][3,4,5,7,8][0-9]{9}$/;
+           let phone = that.phone.trim()
+
           layui.use('layer', function() {
             var layer = layui.layer;
             if(that.value==1){
@@ -186,26 +189,31 @@
                 layer.msg("请选择接车时间")
               }
               else if(that.phone==""){
+
                  layer.msg("请输入联系电话")
               }else{
-                that.$addr.post('/index/proxy/collect', {
-                       type:that.value,
-                       address: that.address,
-                       latitude: that.latitude,
-                       longitude: that.longitude,
-                       date: that.date,
-                       phone: that.phone
-                     })
-                     .then(function (response) {
-                       console.log(response)
-                       if(response.data.code==200){
-                         layer.msg("已提交申请等待通知")
-                         that.text = "等待通知"
-                          that.bled = true
-                          that.run()
-                       }
+                  if((reg1.test(phone))){
+                      that.$addr.post('/index/proxy/collect', {
+                             type:that.value,
+                             address: that.address,
+                             latitude: that.latitude,
+                             longitude: that.longitude,
+                             date: that.date,
+                             phone: that.phone
+                           })
+                           .then(function (response) {
+                             console.log(response)
+                             if(response.data.code==200){
+                               layer.msg("已提交申请等待通知")
+                               that.text = "等待通知"
+                                that.bled = true
+                                that.run()
+                             }
 
-                     })
+                           })
+                  }else{
+                      layer.msg("请输入正确手机号")
+                  }
               }
             }else{
               if(that.date==''){

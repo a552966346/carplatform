@@ -3,9 +3,9 @@
     <div class="top_heard">
         <span>{{this.$store.state.heard_title}}</span>
         <div>
-               <router-link to='personal_center'>
-                  <img src="../static/img/person_center_icon.png" alt="">
-                  <span>个人中心</span>
+               <router-link :to='run'>
+                  <img :src="src" alt="">
+                  <span>{{mas}}</span>
                </router-link>
         </div>
     </div>
@@ -19,27 +19,32 @@ export default {
   name:'App',
   data () {
     return{
-      isWechat: true,         // 是否为微信环境（true：是；false：否）
-      wx: {
-          wxAppId: '',        // 微信公众号 ID
-          wxSecret: '',       // 微信公众号 密钥
-          code: '',           // 授权获取的 code
-          openid: '',         // 授权获取的 openid
-          unionid: ''         // 授权获取的用户唯一标识 unionid
-      },
+        mas:'个人中心',
+        run:'personal_center',
+        src:require('../static/img/person_center_icon.png'),
+        src1:require('../static/img/person_center_icon.png'),
+        src2:require('../static/img/index_ico.png')
     }
   },
-  /* created () {
-      // 检测是浏览器端还是微信端
-      let ua = navigator.userAgent.toLowerCase();
-      if (String(ua.match(/MicroMessenger/i)) === 'micromessenger') {
-          this.isWechat = true
-      } else {
-          this.isWechat = false
-      }
-  }, */
+updated() {
+    var url = window.location.href
+    var that = this
+    var src = "personal_center"
+    url = url.split('#/')
+    that.$nextTick(function(){
+        if(url[1]==src){
+            that.run = '/'
+            that.mas = '首页'
+            that.src = that.src2
+        }else{
+            that.run = 'personal_center'
+            that.mas = '个人中心'
+            that.src =that.src1
+        }
+    })
+},
   methods: {
-   
+
   }
 }
 </script>
@@ -51,9 +56,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: 100%;
-  overflow: hidden; 
+  overflow: hidden;
   /* text-align: center; */
-  color: #2c3e50; 
+  color: #2c3e50;
 /*  margin-top: 60px; */
  }
 .app-content{
@@ -86,7 +91,7 @@ export default {
   padding-left: 5px;
 }
 .top_heard img{
-  width:15px;
-  height: 15px;
+  width:20px;
+  height: 20px;
 }
 </style>
