@@ -1,7 +1,7 @@
 <template>
   <div class="order">
     <div class="order_top">
-      <div  v-for="(item,index) in msg"><p :class="{text:index==istext}" @click="istextclick(index)">{{item}}</p></div>
+      <div  v-for="(item,index) in msg"><p :class="{text:index==istext}" @click="istextclick(index)">{{item.name}}</p></div>
     </div>
     <div class="isorder">
       <div class="isorder_top">
@@ -34,9 +34,15 @@
     data(){
       return{
         xinxi:true,
-        msg:["全部订单","待付款","待发货","待收货","待评价"],
-        istext:'0',
+        msg:[{name:"全部订单",id:'0'},{name:"待付款",id:'1'},{name:"代发货",id:'3'},{name:"待收货",id:'4'},{name:"待评价",id:'5'}],
+        istext:'',
       }
+    },
+    mounted() {
+         this.$store.state.heard_title = '车平台 - 订单';
+        var that= this
+
+         that.istext = that.$route.query.id
     },
     methods:{
       istextclick(index){

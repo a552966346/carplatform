@@ -13,8 +13,8 @@
                            <h3>审车代办</h3>
                         </div>
                         <div class="bottom_center_bianhao">
-                            <p><span>订单编号</span><span>2020015855231</span></p>
-                            <p><span>下单时间</span><span>2020-02-22 10:22:23</span></p>
+                            <p v-if="position != ''"><span>借车位置</span><span>{{postion}}</span></p>
+                            <p><span>下单时间</span><span>{{time}}</span></p>
                         </div>
                   </div>
             </div>
@@ -30,11 +30,14 @@
     name:"success",
     data(){
       return{
-
+            postion:'',
+            time:''
       }
     },
 	mounted(){
       this.$store.state.heard_title ='车平台 - 预约成功'
+      this.postion = this.$route.query.position
+      this.time = this.$route.query.time
     },
     methods:{
       run(){

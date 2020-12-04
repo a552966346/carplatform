@@ -79,7 +79,7 @@
   	<div class="examination_last">
   		<div class="last_left">
   			<img src="../../static/img/customer.png" >
-  			<p>联系商家</p>
+  			<p><a href="tel:400-500-600">联系商家</a></p>
   		</div>
   		<div class="last_right">
         <input type="button" @click="appointment" :value="text" :disabled="bled"/>
@@ -105,7 +105,9 @@
         longitude:'',//经度
         latitude:'',//纬度
         text:"立即预约",
-        bled:false
+        bled:false,
+        position:'',
+        booktime:''
       }
     },
     created() {
@@ -203,6 +205,8 @@
                            })
                            .then(function (response) {
                              console.log(response)
+                            that.position = response.data.result.data.position
+                            that.booktime = response.data.result.data.booktime
                              if(response.data.code==200){
                                layer.msg("已提交申请等待通知")
                                that.text = "等待通知"
@@ -268,6 +272,10 @@
      run(){    //预约成功后跳转
         this.$router.push({
           　　path: '/success',
+                query:{
+                    position:this.position,
+                    time:this.booktime
+                }
           });
       }
    /*   removeMarker() {

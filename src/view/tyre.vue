@@ -6,7 +6,7 @@
                     <li>轮胎变形</li>
                     <li>轮胎被化学物质侵蚀</li>
                 </ul>
-                <span>详情<i class="iconfont icon-youjiantou"></i></span>
+                <!-- <span>详情<i class="iconfont icon-youjiantou"></i></span> -->
             </div>
             <div class="type_tope_ech">
                 <div class="center_data" id="myChart">

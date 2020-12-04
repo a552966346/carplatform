@@ -29,6 +29,7 @@ import appointment from '@/view/appointment'
 import isdetails from '@/view/isdetails'
 import order from '@/view/order'
 import after_sale from '@/view/after_sale'
+import store from '@/view/store'
 
 Vue.use(Router)
 
@@ -180,6 +181,11 @@ export default new Router({
             path: '/after_sale',
             name: 'after_sale',
             component: after_sale
+        },
+        {
+            path: '/store',
+            name: 'store',
+            component: store
         },
     ]
 })

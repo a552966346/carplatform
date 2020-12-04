@@ -66,7 +66,7 @@
                     <!-- 标题 -->
                     <div class="index_shop_title">
                         <p>附近商家</p>
-                        <a href="javascript:;">更多<i class="iconfont icon-youjiantou"></i></a>
+                        <router-link to="store">更多<i class="iconfont icon-youjiantou"></i></router-link>
                     </div>
                     <!-- 内容 -->
                     <div class="index_shop_cont">
@@ -121,7 +121,6 @@
                     require('../../static/img/stars_four.png'),
                     require('../../static/img/stars_five.png')
                 ],
-                stats: [],
                 id: "",
                 llat: '',
                 llng: '',

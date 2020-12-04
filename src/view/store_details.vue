@@ -17,9 +17,9 @@
             </div>
           </div>
           <div class="top_right">
-            <a href="">
+            <!-- <a href="">
                <i class="iconfont icon-youjiantou"></i>
-            </a>
+            </a> -->
           </div>
         </div>
         <!-- 轮播内容 -->

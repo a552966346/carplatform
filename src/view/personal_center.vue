@@ -16,30 +16,30 @@
                     <!--<p>上次登录<span style="padding-left: 10px;">2020-02-02</span></p>-->
                 </div>
                 <div class="top_top_set">
-                   <!-- <a href="#">设置</a> -->
+                   <!-- <a  >设置</a> -->
                 </div>
             </div>
             <!-- 我的 -->
             <div class="personalcenter_bottom">
-                <a href="#" @click="integral">
+                <a   @click="integral">
                     <div class="personalcenter_bottom_item">
                         <!-- <p>5</p>
                         <p>积分</p> -->
                     </div>
                 </a>
-                <a href="#" @click="agency">
+                <a   @click="agency">
                     <div class="personalcenter_bottom_item">
-                        <p>0</p>
+                        <p>{{prepare}}</p>
                         <p>待办</p>
                     </div>
                 </a>
-                <a href="#" @click="appointment">
+                <a   @click="appointment">
                     <div class="personalcenter_bottom_item">
-                        <p>0</p>
+                        <p>{{book}}</p>
                         <p>我的预约</p>
                     </div>
                 </a>
-                <a href="#" @click="coupon">
+                <a   @click="coupon">
                     <div class="personalcenter_bottom_item">
                         <!-- <p><img src="../../static/img/personalcenter_coupon.png"></p>
                         <p>票券</p> -->
@@ -65,42 +65,42 @@
                 <!-- 我的订单 -->
                 <div class="dingdan">
                     <div class="dingdan_top">
-                        <a href="" @click="order">
+                        <a   @click="order">
                             <p>我的订单</p>
                             <p><span>全部订单</span><i class="iconfont icon-youjiantou"></i></p>
                         </a>
                     </div>
                     <div class="dingdan_center">
                         <div class="dingdan_center_a">
-                            <a href="#" @click="payment">
+                            <a   @click="payment">
                                 <img src="../../static/img/personal_center_pay.png">
                                 <p>待付款</p>
                             </a>
                             <i class="iconfont icon-youjiantou"></i>
                         </div>
                         <div class="dingdan_center_a">
-                            <a href="#" @click="delivered">
+                            <a   @click="delivered">
                                 <img src="../../static/img/personal_center_delivered.png">
                                 <p>待发货</p>
                             </a>
                             <i class="iconfont icon-youjiantou"></i>
                         </div>
                         <div class="dingdan_center_a">
-                            <a href="#" @click="receive">
+                            <a   @click="receive">
                                 <img src="../../static/img/personal_center_receive.png">
                                 <p>待收货</p>
                             </a>
                             <i class="iconfont icon-youjiantou"></i>
                         </div>
                         <div class="dingdan_center_a">
-                            <a href="#" @click="evaluated">
+                            <a   @click="evaluated">
                                 <img src="../../static/img/personal_center_evaluated.png">
                                 <p>待评价</p>
                             </a>
                             <i class="iconfont icon-youjiantou"></i>
                         </div>
                         <div class="dingdan_center_a">
-                            <a href="#" @click="refund">
+                            <a   @click="refund">
                                 <img src="../../static/img/personal_center_refund.png">
                                 <p>退款/售后</p>
                             </a>
@@ -121,7 +121,9 @@
             return {
                 msg: 'personal_center',
                 avatar: "../../static/img/portrait.jpg",
-                nickname: "未登录"
+                nickname: "未登录",
+                book:'',
+                prepare:''
             }
         },
         mounted: function() {
@@ -131,6 +133,9 @@
                     token: token
                 })
                 .then(res => {
+                    console.log(res.data)
+                    this.book = res.data.result.book;
+                    this.prepare =res.data.result.prepare
                     this.avatar = res.data.result.user.avatar;
                     this.nickname = res.data.result.user.nickname;
                 })
@@ -140,7 +145,7 @@
             //积分
             integral: function() {
                 this.$router.push({
-                    name: 'integral',
+                    path: 'integral',
                 })
             },
             //待办
@@ -165,35 +170,53 @@
             order: function() {
                 this.$router.push({
                     path: 'order',
+                    query:{
+                        id:0
+                    }
                 })
             },
             //待付款
             payment: function() {
                 this.$router.push({
                     name: 'order',
+                    query:{
+                        id:1
+                    }
                 })
             },
             //代发货
             delivered: function() {
                 this.$router.push({
                     name: 'order',
+                    query:{
+                        id:2
+                    }
                 })
             },
             //待收货
             receive: function() {
                 this.$router.push({
                     name: 'order',
+                    query:{
+                        id:3
+                    }
                 })
             },
             //待评价
             evaluated: function() {
                 this.$router.push({
                     path: 'order',
+                    query:{
+                        id:4
+                    }
                 })
             },
             refund() {
                 this.$router.push({
                     path: 'after_sale',
+                    query:{
+                        id:5
+                    }
                 })
             },
 
