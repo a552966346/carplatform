@@ -61,9 +61,9 @@
   .bottom_center_xiangmu>p{font-size: 10px;color: #ccc;}
   .bottom_center_xiangmu>h3{color:#F8D11F;font-weight: bold;padding: 5px 0;}
   .bottom_center_bianhao{height: 55%;border-top:1px dashed #ccc ;padding: 0 15px;}
-  .bottom_center_bianhao>p{display: flex;height: 50%;align-items: center;justify-content: space-between;display: inherit;}
-  .bottom_center_bianhao>p>span:nth-child(1){width: 25%;}
-  .bottom_center_bianhao>p>span:nth-child(2){padding-left:10px; width: 75%;}
+  .bottom_center_bianhao>p{display: flex;height: 50%;align-items: center;justify-content: space-between;}
+  .bottom_center_bianhao>p>span:nth-child(1){width: 30%;}
+  .bottom_center_bianhao>p>span:nth-child(2){padding-left:10px; width: 70%;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
   .success_center{flex: 1;background-color: #f5f5f5;display: flex;justify-content: center;align-items: center;}
   .success_center>button{padding: 10px 80px;background-color: #50AEB4;border: none;color: #fff;border-radius: 30px;}
 </style>
