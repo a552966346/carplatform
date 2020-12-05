@@ -77,5 +77,5 @@
 .bottom_left {width:70%;}
 .bottom_left>p {font-size:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-left: 5px;}
 .bottom_right>a{background-color:#F8D11F;color:#FFFFFF;border-radius:10px;padding:3px 6px;font-size:12px;text-decoration:none;}
-.el-dialog__body{padding: 10px;}
-.el-dialog__header{display: none;}
+.el-dialog__body{padding: 15px 10px !important;}
+.el-dialog__header{display: none;padding: 10px 20px 0px;}

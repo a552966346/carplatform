@@ -232,5 +232,5 @@
   color:#F8D11F;
   border-bottom: 2px solid #F8D11F !important;
 }
-.el-dialog__body{padding: 10px;}
-.el-dialog__header{display: none;}
+.el-dialog__body{padding: 15px 10px !important;}
+.el-dialog__header{display: none;padding: 10px 20px 0px;}

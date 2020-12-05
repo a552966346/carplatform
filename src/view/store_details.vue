@@ -80,26 +80,73 @@
         isimg:[],
         service:[],
         nub:0,
-        km:''
+        km:'',
+        lat:'',
+        lng:'',
+        llat:'',
+        llng:''
       }
     },
     mounted:function(){
           this.$store.state.heard_title ='车平台 - 商家店面'
           let that = this
           that.id = that.$route.query.id
-          that.km = that.$route.query.km
              that.$addr.post("index/index/merchant",{
                 id:that.id
             })
              .then(res=>{
               that.merchant = res.data.result.merchant
               that.isimg = that.merchant.bannerimages
+              that.lat = res.data.result.merchant.lat
+              that.lng = res.data.result.merchant.lng
               that.service = that.merchant.service
+              that.$nextTick(function(){
+                  that.dingwei()
+                  console.log(that.km)
+              })
              })
     },
     methods:{
       isactive(index){
           this.nub = index
+      },
+      dingwei() {
+          var that = this
+          //定位
+           var geolocation = new qq.maps.Geolocation();
+          var options = {
+              timeout: 600000
+          };
+          geolocation.getLocation(showPosition, showErr, options);
+          function showPosition(position) {
+              console.log(position)
+              that.llat = position.lat,
+                  that.llng = position.lng,
+                  that.laddress = position.address
+              that.km = that.getGreatCircleDistance(that.llat, that.llng,that.lat,that.lng)
+          }
+
+          function showErr() {
+              console.log("定位失败")
+          };
+      },
+      getGreatCircleDistance(lat1, lng1, lat2, lng2) {
+          var EARTH_RADIUS = 6378137.0;
+          var radLat1 = this.getRad(lat1);
+          var radLat2 = this.getRad(lat2);
+          var a = radLat1 - radLat2;
+          var b = this.getRad(lng1) - this.getRad(lng2);
+          var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(radLat1) * Math.cos(radLat2) *
+              Math.pow(
+                  Math.sin(b / 2), 2)));
+          s = s * EARTH_RADIUS;
+          s = Math.round(s * 10000) / 10000.0;
+          s = parseInt(s/1000)
+          return s;
+      },
+      getRad(d) {
+          var PI = Math.PI;
+          return d * PI / 180.0;
       }
     }
   }
