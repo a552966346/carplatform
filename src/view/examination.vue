@@ -199,11 +199,11 @@
               else if(that.date==''){
                 layer.msg("请选择接车时间")
               }
-              else if(that.phone==""){
+              else if(that.phone1==""){
 
                  layer.msg("请输入联系电话")
               }else{
-                  if((reg1.test(phone))){
+                  if((reg1.test(phone1))){
                       that.$addr.post('/index/proxy/collect', {
                              type:that.value,
                              address: that.address,
@@ -232,10 +232,10 @@
               if(that.date==''){
                 layer.msg("请选择预约时间")
               }
-              else if(that.phone==""){
+              else if(that.phone2==""){
                  layer.msg("请输入联系电话")
               }else{
-                if((reg1.test(phone))){
+                if((reg1.test(phone2))){
                 that.$addr.post('/index/proxy/collect', {
                        type:that.value,
                        date: that.date,
