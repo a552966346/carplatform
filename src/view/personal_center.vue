@@ -21,12 +21,13 @@
             </div>
             <!-- 我的 -->
             <div class="personalcenter_bottom">
-                <a   @click="integral">
+              <!--  <a   @click="integral">
                     <div class="personalcenter_bottom_item">
-                        <!-- <p>5</p>
-                        <p>积分</p> -->
+                        <p>5</p>
+                        <p>积分</p>
                     </div>
-                </a>
+                </a> -->
+                <a href="#"></a>
                 <a   @click="agency">
                     <div class="personalcenter_bottom_item">
                         <p>0</p>
@@ -39,12 +40,13 @@
                         <p>我的预约</p>
                     </div>
                 </a>
-                <a   @click="coupon">
+                <a href="#"></a>
+               <!-- <a   @click="coupon">
                     <div class="personalcenter_bottom_item">
-                        <!-- <p><img src="../../static/img/personalcenter_coupon.png"></p>
-                        <p>票券</p> -->
+                         <p><img src="../../static/img/personalcenter_coupon.png"></p>
+                        <p>票券</p>
                     </div>
-                </a>
+                </a> -->
             </div>
         </div>
         <!--白色块内容-->

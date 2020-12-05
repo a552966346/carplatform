@@ -32,7 +32,7 @@
   				<div class="center_one_inp">
   					<div class="examination_inp">
   						<p>预约时间</p>
-  						<input type="date" name="time" placeholder="请选择预约日期" id="data2" value="" v-model="date"/>
+  						<input type="date" name="time" placeholder="请选择预约日期" id="data2" value="" v-model="date2"/>
   					</div>
   					<div class="examination_inp">
   						<p>预留电话</p>
@@ -100,6 +100,7 @@
         isBreak:true,
         address:'',
         date:'',
+        date2:'',
         phone1:'',
         phone2:'',
         //position:[],
@@ -188,8 +189,8 @@
         appointment(){
           var that = this
           let reg1 = /^[1][3,4,5,7,8][0-9]{9}$/;
-           let phone = that.phone.trim()
-
+           let phone1 = that.phone1.trim()
+            let phone2 = that.phone2.trim()
           layui.use('layer', function() {
             var layer = layui.layer;
             if(that.value==1){
@@ -229,7 +230,7 @@
                   }
               }
             }else{
-              if(that.date==''){
+              if(that.date2==''){
                 layer.msg("请选择预约时间")
               }
               else if(that.phone2==""){
@@ -238,7 +239,7 @@
                 if((reg1.test(phone2))){
                 that.$addr.post('/index/proxy/collect', {
                        type:that.value,
-                       date: that.date,
+                       date: that.date2,
                        phone: that.phone2
                      })
                      .then(function (response) {
