@@ -13,7 +13,7 @@
                            <h3>审车代办</h3>
                         </div>
                         <div class="bottom_center_bianhao">
-                            <p v-if="position != ''"><span>借车位置：</span><span>{{postion}}</span></p>
+                            <p v-if="position != ''"><span>接车位置：</span><span>{{postion}}</span></p>
                             <p><span>下单时间：</span><span>{{time}}</span></p>
                         </div>
                   </div>

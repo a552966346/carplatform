@@ -29,7 +29,7 @@
                 </a>
                 <a   @click="agency">
                     <div class="personalcenter_bottom_item">
-                        <p>{{prepare}}</p>
+                        <p>0</p>
                         <p>待办</p>
                     </div>
                 </a>

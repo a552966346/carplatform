@@ -96,7 +96,6 @@ export default {
         var data
         that.$addr.get('/index/service/isReg')
         .then(res=>{
-            console.log(res.data)
             data= res.data.result
             if(data.status==0){
                 that.show = true

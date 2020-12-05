@@ -17,7 +17,7 @@
       <p class="appointment_details_chooseseevice">
         <span>选择服务:</span>
         <select v-model="service">
-          <option value="">选择服务</option>
+          <option value=''>选择服务</option>
           <option v-for="(item,index) in isservice" :key="index" :value="item.id">{{item.name}}</option>
         </select>
       </p>
@@ -71,12 +71,13 @@ export default {
         if(that.username==''){
           layer.msg("请输入联系人姓名")
         }
-        if(that.service == ''){
+        else if(that.service == ''){
           layer.msg("请选择预约服务")
         }
-        if(that.time==''){
+       else if(that.time==''){
           layer.msg("请选择预约时间")
-        }else{
+        }
+        else{
           that.$addr.post('/index/service/record', {
              name : that.username,
              booktime : that.time,

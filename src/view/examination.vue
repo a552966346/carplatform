@@ -5,7 +5,7 @@
   			<p v-bind:class="{ break: !isBreak }" @click="exa_switch_two" v-model="value">自驾前往</p>
   	</div>
   	<div class="examination_center">
-  		<div class="examination_center_one " v-show="isBreak">
+  		<div class="examination_center_one " v-if="isBreak">
   			<div class="examination_position">
   				<p>接车位置</p>
             <input type="text" name="" placeholder="请选择机构位置" v-model="address" @click="toMap">
@@ -16,27 +16,27 @@
   			<div class="center_one_inp">
   				<div class="examination_inp">
   					<p>预约时间</p>
-  					<input type="datetime-local" name="time" placeholder="请选择预约日期" id="" value="" v-model="date"/>
+  					<input type="datetime-local" name="time" placeholder="请选择预约日期" id="data1" value="" v-model="date"/>
   				</div>
   				<div class="examination_inp">
   					<p>预留电话</p>
-  					<input type="nub" name="phone"  placeholder="请输入您的电话号" id="" value=""v-model="phone" />
+  					<input type="nub" name="phone" :key="a1"  placeholder="请输入您的电话号" id="phone1" value=""v-model="phone1" />
   				</div>
   			</div>
   			<div class="examination_payment">
-  				<button type="button">提示：当前审车费用预计<span >300元</span></button>
+  				<button type="button">提示：当前审车费用预计<span >{{whole}}元</span></button>
   			</div>
   		</div>
-  		<div class="examination_center_one" v-show="!isBreak" >
+  		<div class="examination_center_one" v-else-if="!isBreak" >
   			<div class="center_one_all">
   				<div class="center_one_inp">
   					<div class="examination_inp">
   						<p>预约时间</p>
-  						<input type="date" name="time" placeholder="请选择预约日期" id="" value="" v-model="date"/>
+  						<input type="date" name="time" placeholder="请选择预约日期" id="data2" value="" v-model="date"/>
   					</div>
   					<div class="examination_inp">
   						<p>预留电话</p>
-  						<input type="nub" name="phone"  placeholder="请输入您的电话号" id="" value=""v-model="phone" />
+  						<input type="nub" name="phone" :key="a2" placeholder="请输入您的电话号" id="phone2" value=""v-model="phone2" />
   					</div>
   				</div>
   				<div class="center_two">
@@ -44,7 +44,7 @@
   					<span>等待通知审车时间</span>
   				</div>
   				<div class="examination_payment">
-  					<button type="button">提示：当前审车费用预计<span >300元</span></button>
+  					<button type="button">提示：当前审车费用预计<span >{{single}}元</span></button>
   				</div>
   			</div>
   		</div>
@@ -100,14 +100,17 @@
         isBreak:true,
         address:'',
         date:'',
-        phone:'',
+        phone1:'',
+        phone2:'',
         //position:[],
         longitude:'',//经度
         latitude:'',//纬度
         text:"立即预约",
         bled:false,
         position:'',
-        booktime:''
+        booktime:'',
+        whole:'',
+        single:''
       }
     },
     created() {
@@ -121,6 +124,12 @@
        var options = {
            timeout: 600000
        };
+       that.$addr.post('index/proxy/fee')
+       .then(res =>{
+           console.log(res)
+           that.whole = res.data.result.whole
+           that.single = res.data.result.single
+       })
        geolocation.getLocation(showPosition, showErr, options);
         function showPosition(position) {
           //定义地图中心点坐标
@@ -201,7 +210,7 @@
                              latitude: that.latitude,
                              longitude: that.longitude,
                              date: that.date,
-                             phone: that.phone
+                             phone: that.phone1
                            })
                            .then(function (response) {
                              console.log(response)
@@ -221,15 +230,16 @@
               }
             }else{
               if(that.date==''){
-                layer.msg("请选择接车时间")
+                layer.msg("请选择预约时间")
               }
               else if(that.phone==""){
                  layer.msg("请输入联系电话")
               }else{
+                if((reg1.test(phone))){
                 that.$addr.post('/index/proxy/collect', {
                        type:that.value,
                        date: that.date,
-                       phone: that.phone
+                       phone: that.phone2
                      })
                      .then(function (response) {
                        console.log(response)
@@ -237,9 +247,12 @@
                          layer.msg("已提交申请等待通知")
                          that.text = "等待通知"
                         that.bled = true
+                        that.run()
                        }
-
                      })
+                 }else{
+                     layer.msg("请输入正确手机号")
+                 }
               }
             }
           console.log(that.value)

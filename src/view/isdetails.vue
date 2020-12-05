@@ -21,11 +21,12 @@
                   <p>{{item.status}}</p>
                 </div>
                 <div class="xing_center">
-                  <img src="../../static/img/index_shop.png" alt="">
+                 <!-- <img src="../../static/img/index_shop.png" alt=""> -->
                   <div class="xiang_center_text">
-                    <p>审车代办</p>
+                    <p v-show="item.category==1" class="title">审车代办(全程代办)</p>
+                    <p v-show="item.category==2" class="title">审车代办(自驾前往)</p>
                     <!-- <p>预约门店：路虎养车 <img src="../../static/img/expert_phone.png" alt=""></p> -->
-                    <p v-show="item.category==1">地址：{{item.position}}</p>
+                    <p v-show="item.category==1" id="text">地址：{{item.position}}</p>
                   </div>
                 </div>
                 <div class="xing_button">
@@ -158,12 +159,12 @@
     padding-left: 10px;
     width: 100%;
   }
-  .xiang_center_text>p:nth-child(1){
+  .title{
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 3px;
   }
-  .xiang_center_text>p:nth-child(2){
+  #text{
       font-size: 11px;
       color: #aaa;
       width: 100%;
@@ -172,13 +173,13 @@
       align-items: center;
       justify-content: space-between;
   }
-  .xiang_center_text>p:nth-child(2)>img{
+  /* .xiang_center_text>p:nth-child(2)>img{
     height: 15px;
   }
   .xiang_center_text>p:nth-child(3){
     font-size: 12px;
     color: #aaa;
-  }
+  } */
   .xing_button{
     display: flex;
     justify-content: space-between;
